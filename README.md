@@ -1,5 +1,7 @@
 # h5p-survey
 
+[![Build Status](https://travis-ci.org/h5p/h5p-survey.svg?branch=master)](https://travis-ci.org/h5p/h5p-survey)
+
 A H5P library for creating interactive surveys.
 
 ## Getting started

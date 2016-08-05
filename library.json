@@ -1,0 +1,21 @@
+{
+  "title": "Survey",
+  "description": "Create a survey",
+  "majorVersion": 1,
+  "minorVersion": 0,
+  "patchVersion": 0,
+  "runnable": 1,
+  "author": "Thomasmars",
+  "license": "cc-by-sa",
+  "machineName": "H5P.Survey",
+  "preloadedJs": [
+    {"path": "dist/dist.js"}
+  ],
+  "editorDependencies": [
+    {
+      "machineName": "H5PEditor.VerticalTabs",
+      "majorVersion": 1,
+      "minorVersion": 1
+    }
+  ]
+}

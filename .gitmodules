@@ -1,0 +1,9 @@
+[submodule "src/content/libraries/h5p-text-input-field"]
+	path = src/content/libraries/h5p-text-input-field
+	url = https://github.com/h5p/h5p-text-input-field.git
+[submodule "src/content/libraries/h5p-text"]
+	path = src/content/libraries/h5p-text
+	url = https://github.com/h5p/h5p-text.git
+[submodule "src/content/libraries/h5p-image"]
+	path = src/content/libraries/h5p-image
+	url = https://github.com/h5p/h5p-image.git

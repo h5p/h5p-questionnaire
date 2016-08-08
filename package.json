@@ -2,7 +2,6 @@
   "name": "Survey",
   "version": "1.0.0",
   "description": "Create a survey",
-  "main": "index.js",
   "scripts": {
     "test": "karma start",
     "testdev": "karma start --autoWatch --no-single-run",
@@ -15,7 +14,7 @@
     "library"
   ],
   "author": "thomasmars",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.6.5",
     "babel-loader": "^6.2.4",

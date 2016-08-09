@@ -18,9 +18,8 @@
       "label": "Library",
       "description": "Choose a library",
       "options": [
-        "H5P.Text 1.1",
-        "H5P.Image 1.0",
-        "H5P.TextInputField 1.0"
+        "H5P.TextInputField 1.0",
+        "H5P.SimpleMultiChoice 1.0"
       ]
     }
   }

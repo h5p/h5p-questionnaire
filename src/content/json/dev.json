@@ -33,5 +33,6 @@
       },
       "library": "H5P.TextInputField 1.0"
     }
-  ]
+  ],
+  "buttonLabel": "Submit"
 }

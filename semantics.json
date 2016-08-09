@@ -22,5 +22,11 @@
         "H5P.SimpleMultiChoice 1.0"
       ]
     }
+  },
+  {
+    "name": "submitLabel",
+    "type": "text",
+    "label": "Submit button label",
+    "default": "Submit"
   }
 ]

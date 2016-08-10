@@ -8,8 +8,13 @@ export default class Survey extends H5P.EventDispatcher {
   constructor(params, contentId = null) {
     super();
 
+  const {
+      surveyElements = [],
+      submitLabel = 'Submit'
+    } = params;
+
     // State of the survey
-    this.state = params.surveyElements.map((elementParams) => {
+    this.state = surveyElements.map((elementParams) => {
       return Object.assign({}, elementParams, {
         answers: null
       });
@@ -85,7 +90,7 @@ export default class Survey extends H5P.EventDispatcher {
       const surveyWrapper = document.createElement('div');
       surveyWrapper.className = 'h5p-survey';
 
-      params.surveyElements.forEach((elParams, instanceId) => {
+      surveyElements.forEach((elParams, instanceId) => {
 
         const surveyElement = this.createSurveyElement(elParams, (event) => {
           this.state = this.handleInstanceChanged(instanceId, this.state, event)
@@ -94,7 +99,7 @@ export default class Survey extends H5P.EventDispatcher {
         surveyWrapper.appendChild(surveyElement);
       });
 
-      const submitButton = this.createSubmitButton(params.buttonLabel, (event) => {
+      const submitButton = this.createSubmitButton(submitLabel, (event) => {
         this.handleSubmit(event);
       });
       surveyWrapper.appendChild(submitButton);

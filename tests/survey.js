@@ -30,12 +30,11 @@ describe('Survey', () => {
       },
       {
         "params": {
-          "taskDescription": "<p>What is your name ?<\/p>\n",
-          "placeholderText": "Ola Nordmann",
-          "inputFieldSize": "3",
-          "requiredField": false
+          "question": "Do you like cake ?",
+          "placeholderText": "No! I like turtles",
+          "inputRows": "2"
         },
-        "library": "H5P.TextInputField 1.0"
+        "library": "H5P.OpenEndedQuestion 1.0"
       }
     ]
   };

@@ -7,9 +7,9 @@ import Survey from '../scripts/survey';
 var params = require('../content/json/dev.json');
 
 // Import testing dependencies
-import 'expose?H5P.TextInputField!imports?H5P=>global.H5P!exports?H5P.TextInputField!../content/libraries/h5p-text-input-field/text-input-field';
-import '../content/libraries/h5p-text-input-field/text-input-field.css';
+import OpenEndedQuestion from 'babel!../content/libraries/h5p-open-ended-question/src/scripts/open-ended-question';
 import SimpleMultiChoice from 'babel!../content/libraries/h5p-simple-multiple-choice/src/scripts/simple-multiple-choice';
+H5P.OpenEndedQuestion = OpenEndedQuestion;
 H5P.SimpleMultiChoice = SimpleMultiChoice;
 
 new Survey(params).attach(H5P.jQuery('<div>').appendTo(H5P.jQuery('body')));

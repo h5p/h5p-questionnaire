@@ -1,6 +1,6 @@
-[submodule "src/content/libraries/h5p-text-input-field"]
-	path = src/content/libraries/h5p-text-input-field
-	url = https://github.com/h5p/h5p-text-input-field.git
 [submodule "src/content/libraries/h5p-simple-multiple-choice"]
 	path = src/content/libraries/h5p-simple-multiple-choice
 	url = https://github.com/h5p/h5p-simple-multiple-choice.git
+[submodule "src/content/libraries/h5p-open-ended-question"]
+	path = src/content/libraries/h5p-open-ended-question
+	url = https://github.com/h5p/h5p-open-ended-question.git

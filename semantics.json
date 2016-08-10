@@ -18,7 +18,7 @@
       "label": "Library",
       "description": "Choose a library",
       "options": [
-        "H5P.TextInputField 1.0",
+        "H5P.OpenEndedQuestion 1.0",
         "H5P.SimpleMultiChoice 1.0"
       ]
     }

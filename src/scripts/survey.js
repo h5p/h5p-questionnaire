@@ -44,10 +44,21 @@ export default class Survey extends H5P.EventDispatcher {
       const surveyWrapper = document.createElement('div');
       surveyWrapper.className = 'h5p-survey';
 
-      surveyElements.forEach((elParams, index) => {
-        const { surveyElement } = this.createSurveyElement(elParams);
+      surveyElements.forEach((sElement, index) => {
+        const { requiredField , library } = sElement;
+        const { surveyElement, instance } = this.createSurveyElement(library);
         surveyElement.className = 'h5p-survey-element';
-        this.state.surveyElements.push(surveyElement);
+
+        instance.on('xAPI', () => {
+          this.state.surveyElements[index].answered = true;
+        });
+
+        this.state.surveyElements.push({
+          instance,
+          surveyElement,
+          requiredField,
+          answered: false
+        });
         if (index !== 0) {
           surveyElement.classList.add('hide');
         }
@@ -67,16 +78,21 @@ export default class Survey extends H5P.EventDispatcher {
     this.createFooter = function () {
       const footer = new Footer(buttonLabels);
       footer.on('submit', () => {
-        this.triggerXAPI('completed');
+        const currentEl = this.state.surveyElements[this.state.surveyElements.length - 1];
+        if (this.isValidAnswer(currentEl)) {
+          this.triggerXAPI('completed');
+          //TODO: Display 'success' screen!
+        }
+        else {
+          this.triggerRequiredQuestion(currentEl.instance);
+        }
       });
 
       footer.on('next', () => {
-        console.log("pressed next");
         this.move(footer, 1);
       });
 
       footer.on('prev', () => {
-        console.log("pressed prev");
         this.move(footer, -1);
       });
       footer.trigger('disablePrev');
@@ -85,13 +101,24 @@ export default class Survey extends H5P.EventDispatcher {
       return footer;
     };
 
+    this.triggerRequiredQuestion = function (instance) {
+      instance.trigger('showRequiredMessage');
+    };
+
     /**
      * Move in a direction
      * @param footer
      * @param direction
      */
     this.move = function (footer, direction) {
-      let { currentIndex, surveyElements } = this.state;
+      const { currentIndex, surveyElements } = this.state;
+      const element = surveyElements[currentIndex];
+
+      if (direction > 0 && !this.isValidAnswer(element)) {
+        this.triggerRequiredQuestion(element.instance);
+        return;
+      }
+
       const nextIndex = currentIndex + direction;
 
       if (nextIndex >= 0 || nextIndex < surveyElements.length) {
@@ -99,13 +126,17 @@ export default class Survey extends H5P.EventDispatcher {
         footer.trigger(nextIndex >= surveyElements.length -1 ? 'disableNext' : 'enableNext');
         footer.trigger(nextIndex !== surveyElements.length -1 ? 'disableSubmit': 'enableSubmit');
 
-        surveyElements[nextIndex - direction].classList.add('hide');
-        surveyElements[nextIndex].classList.remove('hide');
+        surveyElements[currentIndex].surveyElement.classList.add('hide');
+        surveyElements[nextIndex].surveyElement.classList.remove('hide');
       }
 
-      Object.assign(this.state, {
+      this.state = Object.assign(this.state, {
         currentIndex: nextIndex
       });
+    };
+
+    this.isValidAnswer = function (element) {
+      return !element.requiredField || element.answered;
     };
 
     /**

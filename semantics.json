@@ -1,25 +1,29 @@
 [
   {
-    "name": "surveyElements",
-    "type": "list",
-    "widgets": [
-      {
-        "name": "VerticalTabs",
-        "label": "Default"
-      }
-    ],
     "label": "Survey elements",
     "entity": "element",
     "min": 1,
     "defaultNum": 1,
     "field": {
-      "name": "library",
-      "type": "library",
-      "label": "Library",
-      "description": "Choose a library",
-      "options": [
-        "H5P.OpenEndedQuestion 1.0",
-        "H5P.SimpleMultiChoice 1.0"
+      "name": "libraryGroup",
+      "type": "group",
+      "fields": [
+        {
+          "name": "library",
+          "type": "library",
+          "label": "Library",
+          "description": "Choose a library",
+          "options": [
+            "H5P.OpenEndedQuestion 1.0",
+            "H5P.SimpleMultiChoice 1.0"
+          ]
+        },
+        {
+          "name": "requiredField",
+          "type": "boolean",
+          "label": "Required field",
+          "default": false
+        }
       ]
     }
   },

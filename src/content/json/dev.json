@@ -33,5 +33,9 @@
       "library": "H5P.OpenEndedQuestion 1.0"
     }
   ],
-  "buttonLabel": "Submit"
+  "buttonLabels": {
+    "prevLabel": "Previous",
+    "nextLabel": "Next",
+    "submitLabel": "Submit"
+  }
 }

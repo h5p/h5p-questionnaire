@@ -59,12 +59,4 @@ describe('Survey', () => {
   it('should attach all survey elements', () => {
     expect(H5P.newRunnable).toHaveBeenCalledTimes(3);
   });
-
-
-  describe('Submit Button', () => {
-    it('should create a button element with text', () => {
-      const submitButton = survey.createSubmitButton('submitButton');
-      expect(submitButton.textContent).toMatch('submitButton');
-    });
-  })
 });

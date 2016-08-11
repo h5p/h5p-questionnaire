@@ -48,6 +48,13 @@ module.exports = function(config) {
               path.resolve(__dirname, "src/scripts")
             ],
             loader: 'babel'
+          },
+          {
+            test: /\.css$/,
+            include: [
+              path.resolve(__dirname, "src/scripts")
+            ],
+            loader: "style!css"
           }
         ]
       },

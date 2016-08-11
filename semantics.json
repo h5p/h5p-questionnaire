@@ -24,9 +24,28 @@
     }
   },
   {
-    "name": "submitLabel",
-    "type": "text",
-    "label": "Submit button label",
-    "default": "Submit"
+    "name": "buttonLabels",
+    "type": "group",
+    "label": "Button labels",
+    "fields": [
+      {
+        "name": "prevLabel",
+        "type": "text",
+        "label": "Previous button label",
+        "default": "Previous"
+      },
+      {
+        "name": "nextLabel",
+        "type": "text",
+        "label": "Next button label",
+        "default": "Next"
+      },
+      {
+        "name": "submitLabel",
+        "type": "text",
+        "label": "Submit button label",
+        "default": "Submit"
+      }
+    ]
   }
 ]

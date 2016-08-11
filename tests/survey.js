@@ -60,60 +60,11 @@ describe('Survey', () => {
     expect(H5P.newRunnable).toHaveBeenCalledTimes(3);
   });
 
-  describe('State',() => {
-    const event = {
-      data: {
-        state: 'state'
-      }
-    };
-
-    beforeEach(() => {
-      spyOn(survey, 'trigger');
-      survey.state = survey.handleInstanceChanged(0, survey.state, event);
-      survey.handleSubmit();
-    });
-
-    it('should submit state on submit button click', () => {
-      expect(survey.state).toBe(survey.submittedState);
-      expect(survey.trigger).toHaveBeenCalled();
-    });
-
-    it('should not submit the same state twice', () => {
-      survey.handleSubmit();
-      expect(survey.trigger).toHaveBeenCalledTimes(1);
-    });
-
-    it('should submit state when changed', () => {
-      const newEvent = {
-        data: {
-          state: 'state'
-        }
-      };
-      survey.state = survey.handleInstanceChanged(0, survey.state, newEvent);
-      expect(survey.state).not.toBe(survey.submittedState);
-      survey.handleSubmit();
-      expect(survey.trigger).toHaveBeenCalledTimes(2);
-    });
-  });
 
   describe('Submit Button', () => {
     it('should create a button element with text', () => {
-      const submitButton = survey.createSubmitButton('submitButton', () => {});
+      const submitButton = survey.createSubmitButton('submitButton');
       expect(submitButton.textContent).toMatch('submitButton');
     });
-
-    it('should trigger callback on click', () => {
-      const clickCallback = jasmine.createSpy('clickCallback');
-      const submitButton = survey.createSubmitButton('test', clickCallback);
-      submitButton.click();
-      expect(clickCallback).toHaveBeenCalled();
-    });
-  });
-
-  describe('Survey element', () => {
-    it('should create a survey element', () => {
-      const surveyElement = survey.createSurveyElement({}, () => {});
-      expect(surveyElement).toBeDefined();
-    });
-  });
+  })
 });

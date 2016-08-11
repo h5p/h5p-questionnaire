@@ -8,78 +8,44 @@ export default class Survey extends H5P.EventDispatcher {
   constructor(params, contentId = null) {
     super();
 
-  const {
+    const {
       surveyElements = [],
       submitLabel = 'Submit'
     } = params;
-
-    // State of the survey
-    this.state = surveyElements.map((elementParams) => {
-      return Object.assign({}, elementParams, {
-        answers: null
-      });
-    });
-
-    // Latest submitted state
-    this.submittedState = null;
 
     /**
      * Handle submitting of an answer
      */
     this.handleSubmit = function () {
-      if (this.submittedState !== this.state) {
-        this.submittedState = this.state;
-        this.trigger('submit', this.state, { external: true });
-      }
+      this.triggerXAPI('completed');
     };
 
     /**
      * Handle creating submit answer button
      * @param {string} buttonText Button text
-     * @param {function} onClickCallback Submit button click callback
      * @return {Element} Submit button
      */
-    this.createSubmitButton = function (buttonText, onClickCallback) {
+    this.createSubmitButton = function (buttonText) {
       const submitButton = document.createElement('button');
       submitButton.type = 'button';
       submitButton.textContent = buttonText;
-      submitButton.addEventListener('click', onClickCallback);
 
       return submitButton;
     };
 
     /**
-     * Handle a survey elements change in state
-     * @param {number} instanceId Unique id for survey element
-     * @param {Object} state State of survey that should be updated
-     * @param {Event} event Change event with state data for the instance
-     */
-    this.handleInstanceChanged = function (instanceId, state, event) {
-      // Clone object
-      const newAnswer = Object.assign({}, state[instanceId], {
-        answers: event.data
-      });
-
-      // Update state
-      return [
-        ...state.slice(0, instanceId),
-        newAnswer,
-        ...state.slice(instanceId + 1)
-      ];
-    };
-
-    /**
      * Create survey element from parameters
      * @param {Object} elParams Parameters of survey element
-     * @param {function} changedListener Callback survey element changes
-     * @return {Element} Survey element
+     * @return {Object} Survey element and instance
      */
-    this.createSurveyElement = function (elParams, changedListener) {
+    this.createSurveyElement = function (elParams) {
       const surveyElement = document.createElement('div');
-      const instance = H5P.newRunnable(elParams, contentId, H5P.jQuery(surveyElement));
-      instance.on('changed', changedListener);
+      const instance = H5P.newRunnable(elParams, contentId, H5P.jQuery(surveyElement), undefined, { parent: this });
 
-      return surveyElement;
+      return {
+        surveyElement,
+        instance
+      };
     };
 
     /**
@@ -90,17 +56,14 @@ export default class Survey extends H5P.EventDispatcher {
       const surveyWrapper = document.createElement('div');
       surveyWrapper.className = 'h5p-survey';
 
-      surveyElements.forEach((elParams, instanceId) => {
-
-        const surveyElement = this.createSurveyElement(elParams, (event) => {
-          this.state = this.handleInstanceChanged(instanceId, this.state, event)
-        });
-
+      surveyElements.forEach(elParams => {
+        const { surveyElement } = this.createSurveyElement(elParams);
         surveyWrapper.appendChild(surveyElement);
       });
 
-      const submitButton = this.createSubmitButton(submitLabel, (event) => {
-        this.handleSubmit(event);
+      const submitButton = this.createSubmitButton(submitLabel);
+      submitButton.addEventListener('click', () => {
+        this.handleSubmit();
       });
       surveyWrapper.appendChild(submitButton);
 

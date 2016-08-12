@@ -1,6 +1,14 @@
 [
   {
+    "name": "surveyElements",
     "label": "Survey elements",
+    "type": "list",
+    "widgets": [
+      {
+        "name": "VerticalTabs",
+        "label": "Default"
+      }
+    ],
     "entity": "element",
     "min": 1,
     "defaultNum": 1,

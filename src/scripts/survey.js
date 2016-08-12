@@ -1,20 +1,17 @@
 import './styles/survey.css';
+import SuccessScreen from './success-screen';
 import Footer from './footer';
 
 export default class Survey extends H5P.EventDispatcher {
 
   /**
    * Constructor for survey
-   * @param params
+   * @param surveyElements
+   * @param buttonLabels
    * @param contentId
    */
-  constructor(params, contentId = null) {
+  constructor({ surveyElements = [], buttonLabels = [] }, contentId = null) {
     super();
-
-    const {
-      surveyElements = [],
-      buttonLabels = [],
-    } = params;
 
     this.state = {
       surveyElements: [],
@@ -28,6 +25,7 @@ export default class Survey extends H5P.EventDispatcher {
      */
     this.createSurveyElement = function (elParams) {
       const surveyElement = document.createElement('div');
+      surveyElement.className = 'h5p-survey-element';
       const instance = H5P.newRunnable(elParams, contentId, H5P.jQuery(surveyElement), undefined, { parent: this });
 
       return {
@@ -44,10 +42,9 @@ export default class Survey extends H5P.EventDispatcher {
       const surveyWrapper = document.createElement('div');
       surveyWrapper.className = 'h5p-survey';
 
-      surveyElements.forEach((sElement, index) => {
-        const { requiredField , library } = sElement;
+      surveyElements.forEach(({ requiredField, library }, index) => {
         const { surveyElement, instance } = this.createSurveyElement(library);
-        surveyElement.className = 'h5p-survey-element';
+        surveyElement.classList.toggle('hide', index !== 0);
 
         instance.on('xAPI', () => {
           this.state.surveyElements[index].answered = true;
@@ -59,11 +56,12 @@ export default class Survey extends H5P.EventDispatcher {
           requiredField,
           answered: false
         });
-        if (index !== 0) {
-          surveyElement.classList.add('hide');
-        }
+
         surveyWrapper.appendChild(surveyElement);
       });
+
+      this.successScreen = new SuccessScreen({ successMessage: 'Success!' });
+      this.successScreen.attachTo(surveyWrapper);
 
       const footer = this.createFooter();
       footer.attachTo(surveyWrapper);
@@ -80,8 +78,12 @@ export default class Survey extends H5P.EventDispatcher {
       footer.on('submit', () => {
         const currentEl = this.state.surveyElements[this.state.surveyElements.length - 1];
         if (this.isValidAnswer(currentEl)) {
+          footer.trigger('disablePrev');
+          footer.trigger('disableNext');
+          footer.trigger('disableSubmit');
+          currentEl.surveyElement.classList.add('hide');
           this.triggerXAPI('completed');
-          //TODO: Display 'success' screen!
+          this.successScreen.show();
         }
         else {
           this.triggerRequiredQuestion(currentEl.instance);

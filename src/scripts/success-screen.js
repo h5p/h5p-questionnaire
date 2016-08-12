@@ -1,9 +1,18 @@
-export default class SuccessScreen {
-  constructor() {
+import './styles/success-screen.css';
 
+export default class SuccessScreen {
+  constructor({ successMessage }) {
+    this.wrapper = document.createElement('div');
+    this.wrapper.className = 'h5p-survey-success';
+    this.wrapper.classList.add('hide');
+    this.wrapper.textContent = successMessage;
   }
 
-  appendTo(container) {
+  show() {
+    this.wrapper.classList.remove('hide');
+  }
 
+  attachTo(container) {
+    container.appendChild(this.wrapper);
   }
 }

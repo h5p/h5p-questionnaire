@@ -49,9 +49,12 @@ export default class Questionnaire extends H5P.EventDispatcher {
         const { questionnaireElement, instance } = this.createQuestionnaireElement(library);
         questionnaireElement.classList.toggle('hide', index !== 0);
 
-        instance.on('xAPI', () => {
+        instance.on('xAPI', (e) => {
           this.requiredMessage.trigger('hideMessage');
-          this.state.questionnaireElements[index].answered = true;
+
+          // Make sure there was a results response
+          const results = e.data.statement.result.response;
+          this.state.questionnaireElements[index].answered = !!results.length;
         });
 
         this.state.questionnaireElements.push({

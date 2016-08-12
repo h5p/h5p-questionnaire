@@ -1,7 +1,7 @@
 {
-  "name": "Survey",
+  "name": "Questionnaire",
   "version": "1.0.0",
-  "description": "Create a survey",
+  "description": "Create a questionnaire",
   "scripts": {
     "test": "karma start",
     "testdev": "karma start --autoWatch --no-single-run",
@@ -9,6 +9,7 @@
     "dev": "webpack -d && webpack-dev-server -d --inline --hot --open"
   },
   "keywords": [
+    "questionnaire",
     "survey",
     "h5p",
     "library"

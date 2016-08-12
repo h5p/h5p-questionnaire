@@ -1,7 +1,7 @@
 [
   {
-    "name": "surveyElements",
-    "label": "Survey elements",
+    "name": "questionnaireElements",
+    "label": "Questionnaire elements",
     "type": "list",
     "widgets": [
       {

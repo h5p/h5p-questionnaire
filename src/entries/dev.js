@@ -2,7 +2,7 @@
  * Created by thomasmars on 09.04.2016.
  */
 import 'expose?H5P!exports?H5P!h5p-view';
-import Survey from '../scripts/survey';
+import Questionnaire from '../scripts/questionnaire';
 
 var params = require('../content/json/dev.json');
 
@@ -12,7 +12,7 @@ import SimpleMultiChoice from 'babel!../content/libraries/h5p-simple-multiple-ch
 H5P.OpenEndedQuestion = OpenEndedQuestion;
 H5P.SimpleMultiChoice = SimpleMultiChoice;
 
-new Survey(params).attach(H5P.jQuery('<div>').appendTo(H5P.jQuery('body')));
+new Questionnaire(params).attach(H5P.jQuery('<div>').appendTo(H5P.jQuery('body')));
 
 // Create external event listener element
 const externalEventsElement = document.createElement('div');

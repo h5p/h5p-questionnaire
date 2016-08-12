@@ -1,11 +1,11 @@
-.h5p-simple-multiple-choice-required.hide {
+.h5p-questionnaire-choice-required.hide {
   display: none;
 }
 
-.h5p-simple-multiple-choice-required-message {
+.h5p-questionnaire-choice-required-message {
   display: inline-block;
 }
 
-.h5p-simple-multiple-choice-required-exit {
+.h5p-questionnaire-choice-required-exit {
   display: inline-block;
 }

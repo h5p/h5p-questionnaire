@@ -8,9 +8,9 @@ export default class RequiredMessage extends H5P.EventDispatcher {
     const requiredMessage = document.createElement('div');
     const exitButton = document.createElement('button');
 
-    this.requiredElement.classList.add('h5p-simple-multiple-choice-required', 'hide');
-    requiredMessage.className = 'h5p-simple-multiple-choice-required-message';
-    exitButton.className = 'h5p-simple-multiple-choice-required-exit';
+    this.requiredElement.classList.add('h5p-questionnaire-choice-required', 'hide');
+    requiredMessage.className = 'h5p-questionnaire-choice-required-message';
+    exitButton.className = 'h5p-questionnaire-choice-required-exit';
 
     requiredMessage.textContent = message;
     exitButton.textContent = 'x';

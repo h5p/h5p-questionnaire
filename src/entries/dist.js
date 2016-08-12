@@ -1,2 +1,2 @@
 // Load library
-H5P.Survey = require('../scripts/survey').default;
+H5P.Questionnaire = require('../scripts/questionnaire').default;

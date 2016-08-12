@@ -11,7 +11,7 @@ export default class Footer extends H5P.EventDispatcher {
     } = buttonLabels;
 
     this.footerWrapper = document.createElement('div');
-    this.footerWrapper.className = 'h5p-survey-footer';
+    this.footerWrapper.className = 'h5p-questionnaire-footer';
 
     const submitButton = this.createFooterButton(submitLabel);
     submitButton.addEventListener('click', () => {
@@ -58,7 +58,7 @@ export default class Footer extends H5P.EventDispatcher {
    */
   createFooterButton(buttonText) {
     const footerButton = document.createElement('button');
-    footerButton.className = 'h5p-survey-footer-button';
+    footerButton.className = 'h5p-questionnaire-footer-button';
     footerButton.type = 'button';
     footerButton.textContent = buttonText;
 

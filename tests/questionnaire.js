@@ -1,9 +1,9 @@
 import 'expose?H5P!exports?H5P!h5p-view';
-import Survey from '../src/scripts/survey';
+import Questionnaire from '../src/scripts/questionnaire';
 
-describe('Survey', () => {
+describe('Questionnaire', () => {
   const params = {
-    "surveyElements": [
+    "questionnaireElements": [
       {
         "library": {
           "params": {
@@ -57,23 +57,23 @@ describe('Survey', () => {
   };
 
   var $body = H5P.jQuery('body');
-  let survey;
+  let questionnaire;
 
   beforeEach(() => {
     const instance = jasmine.createSpyObj('instance', ['on']);
     spyOn(H5P, 'newRunnable').and.returnValue(instance);
-    survey = new Survey(params);
-    survey.attach($body);
+    questionnaire = new Questionnaire(params);
+    questionnaire.attach($body);
   });
 
   // Check that attach is called
   it('should attach to the $wrapper', () => {
-    let surveyElement = $body.get(0).querySelectorAll('.h5p-survey');
-    expect(surveyElement[0].parentNode).toBe($body.get(0));
+    let questionnaireElement = $body.get(0).querySelectorAll('.h5p-questionnaire');
+    expect(questionnaireElement[0].parentNode).toBe($body.get(0));
   });
 
-  // Check that all survey elements are called with newRunnable
-  it('should attach all survey elements', () => {
+  // Check that all questionnaire elements are called with newRunnable
+  it('should attach all questionnaire elements', () => {
     expect(H5P.newRunnable).toHaveBeenCalledTimes(3);
   });
 });

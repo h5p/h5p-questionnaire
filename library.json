@@ -1,13 +1,13 @@
 {
-  "title": "Survey",
-  "description": "Create a survey",
+  "title": "Questionnaire",
+  "description": "Create a questionnaire",
   "majorVersion": 1,
   "minorVersion": 0,
   "patchVersion": 0,
   "runnable": 1,
   "author": "Thomasmars",
   "license": "cc-by-sa",
-  "machineName": "H5P.Survey",
+  "machineName": "H5P.Questionnaire",
   "preloadedJs": [
     {"path": "dist/dist.js"}
   ],

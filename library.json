@@ -11,6 +11,18 @@
   "preloadedJs": [
     {"path": "dist/dist.js"}
   ],
+  "preloadedDependencies": [
+    {
+      "machineName": "H5P.OpenEndedQuestion",
+      "majorVersion": 1,
+      "minorVersion": 0
+    },
+    {
+      "machineName": "H5P.SimpleMultiChoice",
+      "majorVersion": 1,
+      "minorVersion": 0
+    }
+  ],
   "editorDependencies": [
     {
       "machineName": "H5PEditor.VerticalTabs",

@@ -8,8 +8,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '/build'),
-    filename: "[name].js",
-    sourceMapFileName: "[file].map"
+    filename: "[name].js"
   },
   module: {
     loaders: [
@@ -37,7 +36,7 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   devServer: {
     port: 8050,
     contentBase: "./build",

@@ -1,0 +1,11 @@
+.h5p-simple-multiple-choice-required.hide {
+  display: none;
+}
+
+.h5p-simple-multiple-choice-required-message {
+  display: inline-block;
+}
+
+.h5p-simple-multiple-choice-required-exit {
+  display: inline-block;
+}

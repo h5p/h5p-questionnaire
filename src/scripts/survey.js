@@ -1,5 +1,6 @@
 import './styles/survey.css';
 import SuccessScreen from './success-screen';
+import RequiredMessage from './required-message';
 import Footer from './footer';
 
 export default class Survey extends H5P.EventDispatcher {
@@ -7,10 +8,12 @@ export default class Survey extends H5P.EventDispatcher {
   /**
    * Constructor for survey
    * @param surveyElements
-   * @param buttonLabels
+   * @param uiElements
+   * @param uiElements.buttonLabels
+   * @param uiElements.requiredMessage
    * @param contentId
    */
-  constructor({ surveyElements = [], buttonLabels = [] }, contentId = null) {
+  constructor({ surveyElements = [], uiElements = [] }, contentId = null) {
     super();
 
     this.state = {
@@ -47,6 +50,7 @@ export default class Survey extends H5P.EventDispatcher {
         surveyElement.classList.toggle('hide', index !== 0);
 
         instance.on('xAPI', () => {
+          this.requiredMessage.trigger('hideMessage');
           this.state.surveyElements[index].answered = true;
         });
 
@@ -63,6 +67,9 @@ export default class Survey extends H5P.EventDispatcher {
       this.successScreen = new SuccessScreen({ successMessage: 'Success!' });
       this.successScreen.attachTo(surveyWrapper);
 
+      this.requiredMessage = new RequiredMessage(uiElements.requiredMessage);
+      this.requiredMessage.attachTo(surveyWrapper);
+
       const footer = this.createFooter();
       footer.attachTo(surveyWrapper);
 
@@ -74,7 +81,7 @@ export default class Survey extends H5P.EventDispatcher {
      * @return {Footer}
      */
     this.createFooter = function () {
-      const footer = new Footer(buttonLabels);
+      const footer = new Footer(uiElements.buttonLabels);
       footer.on('submit', () => {
         const currentEl = this.state.surveyElements[this.state.surveyElements.length - 1];
         if (this.isValidAnswer(currentEl)) {
@@ -86,7 +93,7 @@ export default class Survey extends H5P.EventDispatcher {
           this.successScreen.show();
         }
         else {
-          this.triggerRequiredQuestion(currentEl.instance);
+          this.triggerRequiredQuestion();
         }
       });
 
@@ -103,8 +110,8 @@ export default class Survey extends H5P.EventDispatcher {
       return footer;
     };
 
-    this.triggerRequiredQuestion = function (instance) {
-      instance.trigger('showRequiredMessage');
+    this.triggerRequiredQuestion = function () {
+      this.requiredMessage.trigger('showMessage');
     };
 
     /**
@@ -117,7 +124,7 @@ export default class Survey extends H5P.EventDispatcher {
       const element = surveyElements[currentIndex];
 
       if (direction > 0 && !this.isValidAnswer(element)) {
-        this.triggerRequiredQuestion(element.instance);
+        this.triggerRequiredQuestion();
         return;
       }
 

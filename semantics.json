@@ -36,27 +36,41 @@
     }
   },
   {
-    "name": "buttonLabels",
+    "name": "uiElements",
+    "label": "UI Elements",
     "type": "group",
-    "label": "Button labels",
     "fields": [
       {
-        "name": "prevLabel",
-        "type": "text",
-        "label": "Previous button label",
-        "default": "Previous"
+        "name": "buttonLabels",
+        "type": "group",
+        "label": "Button labels",
+        "fields": [
+          {
+            "name": "prevLabel",
+            "type": "text",
+            "label": "Previous button label",
+            "default": "Previous"
+          },
+          {
+            "name": "nextLabel",
+            "type": "text",
+            "label": "Next button label",
+            "default": "Next"
+          },
+          {
+            "name": "submitLabel",
+            "type": "text",
+            "label": "Submit button label",
+            "default": "Submit"
+          }
+        ]
       },
       {
-        "name": "nextLabel",
+        "name": "requiredMessage",
         "type": "text",
-        "label": "Next button label",
-        "default": "Next"
-      },
-      {
-        "name": "submitLabel",
-        "type": "text",
-        "label": "Submit button label",
-        "default": "Submit"
+        "label": "Required message",
+        "default": "This question requires an answer",
+        "description": "Will display if this field is unanswered and required by a wrapper content type"
       }
     ]
   }

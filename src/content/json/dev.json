@@ -42,9 +42,12 @@
       "requiredField": true
     }
   ],
-  "buttonLabels": {
-    "prevLabel": "Previous",
-    "nextLabel": "Next",
-    "submitLabel": "Submit"
+  "uiElements": {
+    "buttonLabels": {
+      "prevLabel": "Previous",
+      "nextLabel": "Next",
+      "submitLabel": "Submit"
+    },
+    "requiredMessage": "This question requires an answer"
   }
 }

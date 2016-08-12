@@ -5,38 +5,55 @@ describe('Survey', () => {
   const params = {
     "surveyElements": [
       {
-        "params": {
-          "question": "What do you like the most ?",
-          "inputType": "checkbox",
-          "alternatives": [
-            "Fish",
-            "Turtles",
-            "Icecream"
-          ]
+        "library": {
+          "params": {
+            "question": "What do you like the most ?",
+            "inputType": "checkbox",
+            "alternatives": [
+              "Fish",
+              "Turtles",
+              "Icecream"
+            ]
+          },
+          "library": "H5P.SimpleMultiChoice 1.0"
         },
-        "library": "H5P.SimpleMultiChoice 1.0"
+        "requiredField": true
       },
       {
-        "params": {
-          "question": "What do you like the most ?",
-          "inputType": "radio",
-          "alternatives": [
-            "Fish",
-            "Turtles",
-            "Icecream"
-          ]
+        "library": {
+          "params": {
+            "question": "What do you like the most ?",
+            "inputType": "radio",
+            "alternatives": [
+              "Fish",
+              "Turtles",
+              "Icecream"
+            ]
+          },
+          "library": "H5P.SimpleMultiChoice 1.0"
         },
-        "library": "H5P.SimpleMultiChoice 1.0"
+        "requiredField": false
       },
       {
-        "params": {
-          "question": "Do you like cake ?",
-          "placeholderText": "No! I like turtles",
-          "inputRows": "2"
+        "library": {
+          "params": {
+            "question": "Do you like cake ?",
+            "placeholderText": "No! I like turtles",
+            "inputRows": "2"
+          },
+          "library": "H5P.OpenEndedQuestion 1.0"
         },
-        "library": "H5P.OpenEndedQuestion 1.0"
+        "requiredField": true
       }
-    ]
+    ],
+    "uiElements": {
+      "buttonLabels": {
+        "prevLabel": "Previous",
+        "nextLabel": "Next",
+        "submitLabel": "Submit"
+      },
+      "requiredMessage": "This question requires an answer"
+    }
   };
 
   var $body = H5P.jQuery('body');

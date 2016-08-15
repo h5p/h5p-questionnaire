@@ -71,6 +71,13 @@
         "label": "Required message",
         "default": "This question requires an answer",
         "description": "Will display if this field is unanswered and required by a wrapper content type"
+      },
+      {
+        "name": "requiredText",
+        "type": "text",
+        "label": "Required symbol text",
+        "default": "required",
+        "description": "Text that will accompany an asterisk to signal that a question is required"
       }
     ]
   }

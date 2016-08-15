@@ -1,0 +1,4 @@
+.h5p-open-ended-question > div,
+.h5p-simple-multiple-choice-question {
+  margin-right: 3em;
+}

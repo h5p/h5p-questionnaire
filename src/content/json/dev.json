@@ -48,6 +48,7 @@
       "nextLabel": "Next",
       "submitLabel": "Submit"
     },
-    "requiredMessage": "This question requires an answer"
+    "requiredMessage": "This question requires an answer",
+    "requiredText": "required"
   }
 }

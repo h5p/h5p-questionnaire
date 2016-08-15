@@ -1,7 +1,9 @@
+import './styles/children-styles.css';
 import './styles/questionnaire.css';
 import SuccessScreen from './success-screen';
 import RequiredMessage from './required-message';
 import Footer from './footer';
+import ProgressBar from './progress-bar/progress-bar';
 
 export default class Questionnaire extends H5P.EventDispatcher {
 
@@ -45,6 +47,14 @@ export default class Questionnaire extends H5P.EventDispatcher {
       const questionnaireWrapper = document.createElement('div');
       questionnaireWrapper.className = 'h5p-questionnaire';
 
+      this.progressBar = new ProgressBar({
+        currentIndex: 1,
+        maxIndex: questionnaireElements.length
+      });
+      this.progressBar.attachTo(questionnaireWrapper);
+
+      this.progressBar.attachNumberWidgetTo(questionnaireWrapper);
+
       questionnaireElements.forEach(({ requiredField, library }, index) => {
         const { questionnaireElement, instance } = this.createQuestionnaireElement(library);
         questionnaireElement.classList.toggle('hide', index !== 0);
@@ -56,6 +66,12 @@ export default class Questionnaire extends H5P.EventDispatcher {
           const results = e.data.statement.result.response;
           this.state.questionnaireElements[index].answered = !!results.length;
         });
+
+        if (requiredField) {
+          const requiredSymbol = document.createElement('div');
+          requiredSymbol.textContent = '* ' + uiElements.requiredText;
+          questionnaireElement.insertBefore(requiredSymbol, questionnaireElement.firstChild);
+        }
 
         this.state.questionnaireElements.push({
           instance,
@@ -92,7 +108,9 @@ export default class Questionnaire extends H5P.EventDispatcher {
           footer.trigger('disableNext');
           footer.trigger('disableSubmit');
           currentEl.questionnaireElement.classList.add('hide');
+
           this.triggerXAPI('completed');
+          this.progressBar.remove();
           this.successScreen.show();
         }
         else {
@@ -145,6 +163,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
       this.state = Object.assign(this.state, {
         currentIndex: nextIndex
       });
+      this.progressBar.move(nextIndex + 1);
     };
 
     this.isValidAnswer = function (element) {

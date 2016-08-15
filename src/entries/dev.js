@@ -14,6 +14,12 @@ H5P.SimpleMultiChoice = SimpleMultiChoice;
 
 new Questionnaire(params).attach(H5P.jQuery('<div>').appendTo(H5P.jQuery('body')));
 
+
+const smallerQuestionnaire = document.createElement('div');
+smallerQuestionnaire.style.width = '200px';
+document.body.appendChild(smallerQuestionnaire);
+new Questionnaire(params).attach(H5P.jQuery('<div>').appendTo(smallerQuestionnaire));
+
 // Create external event listener element
 const externalEventsElement = document.createElement('div');
 externalEventsElement.style.fontSize = '9px';

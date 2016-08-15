@@ -1,3 +1,7 @@
+.h5p-questionnaire {
+  position: relative;
+}
+
 .h5p-questionnaire-element.hide {
   display: none;
 }

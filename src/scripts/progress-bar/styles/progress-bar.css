@@ -1,0 +1,9 @@
+.h5p-questionnaire-progress-bar {
+  background: darkblue;
+  height: 0.2em;
+}
+
+.h5p-questionnaire-progress-bar-current {
+  background: orange;
+  height:100%;
+}

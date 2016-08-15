@@ -1,0 +1,10 @@
+.h5p-questionnaire-progress-bar-widget {
+  position: absolute;
+  right: 10%;
+}
+
+.h5p-questionnaire-progress-bar-widget-current,
+.h5p-questionnaire-progress-bar-widget-separator,
+.h5p-questionnaire-progress-bar-widget-max {
+  display: inline-block;
+}

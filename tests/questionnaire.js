@@ -76,4 +76,6 @@ describe('Questionnaire', () => {
   it('should attach all questionnaire elements', () => {
     expect(H5P.newRunnable).toHaveBeenCalledTimes(3);
   });
+
+  //TODO: Add test for reattaching content type
 });

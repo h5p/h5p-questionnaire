@@ -156,8 +156,9 @@ export default class Questionnaire extends H5P.EventDispatcher {
      * @param {jQuery} $wrapper
      */
     this.attach = function ($wrapper) {
-      const questionnaireWrapper = this.createQuestionnaire();
       $wrapper.get(0).appendChild(questionnaireWrapper);
     };
+
+    const questionnaireWrapper = this.createQuestionnaire();
   }
 }

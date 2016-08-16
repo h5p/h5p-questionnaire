@@ -4,3 +4,6 @@
 [submodule "src/content/libraries/h5p-open-ended-question"]
 	path = src/content/libraries/h5p-open-ended-question
 	url = https://github.com/h5p/h5p-open-ended-question.git
+[submodule "src/content/libraries/font-awesome"]
+	path = src/content/libraries/font-awesome
+	url = https://github.com/h5p/font-awesome.git

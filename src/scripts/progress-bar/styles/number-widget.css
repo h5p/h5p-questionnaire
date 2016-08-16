@@ -1,7 +1,7 @@
 .h5p-questionnaire-progress-bar-widget {
   position: absolute;
   right: 1em;
-  top: 1em;
+  top: 2em;
   width: 3em;
   height: 3em;
   line-height: 3em;
@@ -15,7 +15,7 @@
   width: 70%;
   height: 0;
   content: ' ';
-  bottom: -0.4em;
+  bottom: -0.6em;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50%;

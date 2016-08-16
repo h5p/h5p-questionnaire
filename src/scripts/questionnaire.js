@@ -68,6 +68,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         });
 
         if (requiredField) {
+          questionnaireElement.classList.add('h5p-questionnaire-required');
           const requiredSymbol = document.createElement('div');
           requiredSymbol.textContent = '* ' + uiElements.requiredText;
           requiredSymbol.className = 'h5p-questionnaire-required-symbol';
@@ -157,6 +158,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         footer.trigger(nextIndex >= questionnaireElements.length -1 ? 'disableNext' : 'enableNext');
         footer.trigger(nextIndex !== questionnaireElements.length -1 ? 'disableSubmit': 'enableSubmit');
 
+        this.requiredMessage.trigger('hideMessage');
         questionnaireElements[currentIndex].questionnaireElement.classList.add('hide');
         questionnaireElements[nextIndex].questionnaireElement.classList.remove('hide');
       }

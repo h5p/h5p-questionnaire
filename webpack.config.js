@@ -33,6 +33,14 @@ module.exports = {
         test: /\.json$/,
         include: path.resolve(__dirname, "src/content"),
         loader: 'json'
+      },
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "url?limit=10000&mimetype=application/font-woff"
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "file"
       }
     ]
   },

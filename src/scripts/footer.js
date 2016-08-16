@@ -14,6 +14,7 @@ export default class Footer extends H5P.EventDispatcher {
     this.footerWrapper.className = 'h5p-questionnaire-footer';
 
     const submitButton = this.createFooterButton(submitLabel);
+    submitButton.classList.add('h5p-questionnaire-footer-submit');
     submitButton.addEventListener('click', () => {
       this.trigger('submit');
     });
@@ -25,6 +26,7 @@ export default class Footer extends H5P.EventDispatcher {
     });
 
     const nextButton = this.createFooterButton(nextLabel);
+    nextButton.classList.add('h5p-questionnaire-footer-next');
     nextButton.addEventListener('click', () => {
       this.trigger('next');
     });
@@ -36,6 +38,7 @@ export default class Footer extends H5P.EventDispatcher {
     });
 
     const previousButton = this.createFooterButton(prevLabel);
+    previousButton.classList.add('h5p-questionnaire-footer-previous');
     previousButton.addEventListener('click', () => {
       this.trigger('prev');
     });

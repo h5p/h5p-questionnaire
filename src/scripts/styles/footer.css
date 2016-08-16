@@ -1,3 +1,75 @@
+.h5p-questionnaire-footer {
+  background: #000;
+  padding: 0.8em 1.2em;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.h5p-questionnaire-footer-button {
+  float: right;
+  padding: 0.7em 1.1em;
+
+  color: #FFF;
+  background-color: #1F1F1F;
+  border: 1px solid #404040;
+
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 0.3em;
+  font-size: 0.8em;
+}
+
+.h5p-questionnaire-footer-previous {
+  float:left;
+}
+
+.h5p-questionnaire-footer-button:active {
+  background-color: #1C1C1C;
+}
+
+.h5p-questionnaire-footer-button:hover {
+  background-color: #363636;
+}
+
+.h5p-questionnaire-footer-submit {
+  background-color: #ff6b00;
+}
+
+.h5p-questionnaire-footer-submit:hover {
+  background-color: #ff7a1a;
+}
+
+.h5p-questionnaire-footer-submit:active {
+  background-color: #e66507;
+}
+
 .h5p-questionnaire-footer-button.disable {
   display: none;
+}
+
+.h5p-questionnaire-footer-previous:before {
+  content: "\f137";
+}
+
+.h5p-questionnaire-footer-next:after {
+  content: "\f138";
+}
+
+.h5p-questionnaire-footer-submit:after {
+  content: "\f058";
+}
+
+.h5p-questionnaire-footer-previous:before,
+.h5p-questionnaire-footer-next:after,
+.h5p-questionnaire-footer-submit:after {
+  font-family: "H5PFontAwesome4";
+  margin-left: 0.5em;
+}
+
+.h5p-questionnaire-footer-previous:before {
+  margin-left: 0;
+  margin-right: 0.5em;
 }

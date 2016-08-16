@@ -15,13 +15,24 @@ export default class Questionnaire extends H5P.EventDispatcher {
    * @param uiElements.requiredMessage
    * @param contentId
    */
-  constructor({ questionnaireElements = [], uiElements = [] }, contentId = null) {
+  constructor({ questionnaireElements = [], uiElements = {} }, contentId = null) {
     super();
 
     this.state = {
       questionnaireElements: [],
       currentIndex: 0
     };
+
+    uiElements = Object.assign({}, {
+      buttonLabels: {
+        prevLabel: 'Previous',
+        nextLabel: 'Next',
+        submitLabel: 'Submit'
+      },
+      requiredMessage: 'This question requires an answer',
+      requiredText: 'required',
+      successMessage: 'You successfully answered all of the questions.'
+    }, uiElements);
 
     /**
      * Create questionnaire element from parameters
@@ -70,6 +81,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
           // Make sure there was a results response
           const results = e.data.statement.result.response;
           this.state.questionnaireElements[index].answered = !!results.length;
+          this.trigger('resize');
         });
 
         if (requiredField) {
@@ -123,6 +135,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
           this.progressBar.remove();
           footer.remove();
           this.successScreen.show();
+          this.trigger('resize');
         }
         else {
           this.triggerRequiredQuestion();
@@ -144,6 +157,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
 
     this.triggerRequiredQuestion = function () {
       this.requiredMessage.trigger('showMessage');
+      this.trigger('resize');
     };
 
     /**
@@ -173,6 +187,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         nextQuestion.classList.remove('hide');
         const nextQuestionHeader = nextQuestion.querySelector('.h5p-subcontent-question');
         this.progressBar.attachNumberWidgetTo(nextQuestionHeader);
+        this.trigger('resize');
       }
 
       this.state = Object.assign(this.state, {
@@ -190,6 +205,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
      * @param {jQuery} $wrapper
      */
     this.attach = function ($wrapper) {
+      $wrapper.get(0).classList.add('h5p-questionnaire-wrapper');
       $wrapper.get(0).appendChild(questionnaireWrapper);
     };
 

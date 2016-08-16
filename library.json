@@ -8,6 +8,7 @@
   "author": "Thomasmars",
   "license": "cc-by-sa",
   "machineName": "H5P.Questionnaire",
+  "embedTypes": ["iframe"],
   "preloadedJs": [
     {"path": "dist/dist.js"}
   ],

@@ -24,10 +24,16 @@ module.exports = {
       {
         test: /\.css$/,
         include: [
-          path.resolve(__dirname, "src/content"),
-          path.resolve(__dirname, "src/scripts")
+          path.resolve(__dirname, "src/content")
         ],
         loader: "style!css"
+      },
+      {
+        test: /\.css$/,
+        include: [
+          path.resolve(__dirname, "src/scripts")
+        ],
+        loader: "style!css?sourceMap"
       },
       {
         test: /\.json$/,

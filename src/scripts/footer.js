@@ -4,16 +4,11 @@ export default class Footer extends H5P.EventDispatcher {
   constructor(buttonLabels) {
     super();
 
-    const {
-      prevLabel = "Previous",
-      nextLabel = "Next",
-      submitLabel = "Submit"
-    } = buttonLabels;
 
     this.footerWrapper = document.createElement('div');
     this.footerWrapper.className = 'h5p-questionnaire-footer';
 
-    const submitButton = this.createFooterButton(submitLabel);
+    const submitButton = this.createFooterButton(buttonLabels.submitLabel);
     submitButton.classList.add('h5p-questionnaire-footer-submit');
     submitButton.addEventListener('click', () => {
       this.trigger('submit');
@@ -25,7 +20,7 @@ export default class Footer extends H5P.EventDispatcher {
       submitButton.classList.add('disable');
     });
 
-    const nextButton = this.createFooterButton(nextLabel);
+    const nextButton = this.createFooterButton(buttonLabels.nextLabel);
     nextButton.classList.add('h5p-questionnaire-footer-next');
     nextButton.addEventListener('click', () => {
       this.trigger('next');
@@ -37,7 +32,7 @@ export default class Footer extends H5P.EventDispatcher {
       nextButton.classList.add('disable');
     });
 
-    const previousButton = this.createFooterButton(prevLabel);
+    const previousButton = this.createFooterButton(buttonLabels.prevLabel);
     previousButton.classList.add('h5p-questionnaire-footer-previous');
     previousButton.addEventListener('click', () => {
       this.trigger('prev');

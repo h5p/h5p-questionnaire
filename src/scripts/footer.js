@@ -68,6 +68,10 @@ export default class Footer extends H5P.EventDispatcher {
     return footerButton;
   }
 
+  remove() {
+    this.footerWrapper.parentNode.removeChild(this.footerWrapper);
+  }
+
   attachTo(element) {
     element.appendChild(this.footerWrapper);
   }

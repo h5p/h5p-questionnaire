@@ -24,6 +24,7 @@ export default class ProgressBar {
   }
 
   remove() {
+    this.numberWidget.remove();
     this.progressBar.parentNode.removeChild(this.progressBar);
   }
 

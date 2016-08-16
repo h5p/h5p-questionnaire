@@ -5,7 +5,16 @@ export default class SuccessScreen {
     this.wrapper = document.createElement('div');
     this.wrapper.className = 'h5p-questionnaire-success';
     this.wrapper.classList.add('hide');
-    this.wrapper.textContent = successMessage;
+
+    const successIcon = document.createElement('div');
+    successIcon.className = 'h5p-questionnaire-success-icon';
+
+    const successText = document.createElement('div');
+    successText.className = 'h5p-questionnaire-success-message';
+    successText.innerHTML = successMessage;
+
+    this.wrapper.appendChild(successIcon);
+    this.wrapper.appendChild(successText);
   }
 
   show() {

@@ -49,6 +49,7 @@
       "submitLabel": "Submit"
     },
     "requiredMessage": "This question requires an answer",
-    "requiredText": "required"
+    "requiredText": "required",
+    "successMessage": "You successfully answered all of the questions."
   }
 }

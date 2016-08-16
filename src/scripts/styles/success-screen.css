@@ -1,3 +1,25 @@
+.h5p-questionnaire-success {
+  text-align: center;
+  padding: 2em;
+}
+
 .h5p-questionnaire-success.hide {
   display: none;
+}
+
+.h5p-questionnaire-success-icon {
+  padding: 1.5em;
+}
+
+.h5p-questionnaire-success-icon:before {
+  font-family: "H5PFontAwesome4";
+  font-size: 5em;
+  color: rgba(22, 235, 0, 1);
+  content: '\f00c';
+}
+
+.h5p-questionnaire-success-message {
+  padding: 1.5em;
+  font-size: 1.5em;
+  word-wrap: break-word;
 }

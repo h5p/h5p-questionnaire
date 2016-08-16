@@ -85,7 +85,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         questionnaireWrapper.appendChild(questionnaireElement);
       });
 
-      this.successScreen = new SuccessScreen({ successMessage: 'Success!' });
+      this.successScreen = new SuccessScreen({ successMessage: uiElements.successMessage });
       this.successScreen.attachTo(questionnaireWrapper);
 
       this.requiredMessage = new RequiredMessage(uiElements.requiredMessage);
@@ -113,6 +113,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
 
           this.triggerXAPI('completed');
           this.progressBar.remove();
+          footer.remove();
           this.successScreen.show();
         }
         else {

@@ -18,6 +18,8 @@ new Questionnaire(params).attach(H5P.jQuery('<div>').appendTo(H5P.jQuery('body')
 
 const smallerQuestionnaire = document.createElement('div');
 smallerQuestionnaire.style.width = '250px';
+smallerQuestionnaire.style.height = '400px';
+smallerQuestionnaire.style.overflow = 'hidden';
 document.body.appendChild(smallerQuestionnaire);
 new Questionnaire(params).attach(H5P.jQuery('<div>').appendTo(smallerQuestionnaire));
 

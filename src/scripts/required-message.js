@@ -13,7 +13,6 @@ export default class RequiredMessage extends H5P.EventDispatcher {
     exitButton.className = 'h5p-questionnaire-choice-required-exit';
 
     requiredMessage.textContent = message;
-    exitButton.textContent = 'x';
 
     exitButton.addEventListener('click', () => {
       this.hideMessage();

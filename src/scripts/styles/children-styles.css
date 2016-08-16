@@ -1,4 +1,13 @@
-.h5p-open-ended-question > div,
-.h5p-simple-multiple-choice-question {
-  margin-right: 3em;
+.h5p-questionnaire-element .h5p-open-ended-question > div,
+.h5p-questionnaire-element .h5p-simple-multiple-choice-question {
+  padding-top: 0;
+  padding-right: 5em;
+  word-wrap: break-word;
+}
+
+.h5p-questionnaire-required-symbol {
+  padding: 1em 1.2em 0.4em;
+  background: #2880d0;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.75em;
 }

@@ -70,6 +70,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         if (requiredField) {
           const requiredSymbol = document.createElement('div');
           requiredSymbol.textContent = '* ' + uiElements.requiredText;
+          requiredSymbol.className = 'h5p-questionnaire-required-symbol';
           questionnaireElement.insertBefore(requiredSymbol, questionnaireElement.firstChild);
         }
 

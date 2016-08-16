@@ -1,10 +1,34 @@
 .h5p-questionnaire-progress-bar-widget {
   position: absolute;
-  right: 10%;
+  right: 1em;
+  top: 1em;
+  width: 3em;
+  height: 3em;
+  line-height: 3em;
+  background-color: #FFF;
+  text-align: center;
+  border-radius: 0.2em;
+}
+
+.h5p-questionnaire-progress-bar-widget:before {
+  position: absolute;
+  width: 70%;
+  height: 0;
+  content: ' ';
+  bottom: -0.4em;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px rgba(51, 51, 51, 0.31);
 }
 
 .h5p-questionnaire-progress-bar-widget-current,
 .h5p-questionnaire-progress-bar-widget-separator,
 .h5p-questionnaire-progress-bar-widget-max {
   display: inline-block;
+  color: #acacac;
+}
+
+.h5p-questionnaire-progress-bar-widget-current {
+  color: #ff6b00;
 }

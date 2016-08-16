@@ -13,7 +13,7 @@
         },
         "library": "H5P.SimpleMultiChoice 1.0"
       },
-      "requiredField": true
+      "requiredField": false
     },
     {
       "library": {
@@ -23,12 +23,18 @@
           "alternatives": [
             "Fish",
             "Turtles",
-            "Icecream"
+            "Icecream",
+            "Ninjas",
+            "Flowers",
+            "Beer",
+            "Sun",
+            "Stars",
+            "Coffee"
           ]
         },
         "library": "H5P.SimpleMultiChoice 1.0"
       },
-      "requiredField": false
+      "requiredField": true
     },
     {
       "library": {

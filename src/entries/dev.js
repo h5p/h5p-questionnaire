@@ -13,15 +13,18 @@ import SimpleMultiChoice from 'babel!../content/libraries/h5p-simple-multiple-ch
 H5P.OpenEndedQuestion = OpenEndedQuestion;
 H5P.SimpleMultiChoice = SimpleMultiChoice;
 
-new Questionnaire(params).attach(H5P.jQuery('<div>').appendTo(H5P.jQuery('body')));
+const standalone = document.createElement('div');
+standalone.className = 'h5p-standalone';
+document.body.appendChild(standalone);
+new Questionnaire(params).attach(H5P.jQuery(standalone));
 
 
 const smallerQuestionnaire = document.createElement('div');
-smallerQuestionnaire.style.width = '250px';
+smallerQuestionnaire.style.width = '300px';
 smallerQuestionnaire.style.height = '400px';
 smallerQuestionnaire.style.overflow = 'hidden';
 document.body.appendChild(smallerQuestionnaire);
-new Questionnaire(params).attach(H5P.jQuery('<div>').appendTo(smallerQuestionnaire));
+new Questionnaire(params).attach(H5P.jQuery(smallerQuestionnaire));
 
 // Create external event listener element
 

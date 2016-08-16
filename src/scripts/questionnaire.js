@@ -53,10 +53,15 @@ export default class Questionnaire extends H5P.EventDispatcher {
       });
       this.progressBar.attachTo(questionnaireWrapper);
 
-      this.progressBar.attachNumberWidgetTo(questionnaireWrapper);
+      const content = document.createElement('div');
+      content.className = 'h5p-questionnaire-content';
 
       questionnaireElements.forEach(({ requiredField, library }, index) => {
         const { questionnaireElement, instance } = this.createQuestionnaireElement(library);
+        const subContentQuestion = questionnaireElement.querySelector('.h5p-subcontent-question');
+        if (index === 0 && subContentQuestion) {
+          this.progressBar.attachNumberWidgetTo(subContentQuestion);
+        }
         questionnaireElement.classList.toggle('hide', index !== 0);
 
         instance.on('xAPI', (e) => {
@@ -72,7 +77,9 @@ export default class Questionnaire extends H5P.EventDispatcher {
           const requiredSymbol = document.createElement('div');
           requiredSymbol.textContent = '* ' + uiElements.requiredText;
           requiredSymbol.className = 'h5p-questionnaire-required-symbol';
-          questionnaireElement.insertBefore(requiredSymbol, questionnaireElement.firstChild);
+          if (subContentQuestion) {
+            subContentQuestion.insertBefore(requiredSymbol, subContentQuestion.firstChild);
+          }
         }
 
         this.state.questionnaireElements.push({
@@ -82,11 +89,12 @@ export default class Questionnaire extends H5P.EventDispatcher {
           answered: false
         });
 
-        questionnaireWrapper.appendChild(questionnaireElement);
+        content.appendChild(questionnaireElement);
       });
+      questionnaireWrapper.appendChild(content);
 
       this.successScreen = new SuccessScreen({ successMessage: uiElements.successMessage });
-      this.successScreen.attachTo(questionnaireWrapper);
+      this.successScreen.attachTo(content);
 
       this.requiredMessage = new RequiredMessage(uiElements.requiredMessage);
       this.requiredMessage.attachTo(questionnaireWrapper);
@@ -161,7 +169,10 @@ export default class Questionnaire extends H5P.EventDispatcher {
 
         this.requiredMessage.trigger('hideMessage');
         questionnaireElements[currentIndex].questionnaireElement.classList.add('hide');
-        questionnaireElements[nextIndex].questionnaireElement.classList.remove('hide');
+        const nextQuestion = questionnaireElements[nextIndex].questionnaireElement;
+        nextQuestion.classList.remove('hide');
+        const nextQuestionHeader = nextQuestion.querySelector('.h5p-subcontent-question');
+        this.progressBar.attachNumberWidgetTo(nextQuestionHeader);
       }
 
       this.state = Object.assign(this.state, {

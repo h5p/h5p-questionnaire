@@ -6,3 +6,33 @@
 .h5p-questionnaire-element.hide {
   display: none;
 }
+
+div:not(.h5p-standalone) > .h5p-questionnaire {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.h5p-questionnaire-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.h5p-questionnaire-element {
+  height: 100%;
+  width: 100%;
+}
+
+.h5p-questionnaire-element > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.h5p-questionnaire-content .h5p-subcontent-body {
+  overflow: auto;
+}

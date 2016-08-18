@@ -17,22 +17,11 @@ div:not(.h5p-standalone) > .h5p-questionnaire {
 .h5p-questionnaire-content {
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  flex: 1;
+  overflow: auto;
 }
 
 .h5p-questionnaire-element {
   height: 100%;
   width: 100%;
-}
-
-.h5p-questionnaire-element > div {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-}
-
-.h5p-questionnaire-content .h5p-subcontent-body {
-  overflow: auto;
 }

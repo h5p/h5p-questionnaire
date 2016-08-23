@@ -12,6 +12,9 @@
   "preloadedJs": [
     {"path": "dist/dist.js"}
   ],
+  "preloadedCss": [
+    {"path": "dist/dist.css"}
+  ],
   "preloadedDependencies": [
     {
       "machineName": "H5P.OpenEndedQuestion",

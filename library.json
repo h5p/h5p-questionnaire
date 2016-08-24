@@ -13,7 +13,7 @@
     {"path": "dist/dist.js"}
   ],
   "preloadedCss": [
-    {"path": "dist/dist.css"}
+    {"path": "dist/styles.css"}
   ],
   "preloadedDependencies": [
     {

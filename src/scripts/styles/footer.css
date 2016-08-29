@@ -6,12 +6,13 @@
   box-sizing: border-box;
 }
 
+.h5peditor .h5p-questionnaire-footer-button,
 .h5p-questionnaire-footer-button {
   float: right;
   padding: 0.7em 1.1em;
 
   color: #FFF;
-  background-color: #1F1F1F;
+  background: #1F1F1F;
   border: 1px solid #404040;
 
   cursor: pointer;

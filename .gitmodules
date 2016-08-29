@@ -7,3 +7,6 @@
 [submodule "src/content/libraries/font-awesome"]
 	path = src/content/libraries/font-awesome
 	url = https://github.com/h5p/font-awesome.git
+[submodule "src/content/libraries/h5p-image"]
+	path = src/content/libraries/h5p-image
+	url = https://github.com/h5p/h5p-image.git

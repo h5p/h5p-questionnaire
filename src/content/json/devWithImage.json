@@ -1,0 +1,81 @@
+{
+  "questionnaireElements": [
+    {
+      "library": {
+        "params": {
+          "question": "Don&#039;t you like Questionnaire ?",
+          "inputType": "checkbox",
+          "alternatives": [
+            "Fish",
+            "Turtles",
+            "Icecream"
+          ]
+        },
+        "library": "H5P.SimpleMultiChoice 1.0"
+      },
+      "requiredField": false
+    },
+    {
+      "library": {
+        "params": {
+          "question": "What do you like the most ?",
+          "inputType": "radio",
+          "alternatives": [
+            "Fish",
+            "Turtles",
+            "Icecream",
+            "Ninjas",
+            "Flowers",
+            "Beer",
+            "Sun",
+            "Stars",
+            "Coffee"
+          ]
+        },
+        "library": "H5P.SimpleMultiChoice 1.0"
+      },
+      "requiredField": true
+    },
+    {
+      "library": {
+        "params": {
+          "question": "Do you like cake ?",
+          "placeholderText": "No! I like turtles",
+          "inputRows": "2"
+        },
+        "library": "H5P.OpenEndedQuestion 1.0"
+      },
+      "requiredField": true
+    }
+  ],
+  "successScreenOptions": {
+    "enableSuccessScreen": true,
+    "successScreenImage": {
+      "params": {
+        "contentName": "Image",
+        "file": {
+          "path": "domokun.png",
+          "mime": "image/png",
+          "copyright": {
+            "license": "U"
+          },
+          "width": 1200,
+          "height": 628
+        },
+        "alt": "Domokun"
+      },
+      "library": "H5P.Image 1.0",
+      "subContentId": "81a06396-c4a3-4ce0-9ea0-1dde911b65ea"
+    }
+  },
+  "uiElements": {
+    "buttonLabels": {
+      "prevLabel": "Previous",
+      "nextLabel": "Next",
+      "submitLabel": "Submit"
+    },
+    "requiredMessage": "This question requires an answer",
+    "requiredText": "required",
+    "successMessage": "You successfully answered all of the questions."
+  }
+}

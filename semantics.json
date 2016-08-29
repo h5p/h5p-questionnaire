@@ -36,6 +36,35 @@
     }
   },
   {
+    "name": "successScreenOptions",
+    "label": "Success screen options",
+    "type": "group",
+    "fields": [
+      {
+        "name": "enableSuccessScreen",
+        "label": "Enable success screen",
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "name": "successScreenImage",
+        "label": "Add success screen image",
+        "type": "group",
+        "fields": [
+          {
+            "name": "successScreenImage",
+            "label": "Replace success icon with image",
+            "type": "library",
+            "optional": true,
+            "options": [
+              "H5P.Image 1.0"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "uiElements",
     "label": "UI Elements",
     "type": "group",

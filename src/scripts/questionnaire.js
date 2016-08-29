@@ -10,14 +10,16 @@ export default class Questionnaire extends H5P.EventDispatcher {
   /**
    * Constructor for questionnaire
    * @param questionnaireElements
+   * @param successScreenOptions
    * @param uiElements
    * @param uiElements.buttonLabels
    * @param uiElements.requiredMessage
    * @param contentId
    */
-  constructor({ questionnaireElements = [], uiElements = {} }, contentId = null) {
+  constructor({questionnaireElements = [], successScreenOptions = {}, uiElements = {}}, contentId = null) {
     super();
 
+    this.contentId = contentId;
     this.state = {
       questionnaireElements: [],
       currentIndex: 0
@@ -42,7 +44,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
     this.createQuestionnaireElement = function (elParams) {
       const questionnaireElement = document.createElement('div');
       questionnaireElement.className = 'h5p-questionnaire-element';
-      const instance = H5P.newRunnable(elParams, contentId, H5P.jQuery(questionnaireElement), undefined, { parent: this });
+      const instance = H5P.newRunnable(elParams, contentId, H5P.jQuery(questionnaireElement), undefined, {parent: this});
 
       return {
         questionnaireElement,
@@ -67,8 +69,8 @@ export default class Questionnaire extends H5P.EventDispatcher {
       const content = document.createElement('div');
       content.className = 'h5p-questionnaire-content';
 
-      questionnaireElements.forEach(({ requiredField, library }, index) => {
-        const { questionnaireElement, instance } = this.createQuestionnaireElement(library);
+      questionnaireElements.forEach(({requiredField, library}, index) => {
+        const {questionnaireElement, instance} = this.createQuestionnaireElement(library);
         const subContentQuestion = questionnaireElement.querySelector('.h5p-subcontent-question');
         if (index === 0 && subContentQuestion) {
           this.progressBar.attachNumberWidgetTo(subContentQuestion);
@@ -105,7 +107,14 @@ export default class Questionnaire extends H5P.EventDispatcher {
       });
       questionnaireWrapper.appendChild(content);
 
-      this.successScreen = new SuccessScreen({ successMessage: uiElements.successMessage });
+      this.successScreen = new SuccessScreen(
+        successScreenOptions,
+        {successMessage: uiElements.successMessage},
+        this
+      );
+      this.successScreen.on('noSuccessScreen', () => {
+        this.trigger('noSuccessScreen');
+      });
       this.successScreen.attachTo(content);
 
       this.requiredMessage = new RequiredMessage(uiElements.requiredMessage);
@@ -126,15 +135,16 @@ export default class Questionnaire extends H5P.EventDispatcher {
       footer.on('submit', () => {
         const currentEl = this.state.questionnaireElements[this.state.questionnaireElements.length - 1];
         if (this.isValidAnswer(currentEl)) {
-          footer.trigger('disablePrev');
-          footer.trigger('disableNext');
-          footer.trigger('disableSubmit');
-          currentEl.questionnaireElement.classList.add('hide');
-
           this.triggerXAPI('completed');
-          this.progressBar.remove();
-          footer.remove();
-          this.successScreen.show();
+
+          if (this.successScreen.show()) {
+            currentEl.questionnaireElement.classList.add('hide');
+            footer.trigger('disablePrev');
+            footer.trigger('disableNext');
+            footer.trigger('disableSubmit');
+            this.progressBar.remove();
+            footer.remove();
+          }
           this.trigger('resize');
         }
         else {
@@ -166,7 +176,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
      * @param direction
      */
     this.move = function (footer, direction) {
-      const { currentIndex, questionnaireElements } = this.state;
+      const {currentIndex, questionnaireElements} = this.state;
       const element = questionnaireElements[currentIndex];
 
       if (direction > 0 && !this.isValidAnswer(element)) {
@@ -178,8 +188,8 @@ export default class Questionnaire extends H5P.EventDispatcher {
 
       if (nextIndex >= 0 || nextIndex < questionnaireElements.length) {
         footer.trigger(nextIndex === 0 ? 'disablePrev' : 'enablePrev');
-        footer.trigger(nextIndex >= questionnaireElements.length -1 ? 'disableNext' : 'enableNext');
-        footer.trigger(nextIndex !== questionnaireElements.length -1 ? 'disableSubmit': 'enableSubmit');
+        footer.trigger(nextIndex >= questionnaireElements.length - 1 ? 'disableNext' : 'enableNext');
+        footer.trigger(nextIndex !== questionnaireElements.length - 1 ? 'disableSubmit' : 'enableSubmit');
 
         this.requiredMessage.trigger('hideMessage');
         questionnaireElements[currentIndex].questionnaireElement.classList.add('hide');

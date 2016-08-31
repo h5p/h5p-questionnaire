@@ -1,0 +1,29 @@
+{
+  "questionnaireElements": [
+    {
+      "library": {
+        "params": {
+          "question": "Don&#039;t you like Questionnaire ?",
+          "inputType": "checkbox",
+          "alternatives": [
+            "Fish",
+            "Turtles",
+            "Icecream"
+          ]
+        },
+        "library": "H5P.SimpleMultiChoice 1.0"
+      },
+      "requiredField": false
+    }
+  ],
+  "uiElements": {
+    "buttonLabels": {
+      "prevLabel": "Previous",
+      "nextLabel": "Next",
+      "submitLabel": "Submit"
+    },
+    "requiredMessage": "This question requires an answer",
+    "requiredText": "required",
+    "successMessage": "You successfully answered all of the questions."
+  }
+}

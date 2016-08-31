@@ -164,8 +164,14 @@ export default class Questionnaire extends H5P.EventDispatcher {
       footer.on('prev', () => {
         this.move(footer, -1);
       });
+
       footer.trigger('disablePrev');
-      footer.trigger('disableSubmit');
+      if (this.state.questionnaireElements.length > 1) {
+        footer.trigger('disableSubmit');
+      }
+      else {
+        footer.trigger('disableNext');
+      }
 
       return footer;
     };

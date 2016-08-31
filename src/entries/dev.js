@@ -20,6 +20,7 @@ H5P.getPath = (path) => {
 };
 
 import params from '../content/json/dev.json';
+import justOneQuestion from '../content/json/devJustOne.json';
 import noSuccessScreenParams from '../content/json/devNoSuccessScreen.json';
 import successScreenImageParams from '../content/json/devWithImage.json';
 
@@ -28,6 +29,10 @@ standalone.className = 'h5p-standalone';
 document.body.appendChild(standalone);
 new Questionnaire(params).attach(H5P.jQuery(standalone));
 
+const justOne = document.createElement('div');
+justOne.className = 'h5p-standalone';
+document.body.appendChild(justOne);
+new Questionnaire(justOneQuestion).attach(H5P.jQuery(justOne));
 
 const smallerQuestionnaire = document.createElement('div');
 smallerQuestionnaire.style.width = '300px';

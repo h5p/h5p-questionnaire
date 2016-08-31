@@ -95,6 +95,26 @@
         ]
       },
       {
+        "name": "accessibility",
+        "type": "group",
+        "label": "Accessibility",
+        "fields": [
+          {
+            "name": "requiredTextExitLabel",
+            "type": "text",
+            "label": "Required message exit button label",
+            "default": "Close error message"
+          },
+          {
+            "name": "progressBarText",
+            "type": "text",
+            "label": "Progress bar text",
+            "default": "Question %current of %max",
+            "description": "Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
+          }
+        ]
+      },
+      {
         "name": "requiredMessage",
         "type": "text",
         "label": "Required message",

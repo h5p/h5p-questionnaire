@@ -6,6 +6,7 @@ export default class SuccessScreen extends H5P.EventDispatcher {
 
     this.wrapper = document.createElement('div');
     this.wrapper.className = 'h5p-questionnaire-success';
+    this.wrapper.setAttribute('tabindex', '-1');
     this.wrapper.classList.add('hide');
 
     const centeredElements = document.createElement('div');
@@ -43,6 +44,7 @@ export default class SuccessScreen extends H5P.EventDispatcher {
     this.show = function () {
       if (enableSuccessScreen) {
         this.wrapper.classList.remove('hide');
+        this.wrapper.focus();
         return true;
       }
       else {

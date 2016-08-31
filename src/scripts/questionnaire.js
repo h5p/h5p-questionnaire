@@ -31,6 +31,10 @@ export default class Questionnaire extends H5P.EventDispatcher {
         nextLabel: 'Next',
         submitLabel: 'Submit'
       },
+      accessibility: {
+        requiredTextExitLabel: "Close error message",
+        progressBarText: 'Question %current of %max'
+      },
       requiredMessage: 'This question requires an answer',
       requiredText: 'required',
       successMessage: 'You successfully answered all of the questions.'
@@ -62,7 +66,8 @@ export default class Questionnaire extends H5P.EventDispatcher {
 
       this.progressBar = new ProgressBar({
         currentIndex: 1,
-        maxIndex: questionnaireElements.length
+        maxIndex: questionnaireElements.length,
+        uiElements
       });
       this.progressBar.attachTo(questionnaireWrapper);
 
@@ -117,7 +122,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
       });
       this.successScreen.attachTo(content);
 
-      this.requiredMessage = new RequiredMessage(uiElements.requiredMessage);
+      this.requiredMessage = new RequiredMessage(uiElements);
       this.requiredMessage.attachTo(questionnaireWrapper);
 
       const footer = this.createFooter();
@@ -165,6 +170,9 @@ export default class Questionnaire extends H5P.EventDispatcher {
       return footer;
     };
 
+    /**
+     * Trigger required question to any listeners
+     */
     this.triggerRequiredQuestion = function () {
       this.requiredMessage.trigger('showMessage');
       this.trigger('resize');
@@ -206,6 +214,12 @@ export default class Questionnaire extends H5P.EventDispatcher {
       this.progressBar.move(nextIndex + 1);
     };
 
+    /**
+     * Valid answer if field is not required or answered
+     *
+     * @param element
+     * @return {boolean}
+     */
     this.isValidAnswer = function (element) {
       return !element.requiredField || element.answered;
     };

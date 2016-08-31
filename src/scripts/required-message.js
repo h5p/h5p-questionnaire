@@ -1,19 +1,20 @@
 import './styles/required-message.css';
 
 export default class RequiredMessage extends H5P.EventDispatcher {
-  constructor(message) {
+  constructor(uiElements) {
     super();
 
     this.requiredElement = document.createElement('div');
-    const requiredMessage = document.createElement('div');
-    const exitButton = document.createElement('button');
-
     this.requiredElement.classList.add('h5p-questionnaire-choice-required', 'hide');
-    requiredMessage.className = 'h5p-questionnaire-choice-required-message';
+
+    this.requiredMessage = document.createElement('div');
+    this.requiredMessage.textContent = uiElements.requiredMessage;
+    this.requiredMessage.className = 'h5p-questionnaire-choice-required-message';
+    this.requiredMessage.setAttribute('tabindex', '-1');
+
+    const exitButton = document.createElement('button');
     exitButton.className = 'h5p-questionnaire-choice-required-exit';
-
-    requiredMessage.textContent = message;
-
+    exitButton.setAttribute('aria-label', uiElements.accessibility.requiredTextExitLabel);
     exitButton.addEventListener('click', () => {
       this.hideMessage();
     });
@@ -26,12 +27,13 @@ export default class RequiredMessage extends H5P.EventDispatcher {
       this.showMessage();
     });
 
-    this.requiredElement.appendChild(requiredMessage);
+    this.requiredElement.appendChild(this.requiredMessage);
     this.requiredElement.appendChild(exitButton);
   }
 
   showMessage() {
     this.requiredElement.classList.remove('hide');
+    this.requiredMessage.focus();
   }
 
   hideMessage() {

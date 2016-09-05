@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+.h5p-questionnaire-success:focus {
+  outline: none;
+}
+
 .h5p-questionnaire-success.hide {
   display: none;
 }

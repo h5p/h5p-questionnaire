@@ -86,7 +86,13 @@ export default class Questionnaire extends H5P.EventDispatcher {
           this.requiredMessage.trigger('hideMessage');
 
           // Make sure there was a results response
-          const results = e.data.statement.result.response;
+          let results = e.data.statement.result.response;
+
+          // Trim if string
+          if (results.trim) {
+            results = results.trim();
+          }
+
           this.state.questionnaireElements[index].answered = !!results.length;
           this.trigger('resize');
         });

@@ -1,17 +1,15 @@
 .h5p-questionnaire {
   font-family: "Open Sans", Calibri, Candara, Arial, sans-serif;
   position: relative;
-}
 
-.h5p-questionnaire-element.hide {
-  display: none;
-}
-
-div:not(.h5p-standalone) > .h5p-questionnaire {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
+}
+
+.h5p-questionnaire-element.hide {
+  display: none;
 }
 
 .h5p-questionnaire-content {

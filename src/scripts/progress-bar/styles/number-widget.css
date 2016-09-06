@@ -3,7 +3,7 @@
   right: 1em;
   top: 50%;
   transform: translateY(-50%);
-  width: 3em;
+  width: 3.5em;
   height: 3em;
   line-height: 3em;
   background-color: #FFF;
@@ -13,14 +13,14 @@
 
 .h5p-questionnaire-progress-bar-widget:before {
   position: absolute;
-  width: 70%;
+  width: 60%;
   height: 0;
   content: ' ';
-  bottom: -0.6em;
+  bottom: -0.55em;
   left: 50%;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  border-radius: 50%;
-  box-shadow: 0 0 1px 1px rgba(51, 51, 51, 0.31);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .h5p-questionnaire-progress-bar-widget-current,
@@ -28,6 +28,13 @@
 .h5p-questionnaire-progress-bar-widget-max {
   display: inline-block;
   color: #8c8c8c;
+  font-weight: 600;
+}
+
+.h5p-questionnaire-progress-bar-widget-separator {
+  font-size: 0.85em;
+  margin: 0 0.15em 0.2em 0.1em;
+  vertical-align: middle;
 }
 
 .h5p-questionnaire-progress-bar-widget-current {

@@ -16,8 +16,9 @@ export default class Questionnaire extends H5P.EventDispatcher {
    * @param uiElements.buttonLabels
    * @param uiElements.requiredMessage
    * @param contentId
+   * @param contentData
    */
-  constructor({questionnaireElements = [], successScreenOptions = {}, uiElements = {}}, contentId = null) {
+  constructor({questionnaireElements = [], successScreenOptions = {}, uiElements = {}}, contentId = null, contentData = {}) {
     super();
 
     this.contentId = contentId;
@@ -78,7 +79,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         index: index,
         uiElements
       });
-      questionContent.hideElement(index !== 0);
+      questionContent.hideElement(index !== this.state.currentIndex);
       questionContent.on('handledInteraction', () => {
         this.trigger('resize');
         this.requiredMessage.trigger('hideMessage');
@@ -110,6 +111,13 @@ export default class Questionnaire extends H5P.EventDispatcher {
         this.state.questionnaireElements[0].setActivityStarted();
       }
 
+      if (this.state.currentIndex >= this.state.questionnaireElements.length) {
+        this.showSuccessScreen();
+      }
+      else {
+        this.move(this.state.currentIndex);
+      }
+
       return questionnaireWrapper;
     };
 
@@ -137,12 +145,24 @@ export default class Questionnaire extends H5P.EventDispatcher {
      */
     this.createProgressBar = function (questionnaireElements) {
       this.progressBar = new ProgressBar({
-        currentIndex: 1,
+        currentIndex: this.state.currentIndex,
         maxIndex: questionnaireElements.length,
         uiElements
       });
 
       return this.progressBar;
+    };
+
+    this.showSuccessScreen = function () {
+      const currentEl = this.state.questionnaireElements[this.state.questionnaireElements.length - 1];
+      if (this.successScreen.show()) {
+        currentEl.hideElement(true);
+        this.footer.trigger('disablePrev');
+        this.footer.trigger('disableNext');
+        this.footer.trigger('disableSubmit');
+        this.progressBar.remove();
+        this.footer.remove();
+      }
     };
 
     /**
@@ -155,16 +175,9 @@ export default class Questionnaire extends H5P.EventDispatcher {
         const currentEl = this.state.questionnaireElements[this.state.questionnaireElements.length - 1];
         if (this.isValidAnswer(currentEl)) {
           this.triggerXAPI('completed');
-
-          if (this.successScreen.show()) {
-            currentEl.hideElement(true);
-            footer.trigger('disablePrev');
-            footer.trigger('disableNext');
-            footer.trigger('disableSubmit');
-            this.progressBar.remove();
-            footer.remove();
-          }
+          this.showSuccessScreen();
           this.trigger('resize');
+          this.state.currentIndex = this.state.questionnaireElements.length;
         }
         else {
           this.triggerRequiredQuestion();
@@ -172,11 +185,11 @@ export default class Questionnaire extends H5P.EventDispatcher {
       });
 
       footer.on('next', () => {
-        this.move(footer, 1);
+        this.move(this.state.currentIndex + 1);
       });
 
       footer.on('prev', () => {
-        this.move(footer, -1);
+        this.move(this.state.currentIndex - 1);
       });
 
       footer.trigger('disablePrev');
@@ -186,6 +199,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
       else {
         footer.trigger('disableNext');
       }
+      this.footer = footer;
 
       return footer;
     };
@@ -200,28 +214,25 @@ export default class Questionnaire extends H5P.EventDispatcher {
 
     /**
      * Move in a direction
-     * @param footer
-     * @param direction
+     * @param {number} index
      */
-    this.move = function (footer, direction) {
+    this.move = function (index) {
       const {currentIndex, questionnaireElements} = this.state;
       const element = questionnaireElements[currentIndex];
 
-      if (direction > 0 && !this.isValidAnswer(element)) {
+      if (index > currentIndex && !this.isValidAnswer(element)) {
         this.triggerRequiredQuestion();
         return;
       }
 
-      const nextIndex = currentIndex + direction;
-
-      if (nextIndex >= 0 || nextIndex < questionnaireElements.length) {
-        footer.trigger(nextIndex === 0 ? 'disablePrev' : 'enablePrev');
-        footer.trigger(nextIndex >= questionnaireElements.length - 1 ? 'disableNext' : 'enableNext');
-        footer.trigger(nextIndex !== questionnaireElements.length - 1 ? 'disableSubmit' : 'enableSubmit');
+      if (index >= 0 || index < questionnaireElements.length) {
+        this.footer.trigger(index === 0 ? 'disablePrev' : 'enablePrev');
+        this.footer.trigger(index >= questionnaireElements.length - 1 ? 'disableNext' : 'enableNext');
+        this.footer.trigger(index !== questionnaireElements.length - 1 ? 'disableSubmit' : 'enableSubmit');
 
         this.requiredMessage.trigger('hideMessage');
         questionnaireElements[currentIndex].hideElement(true);
-        const nextQuestion = questionnaireElements[nextIndex];
+        const nextQuestion = questionnaireElements[index];
         nextQuestion.hideElement(false);
         const nextQuestionHeader = nextQuestion.getElement().querySelector('.h5p-subcontent-question');
         this.progressBar.attachNumberWidgetTo(nextQuestionHeader);
@@ -229,17 +240,17 @@ export default class Questionnaire extends H5P.EventDispatcher {
       }
 
       this.state = Object.assign(this.state, {
-        currentIndex: nextIndex
+        currentIndex: index
       });
-      this.progressBar.move(nextIndex + 1);
+      this.progressBar.move(index + 1);
 
       const progressedEvent = this.createXAPIEventTemplate('progressed');
       if (progressedEvent.data.statement.object) {
-        progressedEvent.data.statement.object.definition.extensions['http://id.tincanapi.com/extension/ending-point'] = nextIndex + 1;
+        progressedEvent.data.statement.object.definition.extensions['http://id.tincanapi.com/extension/ending-point'] = index + 1;
         this.trigger(progressedEvent);
       }
 
-      questionnaireElements[nextIndex].setActivityStarted();
+      questionnaireElements[index].setActivityStarted();
     };
 
     /**
@@ -261,6 +272,36 @@ export default class Questionnaire extends H5P.EventDispatcher {
       $wrapper.get(0).appendChild(questionnaireWrapper);
     };
 
+    this.getCurrentState = function () {
+      const questions = this.state.questionnaireElements.map((question) => {
+        return question.getCurrentState();
+      });
+
+      return {
+        questions,
+        progress: this.state.currentIndex
+      }
+    };
+
+    this.setPreviousState = function () {
+      // No valid content data
+      if (!contentData.previousState) {
+        return;
+      }
+
+      const previousState = contentData.previousState;
+      this.state.currentIndex = previousState.progress;
+      previousState.questions.forEach((question, idx) => {
+        questionnaireElements[idx].library.userDatas =
+          questionnaireElements[idx].library.userDatas || {};
+
+        questionnaireElements[idx].library.userDatas.state =
+          question;
+
+      })
+    };
+
+    this.setPreviousState();
     const questionnaireWrapper = this.createQuestionnaire();
   }
 }

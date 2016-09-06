@@ -8,7 +8,7 @@ export default class QuestionContent extends H5P.EventDispatcher {
     this.questionnaireElement.className = 'h5p-questionnaire-element';
     this.instance = H5P.newRunnable(params, contentId, H5P.jQuery(this.questionnaireElement), undefined, {parent: this});
     this.requiredField = requiredField;
-    this.answered = false;
+    this.answered = params.userDatas && params.userDatas.state && params.userDatas.state.length;
 
     this.attachNumberWidget(index);
     this.attachRequiredField(requiredField, uiElements);
@@ -68,6 +68,14 @@ export default class QuestionContent extends H5P.EventDispatcher {
     this.answered = !!results.length;
     this.trigger('handledInteraction');
   };
+
+  /**
+   * Get current state
+   * @return {*}
+   */
+  getCurrentState() {
+    return this.instance.getCurrentState ? this.instance.getCurrentState() : null;
+  }
 
   /**
    * Get element

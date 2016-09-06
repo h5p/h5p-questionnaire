@@ -83,6 +83,11 @@ export default class Questionnaire extends H5P.EventDispatcher {
         questionnaireElement.classList.toggle('hide', index !== 0);
 
         instance.on('xAPI', (e) => {
+          // Handle interacted events
+          if (e.data.statement.verb.id !== "http://adlnet.gov/expapi/verbs/interacted") {
+            return;
+          }
+
           this.requiredMessage.trigger('hideMessage');
 
           // Make sure there was a results response
@@ -133,6 +138,12 @@ export default class Questionnaire extends H5P.EventDispatcher {
 
       const footer = this.createFooter();
       footer.attachTo(questionnaireWrapper);
+
+      // Start initial questionnaire element activity
+      if (this.state.questionnaireElements.length
+        && this.state.questionnaireElements[0].instance.setActivityStarted) {
+        this.state.questionnaireElements[0].instance.setActivityStarted();
+      }
 
       return questionnaireWrapper;
     };
@@ -224,6 +235,14 @@ export default class Questionnaire extends H5P.EventDispatcher {
         currentIndex: nextIndex
       });
       this.progressBar.move(nextIndex + 1);
+
+      const progressedEvent = this.createXAPIEventTemplate('progressed');
+      progressedEvent.data.statement.object.definition.extensions['http://id.tincanapi.com/extension/ending-point'] = nextIndex + 1;
+      this.trigger(progressedEvent);
+
+      if (questionnaireElements[nextIndex].instance.setActivityStarted) {
+        questionnaireElements[nextIndex].instance.setActivityStarted();
+      }
     };
 
     /**

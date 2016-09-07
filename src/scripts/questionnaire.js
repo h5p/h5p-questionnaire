@@ -272,6 +272,10 @@ export default class Questionnaire extends H5P.EventDispatcher {
       $wrapper.get(0).appendChild(questionnaireWrapper);
     };
 
+    /**
+     * Get current state
+     * @return {{questions: Array, progress: number}}
+     */
     this.getCurrentState = function () {
       const questions = this.state.questionnaireElements.map((question) => {
         return question.getCurrentState();
@@ -283,6 +287,9 @@ export default class Questionnaire extends H5P.EventDispatcher {
       }
     };
 
+    /**
+     * Restore previous state
+     */
     this.setPreviousState = function () {
       // No valid content data
       if (!contentData.previousState) {

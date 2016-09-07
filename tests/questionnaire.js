@@ -1,5 +1,6 @@
 import 'expose?H5P!exports?H5P!h5p-view';
 import Questionnaire from '../src/scripts/questionnaire';
+import QuestionContent from '../src/scripts/question-content';
 
 describe('Questionnaire', () => {
   const params = {
@@ -61,6 +62,11 @@ describe('Questionnaire', () => {
 
   beforeEach(() => {
     const instance = jasmine.createSpyObj('instance', ['on']);
+    const fakeInstanceElement = document.createElement('div');
+    const subContentQuestion = document.createElement('div');
+    subContentQuestion.className = 'h5p-subcontent-question';
+    fakeInstanceElement.appendChild(subContentQuestion);
+    spyOn(QuestionContent.prototype, 'getElement').and.returnValue(fakeInstanceElement);
     spyOn(H5P, 'newRunnable').and.returnValue(instance);
     questionnaire = new Questionnaire(params);
     questionnaire.attach($body);

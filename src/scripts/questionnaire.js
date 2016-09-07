@@ -114,7 +114,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
       if (this.state.currentIndex >= this.state.questionnaireElements.length) {
         this.showSuccessScreen();
       }
-      else {
+      else if (this.state.currentIndex > 0) {
         this.move(this.state.currentIndex);
       }
 

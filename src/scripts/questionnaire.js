@@ -111,7 +111,8 @@ export default class Questionnaire extends H5P.EventDispatcher {
         this.state.questionnaireElements[0].setActivityStarted();
       }
 
-      if (this.state.currentIndex >= this.state.questionnaireElements.length) {
+      if (this.state.questionnaireElements.length &&
+        this.state.currentIndex >= this.state.questionnaireElements.length) {
         this.showSuccessScreen();
       }
       else if (this.state.currentIndex > 0) {
@@ -145,7 +146,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
      */
     this.createProgressBar = function (questionnaireElements) {
       this.progressBar = new ProgressBar({
-        currentIndex: this.state.currentIndex,
+        currentIndex: this.state.currentIndex + 1,
         maxIndex: questionnaireElements.length,
         uiElements
       });

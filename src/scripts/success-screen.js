@@ -1,7 +1,7 @@
 import './styles/success-screen.css';
 
 export default class SuccessScreen extends H5P.EventDispatcher {
-  constructor({enableSuccessScreen = true, successScreenImage = {}}, {successMessage}, parent) {
+  constructor({enableSuccessScreen = true, successScreenImage = {}, successMessage = ''}, parent) {
     super();
 
     this.wrapper = document.createElement('div');

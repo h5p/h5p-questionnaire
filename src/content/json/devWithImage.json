@@ -66,7 +66,8 @@
       },
       "library": "H5P.Image 1.0",
       "subContentId": "81a06396-c4a3-4ce0-9ea0-1dde911b65ea"
-    }
+    },
+    "successMessage": "You successfully answered all of the questions."
   },
   "uiElements": {
     "buttonLabels": {
@@ -79,7 +80,6 @@
       "progressBarText": "Question %current of %max"
     },
     "requiredMessage": "This question requires an answer",
-    "requiredText": "required",
-    "successMessage": "You successfully answered all of the questions."
+    "requiredText": "required"
   }
 }

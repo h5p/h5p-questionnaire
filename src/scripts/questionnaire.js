@@ -38,8 +38,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         progressBarText: 'Question %current of %max'
       },
       requiredMessage: 'This question requires an answer',
-      requiredText: 'required',
-      successMessage: 'You successfully answered all of the questions.'
+      requiredText: 'required'
     }, uiElements);
 
     /**
@@ -129,7 +128,6 @@ export default class Questionnaire extends H5P.EventDispatcher {
     this.createSuccessScreen = function () {
       this.successScreen = new SuccessScreen(
         successScreenOptions,
-        {successMessage: uiElements.successMessage},
         this
       );
       this.successScreen.on('noSuccessScreen', () => {

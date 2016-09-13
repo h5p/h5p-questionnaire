@@ -61,6 +61,12 @@
             ]
           }
         ]
+      },
+      {
+        "name": "successMessage",
+        "type": "text",
+        "label": "Text to display on submit",
+        "default": "You successfully answered all of the questions."
       }
     ]
   },
@@ -127,12 +133,6 @@
         "label": "Required symbol text",
         "default": "required",
         "description": "Text that will accompany an asterisk to signal that a question is required"
-      },
-      {
-        "name": "successMessage",
-        "type": "text",
-        "label": "Text to display on submit",
-        "default": "You successfully answered all of the questions."
       }
     ]
   }

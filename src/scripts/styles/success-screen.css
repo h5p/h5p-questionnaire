@@ -14,10 +14,6 @@
   display: none;
 }
 
-.h5p-questionnaire-success-icon {
-  padding: 1em 0;
-}
-
 .h5p-questionnaire-success-icon.image > img {
   width: auto !important;
   height: auto !important;
@@ -34,7 +30,7 @@
 }
 
 .h5p-questionnaire-success-message {
-  padding: 1em 0;
+  margin: 1em 0;
   font-size: 1.5em;
   word-wrap: break-word;
 }

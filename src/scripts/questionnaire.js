@@ -297,6 +297,13 @@ export default class Questionnaire extends H5P.EventDispatcher {
 
       const previousState = contentData.previousState;
       this.state.currentIndex = previousState.progress;
+
+      // Has no success screen, must restore previous page.
+      if (this.state.currentIndex > questionnaireElements.length - 1 &&
+          !successScreenOptions.enableSuccessScreen) {
+        this.state.currentIndex -= 1;
+      }
+
       previousState.questions.forEach((question, idx) => {
         questionnaireElements[idx].library.userDatas =
           questionnaireElements[idx].library.userDatas || {};

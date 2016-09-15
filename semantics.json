@@ -14,6 +14,7 @@
     "defaultNum": 1,
     "field": {
       "name": "libraryGroup",
+      "label": "Choose library",
       "type": "group",
       "fields": [
         {

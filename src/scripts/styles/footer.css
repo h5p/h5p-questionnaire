@@ -35,6 +35,10 @@
   background-color: #363636;
 }
 
+.h5p-questionnaire-footer-button:focus {
+  outline: 1px solid rgb(59, 153, 252);
+}
+
 .h5p-questionnaire-footer-submit {
   background-color: #ff6b00;
 }

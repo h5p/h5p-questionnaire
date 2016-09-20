@@ -23,6 +23,7 @@ import params from '../content/json/dev.json';
 import justOneQuestion from '../content/json/devJustOne.json';
 import noSuccessScreenParams from '../content/json/devNoSuccessScreen.json';
 import successScreenImageParams from '../content/json/devWithImage.json';
+import emptyContentParams from '../content/json/emptyContent.json';
 
 const standalone = document.createElement('div');
 standalone.className = 'h5p-standalone';
@@ -55,6 +56,13 @@ successScreenImageSmall.style.height = '200px';
 successScreenImageSmall.style.width = '200px';
 document.body.appendChild(successScreenImageSmall);
 new Questionnaire(successScreenImageParams).attach(H5P.jQuery(successScreenImageSmall));
+
+
+const emptyContent = document.createElement('div');
+emptyContent.style.height = '200px';
+emptyContent.style.width = '200px';
+document.body.appendChild(emptyContent);
+new Questionnaire(emptyContentParams).attach(H5P.jQuery(emptyContent));
 
 // Create external event listener element
 

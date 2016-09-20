@@ -1,0 +1,24 @@
+{
+  "questionnaireElements": [
+    {
+      "requiredField": false
+    }
+  ],
+  "successScreenOptions": {
+    "enableSuccessScreen": true,
+    "successMessage": "You successfully answered all of the questions."
+  },
+  "uiElements": {
+    "buttonLabels": {
+      "prevLabel": "Previous",
+      "nextLabel": "Next",
+      "submitLabel": "Submit"
+    },
+    "accessibility": {
+      "requiredTextExitLabel": "Close error message",
+      "progressBarText": "Question %current of %max"
+    },
+    "requiredMessage": "This question requires an answer",
+    "requiredText": "required"
+  }
+}

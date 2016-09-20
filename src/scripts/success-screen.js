@@ -25,6 +25,9 @@ export default class SuccessScreen extends H5P.EventDispatcher {
         undefined,
         { parent: parent }
       );
+      image.on('loaded', () => {
+        this.trigger('imageLoaded')
+      })
     }
     else {
       successIcon.classList.add('standard-icon');

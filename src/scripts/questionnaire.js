@@ -53,7 +53,6 @@ export default class Questionnaire extends H5P.EventDispatcher {
         const questionContent = this.createQuestionContent(requiredField, library, index);
         content.appendChild(questionContent.getElement());
         this.state.questionnaireElements.push(questionContent);
-
       });
 
       this.createSuccessScreen().attachTo(content);
@@ -94,6 +93,12 @@ export default class Questionnaire extends H5P.EventDispatcher {
     this.createQuestionnaire = function () {
       const questionnaireWrapper = document.createElement('div');
       questionnaireWrapper.className = 'h5p-questionnaire';
+      if (questionnaireElements.length === 1 && !questionnaireElements[0].library) {
+        questionnaireWrapper.classList.add('h5p-invalid-questionnaire');
+        questionnaireWrapper.textContent = 'Invalid content';
+        return questionnaireWrapper;
+      }
+
       this.createProgressBar(questionnaireElements).attachTo(questionnaireWrapper);
 
       const content = this.createQuestionnaireBody();
@@ -132,6 +137,14 @@ export default class Questionnaire extends H5P.EventDispatcher {
       );
       this.successScreen.on('noSuccessScreen', () => {
         this.trigger('noSuccessScreen');
+      });
+
+      /**
+       * Need to resize when image is loaded in case we are restoring the
+       * success screen page.
+       */
+      this.successScreen.on('imageLoaded', () => {
+        this.trigger('resize')
       });
 
       return this.successScreen;

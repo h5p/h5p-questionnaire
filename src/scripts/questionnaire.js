@@ -303,18 +303,21 @@ export default class Questionnaire extends H5P.EventDispatcher {
      * Restore previous state
      */
     this.setPreviousState = function () {
+      const previousState = contentData.previousState;
+
       // No valid content data
-      if (!contentData.previousState) {
+      if (!previousState || !previousState.questions) {
         return;
       }
 
-      const previousState = contentData.previousState;
-      this.state.currentIndex = previousState.progress;
+      if (previousState.progress) {
+        this.state.currentIndex = previousState.progress;
 
-      // Has no success screen, must restore previous page.
-      if (this.state.currentIndex > questionnaireElements.length - 1 &&
+        // Has no success screen, must restore previous page.
+        if (this.state.currentIndex > questionnaireElements.length - 1 &&
           !successScreenOptions.enableSuccessScreen) {
-        this.state.currentIndex -= 1;
+          this.state.currentIndex -= 1;
+        }
       }
 
       previousState.questions.forEach((question, idx) => {

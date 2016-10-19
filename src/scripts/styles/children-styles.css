@@ -2,6 +2,7 @@
   position: relative;
   padding: 1.5em 5em 1.5em 1em;
   word-wrap: break-word;
+  font-size: 0.9em;
 }
 
 .h5p-questionnaire-element.h5p-questionnaire-required .h5p-subcontent-question {

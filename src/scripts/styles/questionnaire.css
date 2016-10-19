@@ -8,12 +8,6 @@
   width: 100%;
 }
 
-@media (min-width: 600px) {
-  .h5p-questionnaire {
-    font-size: 0.8em;
-  }
-}
-
 .h5p-questionnaire-element.hide {
   display: none;
 }

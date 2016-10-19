@@ -2,7 +2,6 @@
   position: relative;
   padding: 1.5em 5em 1.5em 1em;
   word-wrap: break-word;
-  font-size: 0.9em;
 }
 
 .h5p-questionnaire-element.h5p-questionnaire-required .h5p-subcontent-question {
@@ -14,4 +13,8 @@
   padding-bottom: 0.5em;
   color: rgba(255,255,255,0.6);
   font-size: 0.75em;
+}
+
+.h5p-questionnaire-element .h5p-subcontent-body {
+  font-size: 0.9em;
 }

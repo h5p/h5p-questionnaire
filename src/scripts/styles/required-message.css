@@ -2,7 +2,7 @@
   position: relative;
   background-color: #eb0000;
   color: #FFF;
-  padding: 0.3em 2em 0.3em 1em;
+  padding: 0 2em 0 1em;
 }
 
 .h5p-questionnaire-choice-required.hide {
@@ -10,7 +10,7 @@
 }
 
 .h5p-questionnaire-choice-required-message {
-  font-size: 0.95em;
+  font-size: 0.9em;
   display: inline-block;
 }
 
@@ -18,7 +18,7 @@
   display: inline-block;
   position: absolute;
   right: 1em;
-  top: 0.6em;
+  top: 0.35em;
   border: none;
   background: none;
   cursor: pointer;

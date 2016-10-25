@@ -1,15 +1,16 @@
 .h5p-questionnaire-footer {
-  background: #000;
-  padding: 0.8em 1.2em;
+  background: #1F1F1F;
+  padding: 0.7em 1.2em;
   display: inline-block;
   width: 100%;
   box-sizing: border-box;
+  border: 1px solid #404040;
 }
 
 .h5peditor .h5p-questionnaire-footer-button,
 .h5p-questionnaire-footer-button {
   float: right;
-  padding: 0.7em 1.1em;
+  padding: 0.6em 1em;
 
   color: #FFF;
   background: #1F1F1F;

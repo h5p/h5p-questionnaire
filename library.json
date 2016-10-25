@@ -3,17 +3,23 @@
   "description": "Create a questionnaire",
   "majorVersion": 1,
   "minorVersion": 0,
-  "patchVersion": 1,
+  "patchVersion": 2,
   "runnable": 1,
   "author": "Thomasmars",
   "license": "cc-by-sa",
   "machineName": "H5P.Questionnaire",
-  "embedTypes": ["iframe"],
+  "embedTypes": [
+    "iframe"
+  ],
   "preloadedJs": [
-    {"path": "dist/dist.js"}
+    {
+      "path": "dist/dist.js"
+    }
   ],
   "preloadedCss": [
-    {"path": "dist/styles.css"}
+    {
+      "path": "dist/styles.css"
+    }
   ],
   "preloadedDependencies": [
     {

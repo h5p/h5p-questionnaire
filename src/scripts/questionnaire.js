@@ -12,6 +12,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
    * Constructor for questionnaire
    * @param questionnaireElements
    * @param successScreenOptions
+   * @param successScreenOptions.enableSuccessScreen
    * @param uiElements
    * @param uiElements.buttonLabels
    * @param uiElements.requiredMessage
@@ -189,7 +190,9 @@ export default class Questionnaire extends H5P.EventDispatcher {
           this.triggerXAPI('completed');
           this.showSuccessScreen();
           this.trigger('resize');
-          this.state.currentIndex = this.state.questionnaireElements.length;
+          if (successScreenOptions.enableSuccessScreen) {
+            this.state.currentIndex = this.state.questionnaireElements.length;
+          }
         }
         else {
           this.triggerRequiredQuestion();

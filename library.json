@@ -2,8 +2,8 @@
   "title": "Questionnaire",
   "description": "Create a questionnaire",
   "majorVersion": 1,
-  "minorVersion": 0,
-  "patchVersion": 3,
+  "minorVersion": 1,
+  "patchVersion": 0,
   "runnable": 1,
   "author": "Thomasmars",
   "license": "cc-by-sa",
@@ -42,7 +42,7 @@
     {
       "machineName": "H5PEditor.VerticalTabs",
       "majorVersion": 1,
-      "minorVersion": 2
+      "minorVersion": 3
     }
   ]
 }

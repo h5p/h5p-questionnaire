@@ -10,7 +10,7 @@ export default class RequiredMessage extends H5P.EventDispatcher {
     this.requiredMessage = document.createElement('div');
     this.requiredMessage.textContent = uiElements.requiredMessage;
     this.requiredMessage.className = 'h5p-questionnaire-choice-required-message';
-    this.requiredMessage.setAttribute('tabindex', '-1');
+    this.requiredMessage.setAttribute('role', 'alert');
 
     const exitButton = document.createElement('button');
     exitButton.className = 'h5p-questionnaire-choice-required-exit';
@@ -33,7 +33,6 @@ export default class RequiredMessage extends H5P.EventDispatcher {
 
   showMessage() {
     this.requiredElement.classList.remove('hide');
-    this.requiredMessage.focus();
   }
 
   hideMessage() {

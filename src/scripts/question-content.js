@@ -106,7 +106,7 @@ export default class QuestionContent extends H5P.EventDispatcher {
    * @param {boolean} hide
    */
   hideElement(hide) {
-    this.questionnaireElement.classList.toggle('hide', hide);
+    this.questionnaireElement.classList[hide ? 'add' : 'remove']('hide');
   }
 
   /**

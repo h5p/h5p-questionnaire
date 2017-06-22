@@ -10,22 +10,10 @@ export default class QuestionContent extends H5P.EventDispatcher {
     this.requiredField = requiredField;
     this.answered = params.userDatas && params.userDatas.state && params.userDatas.state.length;
 
-    this.attachNumberWidget(index);
     this.attachRequiredField(requiredField, uiElements);
 
     this.instance.on('xAPI', this.handleInteraction.bind(this));
     this.instance.on('allow-finish-changed', this.trigger.bind(this));
-  }
-
-  /**
-   * Attaches number widget if first Question
-   * @param index
-   */
-  attachNumberWidget(index) {
-    const subContentQuestion = this.questionnaireElement.querySelector('.h5p-subcontent-question');
-    if (index === 0 && subContentQuestion) {
-      this.progressBar.attachNumberWidgetTo(subContentQuestion);
-    }
   }
 
   /**
@@ -116,7 +104,7 @@ export default class QuestionContent extends H5P.EventDispatcher {
    * Toggle visibility of question
    * @param {boolean} hide
    */
-  hideElement(hide) {
+  hide(hide) {
     this.questionnaireElement.classList[hide ? 'add' : 'remove']('hide');
   }
 

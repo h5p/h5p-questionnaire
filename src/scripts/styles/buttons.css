@@ -1,0 +1,42 @@
+.h5peditor .h5p-questionnaire-button,
+.h5p-questionnaire-button {
+  padding: 0.6em 1em;
+
+  color: #FFF;
+  background: #1F1F1F;
+  border: 1px solid #404040;
+
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 0.3em;
+  font-size: 0.8em;
+}
+.h5p-questionnaire-button:active {
+  background-color: #1C1C1C;
+}
+.h5p-questionnaire-button:hover {
+  background-color: #363636;
+}
+.h5p-questionnaire-button:focus {
+  outline: 1px solid rgb(59, 153, 252);
+}
+.h5p-questionnaire-button.disable {
+  display: none;
+}
+.h5p-questionnaire-button.previous:before {
+  content: "\f137";
+}
+.h5p-questionnaire-button.next:after {
+  content: "\f138";
+}
+.h5p-questionnaire-button.previous:before,
+.h5p-questionnaire-button.next:after {
+  font-family: "H5PFontAwesome4";
+  margin-left: 0.5em;
+}
+.h5p-questionnaire-button.previous:before {
+  margin-left: 0;
+  margin-right: 0.5em;
+}

@@ -1,7 +1,7 @@
 import './styles/success-screen.css';
 
 export default class SuccessScreen extends H5P.EventDispatcher {
-  constructor({enableSuccessScreen = true, successScreenImage = {}, successMessage = ''}, parent) {
+  constructor({successScreenImage = {}, successMessage = ''}, parent) {
     super();
 
     this.wrapper = document.createElement('div');
@@ -45,19 +45,15 @@ export default class SuccessScreen extends H5P.EventDispatcher {
      * @return {boolean} True on success
      */
     this.show = function () {
-      if (enableSuccessScreen) {
-        this.wrapper.classList.remove('hide');
-        this.wrapper.focus();
-        return true;
-      }
-      else {
-        this.trigger('noSuccessScreen');
-        return false;
-      }
+      this.wrapper.classList.remove('hide');
+      this.wrapper.focus();
     }
   }
 
-
+  /**
+   * Attach to container
+   * @param  {HTMLElement} container
+   */
   attachTo(container) {
     container.appendChild(this.wrapper);
   }

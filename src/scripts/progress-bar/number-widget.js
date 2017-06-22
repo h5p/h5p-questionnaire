@@ -27,10 +27,6 @@ export default class NumberWidget {
     this.currentIndex.textContent = index;
   }
 
-  remove() {
-    this.numberWidget.parentNode.removeChild(this.numberWidget);
-  }
-
   attachTo(container) {
     container.appendChild(this.numberWidget);
   }

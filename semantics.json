@@ -28,7 +28,7 @@
           "description": "Choose a library",
           "options": [
             "H5P.OpenEndedQuestion 1.0",
-            "H5P.SimpleMultiChoice 1.0"
+            "H5P.SimpleMultiChoice 1.1"
           ]
         },
         {
@@ -98,7 +98,14 @@
             "type": "text",
             "label": "Previous button label",
             "importance": "low",
-            "default": "Previous"
+            "default": "Back"
+          },
+          {
+            "name": "continueLabel",
+            "type": "text",
+            "label": "Continue button label",
+            "importance": "low",
+            "default": "Continue"
           },
           {
             "name": "nextLabel",

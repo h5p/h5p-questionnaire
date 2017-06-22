@@ -6,6 +6,10 @@ import Footer from './footer';
 import ProgressBar from './progress-bar/progress-bar';
 import QuestionContent from './question-content';
 
+const ALLOW_FINISH_ALWAYS = 0;
+const ALLOW_FINISH_DENY = 1;
+const ALLOW_FINISH_ALLOW = 2;
+
 export default class Questionnaire extends H5P.EventDispatcher {
 
   /**
@@ -30,9 +34,10 @@ export default class Questionnaire extends H5P.EventDispatcher {
 
     uiElements = Object.assign({}, {
       buttonLabels: {
-        prevLabel: 'Previous',
+        prevLabel: 'Back',
         nextLabel: 'Next',
-        submitLabel: 'Submit'
+        submitLabel: 'Submit',
+        continueLabel: 'Continue'
       },
       accessibility: {
         requiredTextExitLabel: "Close error message",
@@ -82,6 +87,9 @@ export default class Questionnaire extends H5P.EventDispatcher {
       questionContent.on('handledInteraction', () => {
         this.trigger('resize');
         this.requiredMessage.trigger('hideMessage');
+      });
+      questionContent.on('allow-finish-changed', () => {
+        this.setForwardNavigationButton(this.state.currentIndex);
       });
 
       return questionContent;
@@ -170,9 +178,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
       const currentEl = this.state.questionnaireElements[this.state.questionnaireElements.length - 1];
       if (this.successScreen.show()) {
         currentEl.hideElement(true);
-        this.footer.trigger('disablePrev');
-        this.footer.trigger('disableNext');
-        this.footer.trigger('disableSubmit');
+        this.footer.disableNavigation();
         this.progressBar.remove();
         this.footer.remove();
       }
@@ -202,21 +208,40 @@ export default class Questionnaire extends H5P.EventDispatcher {
       footer.on('next', () => {
         this.move(this.state.currentIndex + 1);
       });
-
       footer.on('prev', () => {
         this.move(this.state.currentIndex - 1);
       });
 
-      footer.trigger('disablePrev');
-      if (this.state.questionnaireElements.length > 1) {
-        footer.trigger('disableSubmit');
-      }
-      else {
-        footer.trigger('disableNext');
-      }
+      footer.trigger('disable-prev');
       this.footer = footer;
 
+      this.setForwardNavigationButton(0);
+
       return footer;
+    };
+
+    /**
+     * Update the forward button based on content type having a second step
+     * @param {number} index The question index
+     */
+    this.setForwardNavigationButton = function (index) {
+      if (index > this.state.questionnaireElements.length - 1) {
+        return;
+      }
+
+      const isLast = (index === this.state.questionnaireElements.length - 1);
+      const allowFinish = this.state.questionnaireElements[index].allowFinish();
+
+      // continue, next or submit?
+      let buttonType = (isLast ? 'submit' : 'continue');
+      if (allowFinish === ALLOW_FINISH_DENY) {
+        buttonType = 'continue';
+      }
+      else if (allowFinish === ALLOW_FINISH_ALLOW) {
+        buttonType = (isLast ? 'submit' : 'next');
+      }
+
+      this.footer.setForwardNavigationButton(buttonType);
     };
 
     /**
@@ -235,24 +260,35 @@ export default class Questionnaire extends H5P.EventDispatcher {
       const {currentIndex, questionnaireElements} = this.state;
       const element = questionnaireElements[currentIndex];
 
+      if (index < 0 || index > questionnaireElements.length - 1) {
+        return;
+      }
+
+      // If required
       if (index > currentIndex && !this.isValidAnswer(element)) {
         this.triggerRequiredQuestion();
         return;
       }
 
-      if (index >= 0 || index < questionnaireElements.length) {
-        this.footer.trigger(index === 0 ? 'disablePrev' : 'enablePrev');
-        this.footer.trigger(index >= questionnaireElements.length - 1 ? 'disableNext' : 'enableNext');
-        this.footer.trigger(index !== questionnaireElements.length - 1 ? 'disableSubmit' : 'enableSubmit');
-
-        this.requiredMessage.trigger('hideMessage');
-        questionnaireElements[currentIndex].hideElement(true);
-        const nextQuestion = questionnaireElements[index];
-        nextQuestion.hideElement(false);
-        const nextQuestionHeader = nextQuestion.getElement().querySelector('.h5p-subcontent-question');
-        this.progressBar.attachNumberWidgetTo(nextQuestionHeader);
+      // Give question element a chance to stop the move
+      if (element.allowFinish() === ALLOW_FINISH_DENY && !element.finish()) {
+        // Change forward button from continue to Next or Submit
+        this.setForwardNavigationButton(currentIndex);
         this.trigger('resize');
+        return;
       }
+
+      this.footer.trigger(index === 0 ? 'disable-prev' : 'enable-prev');
+      this.setForwardNavigationButton(index);
+
+      this.requiredMessage.trigger('hideMessage');
+      questionnaireElements[currentIndex].hideElement(true);
+      const nextQuestion = questionnaireElements[index];
+      nextQuestion.hideElement(false);
+      const nextQuestionHeader = nextQuestion.getElement().querySelector('.h5p-subcontent-question');
+      this.progressBar.attachNumberWidgetTo(nextQuestionHeader);
+      this.trigger('resize');
+
 
       this.state = Object.assign(this.state, {
         currentIndex: index

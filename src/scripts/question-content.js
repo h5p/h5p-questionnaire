@@ -14,6 +14,7 @@ export default class QuestionContent extends H5P.EventDispatcher {
     this.attachRequiredField(requiredField, uiElements);
 
     this.instance.on('xAPI', this.handleInteraction.bind(this));
+    this.instance.on('allow-finish-changed', this.trigger.bind(this));
   }
 
   /**
@@ -68,6 +69,16 @@ export default class QuestionContent extends H5P.EventDispatcher {
     this.answered = !!results.length;
     this.trigger('handledInteraction');
   };
+
+  allowFinish() {
+    return (this.instance.allowFinish !== undefined ? this.instance.allowFinish() : 0);
+  }
+
+  finish() {
+    if(this.instance.finish) {
+      return this.instance.finish();
+    };
+  }
 
   /**
    * Get current state

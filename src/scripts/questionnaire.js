@@ -338,10 +338,13 @@ export default class Questionnaire extends H5P.EventDispatcher {
       });
       this.progressBar.move(index + 1);
 
-      const progressedEvent = this.createXAPIEventTemplate('progressed');
-      if (progressedEvent.data.statement.object) {
-        progressedEvent.data.statement.object.definition.extensions['http://id.tincanapi.com/extension/ending-point'] = index + 1;
-        this.trigger(progressedEvent);
+      // Don't send xApi event when initializing
+      if (index !== 0 && currentIndex !== 0) {
+        const progressedEvent = this.createXAPIEventTemplate('progressed');
+        if (progressedEvent.data.statement.object) {
+          progressedEvent.data.statement.object.definition.extensions['http://id.tincanapi.com/extension/ending-point'] = index + 1;
+          this.trigger(progressedEvent);
+        }
       }
 
       questionnaireElements[index].setActivityStarted();

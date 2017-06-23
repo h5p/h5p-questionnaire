@@ -3,6 +3,8 @@
   text-align: center;
   color: #fff;
   background: #2880d0;
+  height: 100%;
+  box-sizing: border-box;
 }
 .h5p-questionnaire-submit-screen-title {
   font-size: 1.1em;

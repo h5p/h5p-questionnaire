@@ -5,7 +5,7 @@ export default class QuestionContent extends H5P.EventDispatcher {
     this.progressBar = progressBar;
 
     this.questionnaireElement = document.createElement('div');
-    this.questionnaireElement.className = 'h5p-questionnaire-element';
+    this.questionnaireElement.className = 'h5p-questionnaire-element hide';
     this.instance = H5P.newRunnable(params, contentId, H5P.jQuery(this.questionnaireElement), undefined, {parent: this});
     this.requiredField = requiredField;
     this.answered = params.userDatas && params.userDatas.state && params.userDatas.state.length;

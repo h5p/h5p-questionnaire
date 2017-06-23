@@ -1,17 +1,15 @@
 .h5p-questionnaire-success {
+  color: #fff;
+  background: #2880d0;
   height: 100%;
   display: flex;
   text-align: center;
-  padding: 2em;
+  padding: 5em 2em;
   box-sizing: border-box;
 }
 
 .h5p-questionnaire-success:focus {
   outline: none;
-}
-
-.h5p-questionnaire-success.hide {
-  display: none;
 }
 
 .h5p-questionnaire-success-icon.image > img {
@@ -24,13 +22,12 @@
 
 .h5p-questionnaire-success-icon.standard-icon:before {
   font-family: "H5PFontAwesome4";
-  font-size: 5em;
-  color: rgba(22, 235, 0, 1);
+  font-size: 3em;
   content: '\f00c';
 }
 
 .h5p-questionnaire-success-message {
-  margin: 1em 0;
+  margin: 1.5em 0 0 0;
   font-size: 1.5em;
   word-wrap: break-word;
 }

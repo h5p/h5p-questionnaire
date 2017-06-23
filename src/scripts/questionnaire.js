@@ -151,7 +151,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
       this.submitScreen = new SubmitScreen({
         title: uiElements.submitScreenTitle,
         subtitle: uiElements.submitScreenSubtitle,
-        backLabel: uiElements.buttonLabels.backLabel,
+        backLabel: uiElements.buttonLabels.prevLabel,
         submitLabel: uiElements.buttonLabels.submitLabel
       });
 

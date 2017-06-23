@@ -54,9 +54,7 @@
               "default": "Zurück"
             },
             {
-              "englishLabel": "Continue button label",
               "label": "Continue button label",
-              "englishDefault": "Continue",
               "default": "Continue"
             },
             {
@@ -94,15 +92,11 @@
           "description": "Text, der zusätzlich zum Sternchen darauf hinweist, dass eine Antwort erforderlich ist."
         },
         {
-          "englishLabel": "Title for the submit screen",
           "label": "Title for the submit screen",
-          "englishDefault": "You successfully answered all of the questions",
           "default": "You successfully answered all of the questions"
         },
         {
-          "englishLabel": "Subtitle for the submit screen",
           "label": "Subtitle for the submit screen",
-          "englishDefault": "Click below to submit your answers",
           "default": "Click below to submit your answers"
         }
       ]

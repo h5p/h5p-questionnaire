@@ -49,8 +49,8 @@
         {
           "englishLabel": "Text to display on submit",
           "label": "Tekst ved ferdig innsending",
-          "englishDefault": "You successfully answered all of the questions.",
-          "default": "Du har svart på alle spørsmålene."
+          "englishDefault": "You have completed the questionnaire.",
+          "default": "Du er nå ferdig med spørreskjemaet."
         }
       ]
     },
@@ -67,6 +67,12 @@
               "label": "Forrige knapp etikett",
               "englishDefault": "Previous",
               "default": "Forrige"
+            },
+            {
+              "englishLabel": "Continue button label",
+              "label": "Fortsett knapp etikett",
+              "englishDefault": "Continue",
+              "default": "Fortsett"
             },
             {
               "englishLabel": "Next button label",
@@ -117,6 +123,18 @@
           "default": "nødvendig",
           "englishDescription": "Text that will accompany an asterisk to signal that a question is required",
           "description": "Tekst som vil vises ved siden av asterisk for å vise at spørsmålet er påkrevd."
+        },
+        {
+          "englishLabel": "Title for the submit screen",
+          "label": "Tittel på innsendingsskjermen",
+          "englishDefault": "You successfully answered all of the questions",
+          "default": "Du har nå ferdig med å svare på spørsmålene."
+        },
+        {
+          "englishLabel": "Subtitle for the submit screen",
+          "label": "Hjelpetekst for innsendingsskjermen",
+          "englishDefault": "Click below to submit your answers",
+          "default": "Trykk under for å sende inn dine svar"
         }
       ]
     }

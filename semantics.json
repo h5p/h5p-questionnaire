@@ -77,7 +77,7 @@
         "type": "text",
         "label": "Text to display on submit",
         "importance": "low",
-        "default": "You successfully answered all of the questions."
+        "default": "You have completed the questionnaire."
       }
     ]
   },
@@ -161,6 +161,20 @@
         "importance": "low",
         "default": "required",
         "description": "Text that will accompany an asterisk to signal that a question is required"
+      },
+      {
+        "name": "submitScreenTitle",
+        "type": "text",
+        "label": "Title for the submit screen",
+        "importance": "low",
+        "default": "You successfully answered all of the questions"
+      },
+      {
+        "name": "submitScreenSubtitle",
+        "type": "text",
+        "label": "Subtitle for the submit screen",
+        "importance": "low",
+        "default": "Click below to submit your answers"
       }
     ]
   }

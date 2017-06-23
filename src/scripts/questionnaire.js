@@ -45,7 +45,9 @@ export default class Questionnaire extends H5P.EventDispatcher {
         progressBarText: 'Question %current of %max'
       },
       requiredMessage: 'This question requires an answer',
-      requiredText: 'required'
+      requiredText: 'required',
+      submitScreenTitle: 'You successfully answered all of the questions',
+      submitScreenSubtitle: 'Click below to submit your answers'
     }, uiElements);
 
     /**
@@ -147,10 +149,10 @@ export default class Questionnaire extends H5P.EventDispatcher {
      */
     this.createSubmitScreen = function () {
       this.submitScreen = new SubmitScreen({
-        title: 'You successfully answered all of the questions',
-        subtitle: 'Click below to submit your answers',
-        backLabel: 'Back',
-        submitLabel: 'Submit'
+        title: uiElements.submitScreenTitle,
+        subtitle: uiElements.submitScreenSubtitle,
+        backLabel: uiElements.buttonLabels.backLabel,
+        submitLabel: uiElements.buttonLabels.submitLabel
       });
 
       this.submitScreen.on('submit', this.showSuccessScreen.bind(this));

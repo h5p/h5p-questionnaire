@@ -128,7 +128,7 @@
           "englishLabel": "Title for the submit screen",
           "label": "Tittel på innsendingsskjermen",
           "englishDefault": "You successfully answered all of the questions",
-          "default": "Du har nå ferdig med å svare på spørsmålene."
+          "default": "Du er nå ferdig med å svare på spørsmålene."
         },
         {
           "englishLabel": "Subtitle for the submit screen",

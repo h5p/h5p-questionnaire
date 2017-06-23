@@ -255,8 +255,6 @@ export default class Questionnaire extends H5P.EventDispatcher {
       footer.trigger('disable-previous');
       this.footer = footer;
 
-      this.setForwardNavigationButton(0);
-
       return footer;
     };
 

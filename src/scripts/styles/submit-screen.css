@@ -7,11 +7,11 @@
   box-sizing: border-box;
 }
 .h5p-questionnaire-submit-screen-title {
-  font-size: 1.1em;
+  font-size: 1.485em;
 }
 .h5p-questionnaire-submit-screen-subtitle {
   margin: 0.5em 0 2em 0;
-  font-size: 0.9em;
+  font-size: 1em;
 }
 .h5p-questionnaire-button.submit {
   background-color: #ff6b00;

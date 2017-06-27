@@ -7,10 +7,6 @@ import Footer from './footer';
 import ProgressBar from './progress-bar/progress-bar';
 import QuestionContent from './question-content';
 
-const ALLOW_FINISH_ALWAYS = 0;
-const ALLOW_FINISH_DENY = 1;
-const ALLOW_FINISH_ALLOW = 2;
-
 export default class Questionnaire extends H5P.EventDispatcher {
 
   /**
@@ -175,7 +171,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
       this.state.questionnaireElements[this.state.questionnaireElements.length - 1].hide(hide);
       this.progressBar.hide(hide);
       this.footer.hide(hide);
-    }
+    };
 
     /**
      * Create success screen
@@ -268,7 +264,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
       }
 
       const allowFinish = this.state.questionnaireElements[index].allowFinish();
-      const buttonType = (allowFinish === ALLOW_FINISH_ALLOW ? 'next' : 'continue');
+      const buttonType = (allowFinish === QuestionContent.AllowFinish.ALLOW ? 'next' : 'continue');
       this.footer.setForwardNavigationButton(buttonType);
     };
 
@@ -284,11 +280,11 @@ export default class Questionnaire extends H5P.EventDispatcher {
      * Move in a direction
      *
      * @param {number} index
-     * @param {boolean} force Skip checks, just move (used by resume)
+     * @param {boolean} [force] Skip checks, just move (used by resume)
      *
      * @return {boolean} inidcates if submit screen should be shown
      */
-    this.move = function (index, force) {
+    this.move = function (index, force = false) {
       const {currentIndex, questionnaireElements} = this.state;
       const element = questionnaireElements[currentIndex];
 
@@ -305,7 +301,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         }
 
         // Give question element a chance to stop the move
-        if (element.allowFinish() === ALLOW_FINISH_DENY && !element.finish()) {
+        if (element.allowFinish() === QuestionContent.AllowFinish.DENY && !element.finish()) {
           // Change forward button from continue to Next or Submit
           this.setForwardNavigationButton(currentIndex);
           this.trigger('resize');

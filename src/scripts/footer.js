@@ -26,8 +26,12 @@ export default class Footer extends H5P.EventDispatcher {
 
   /**
    * Handle creating submit answer button
+   *
    * @param {string} buttonText Button text
-   * @return {Element} Submit button
+   * @param {string} type Used as classname and eventname (when clicked)
+   * @param {string} eventName Name of the event used to disable/enable this button
+   *
+   * @return {HTMLElement} Submit button
    */
   createButton(buttonText, type, eventName) {
     const button = Utils.createButton(buttonText, type, this);

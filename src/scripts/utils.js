@@ -38,7 +38,7 @@ export default class Utils {
   static createElement(tagName, attributes) {
     const element = document.createElement(tagName);
 
-    Object.keys(attributes).forEach(function (key) {
+    Object.keys(attributes).forEach(key => {
       element[key] = attributes[key];
     });
 

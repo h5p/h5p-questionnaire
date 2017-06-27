@@ -1,4 +1,34 @@
 export default class QuestionContent extends H5P.EventDispatcher {
+
+  /**
+   * Enum for continue/next logic. For now this is used for being able to
+   * display the feedback for simple multiple choice. I.e: can't skip to next
+   * question until this is displayed (if anything needs to be displayed)
+   *
+   * @readonly
+   * @enum {number}
+   */
+  static get AllowFinish() {
+    return {
+      /**
+       * Question type will never need to display the next button. Always ready
+       * to skip to next question
+       * @member {number}
+       */
+      ALWAYS: 0,
+      /**
+       * Question is not ready to let go yet
+       * @member {Number}
+       */
+      DENY: 1,
+      /**
+       * Question has done whatever needed, ready to let go
+       * @member {Number}
+       */
+      ALLOW: 2
+    };
+  }
+
   constructor({progressBar, params, contentId, requiredField, index, uiElements}) {
     super();
 
@@ -58,14 +88,25 @@ export default class QuestionContent extends H5P.EventDispatcher {
     this.trigger('handledInteraction');
   };
 
+  /**
+   * Check if question needs to e.g. display something before next question may
+   * be displayed
+   * @return {QuestionContent.AllowFinish}
+   */
   allowFinish() {
-    return (this.instance.allowFinish !== undefined ? this.instance.allowFinish() : 0);
+    return (this.instance.allowFinish !== undefined ? this.instance.allowFinish() : QuestionContent.AllowFinish.ALWAYS);
   }
 
+  /**
+   * Let the question know we are about to finish.
+   *
+   * @return {boolean} If true, question has dnoe something the viewer has to digest.
+   *                   Otherwise, we are ready to skip to next question.
+   */
   finish() {
     if(this.instance.finish) {
       return this.instance.finish();
-    };
+    }
   }
 
   /**

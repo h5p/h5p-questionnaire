@@ -54,6 +54,10 @@
               "default": "Zurück"
             },
             {
+              "label": "Continue button label",
+              "default": "Continue"
+            },
+            {
               "label": "Beschriftung für den \"Weiter\"-Button",
               "default": "Weiter"
             },
@@ -86,6 +90,14 @@
           "label": "Text für die Beschriftung bei Erforderlichkeit",
           "default": "erforderlich",
           "description": "Text, der zusätzlich zum Sternchen darauf hinweist, dass eine Antwort erforderlich ist."
+        },
+        {
+          "label": "Title for the submit screen",
+          "default": "You successfully answered all of the questions"
+        },
+        {
+          "label": "Subtitle for the submit screen",
+          "default": "Click below to submit your answers"
         }
       ]
     }

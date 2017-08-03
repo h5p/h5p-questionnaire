@@ -41,9 +41,8 @@ export default class ProgressBar {
     this.progressBar.focus();
   }
 
-  remove() {
-    this.numberWidget.remove();
-    this.progressBar.parentNode.removeChild(this.progressBar);
+  hide(hide = true) {
+    this.progressBar.classList[hide ? 'add' : 'remove']('hide');
   }
 
   attachNumberWidgetTo(container) {

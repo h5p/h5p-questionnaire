@@ -27,3 +27,7 @@
 .h5p-invalid-questionnaire {
   color: red;
 }
+
+.h5p-questionnaire .hide {
+  display: none;
+}

@@ -1,0 +1,47 @@
+.h5p-questionnaire-submit-screen {
+  padding: 5em 2em;
+  text-align: center;
+  color: #fff;
+  background: #2880d0;
+  height: 100%;
+  box-sizing: border-box;
+}
+.h5p-questionnaire-submit-screen-title {
+  font-size: 1.485em;
+}
+.h5p-questionnaire-submit-screen-subtitle {
+  margin: 0.5em 0 2em 0;
+  font-size: 1em;
+}
+.h5p-questionnaire-button.submit {
+  background-color: #ff6b00;
+  border-color: #ff6b00;
+}
+.h5p-questionnaire-button.submit:after {
+  font-family: "H5PFontAwesome4";
+  content: "\f058";
+  margin-left: 0.5em;
+}
+.h5p-questionnaire-button.submit:hover {
+  background-color: #ff7a1a;
+}
+.h5p-questionnaire-button.submit:active {
+  background-color: #e66507;
+}
+.h5p-questionnaire-submit-screen .h5p-questionnaire-button:focus {
+  outline-color: #0d263c;
+}
+.h5p-questionnaire-submit-screen .h5p-questionnaire-button.previous {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+  margin-right: 0.5em;
+}
+.h5p-questionnaire-submit-screen .h5p-questionnaire-button.previous:hover {
+  /* A little lighter */
+  background-color: #3b8ace;
+}
+.h5p-questionnaire-submit-screen .h5p-questionnaire-button.previous:active {
+  /* A little darker */
+  background-color: #1879ce;
+}

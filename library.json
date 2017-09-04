@@ -2,7 +2,7 @@
   "title": "Questionnaire",
   "description": "Create a questionnaire",
   "majorVersion": 1,
-  "minorVersion": 1,
+  "minorVersion": 2,
   "patchVersion": 2,
   "runnable": 1,
   "author": "Joubel",
@@ -30,7 +30,7 @@
     {
       "machineName": "H5P.SimpleMultiChoice",
       "majorVersion": 1,
-      "minorVersion": 0
+      "minorVersion": 1
     },
     {
       "machineName": "FontAwesome",

@@ -1,101 +1,101 @@
 {
   "semantics":[
     {
-      "label":"Questionnaire elements",
+      "label":"Kyselyn osat",
       "widgets":[
         {
-          "label":"Default"
+          "label":"Oletus"
         }
       ],
-      "entity":"element",
+      "entity":"osa",
       "field":{
-        "label":"Choose library",
+        "label":"Valitse tyyppi",
         "fields":[
           {
-            "label":"Library",
-            "description":"Choose a library"
+            "label":"Tyyppi",
+            "description":"Valitse kyselyn tyyppi"
           },
           {
-            "label":"Required field"
+            "label":"Vaadittu kenttä"
           }
         ]
       }
     },
     {
-      "label":"Success screen options",
+      "label":"Päätösnäkymän valinnat",
       "fields":[
         {
-          "label":"Enable success screen"
+          "label":"Salli päätösnäkymä"
         },
         {
-          "label":"Add success screen image",
+          "label":"Päätösnäkymän kuva",
           "fields":[
             {
-              "label":"Replace success icon with image"
+              "label":"Vaihda ikonin tilalle kuva"
             }
           ]
         },
         {
-          "label":"Text to display on submit",
-          "default":"You have completed the questionnaire."
+          "label":"Teksti kyselyn lähdettyä eteenpäin",
+          "default":"Vastaukset lähetetty."
         }
       ]
     },
     {
-      "label":"UI Elements",
+      "label":"Käyttöliittymä",
       "fields":[
         {
-          "label":"Button labels",
+          "label":"Painikkeiden tekstit",
           "fields":[
             {
-              "label":"Previous button label",
-              "default":"Back"
+              "label":"Palaa",
+              "default":"Palaa"
             },
             {
-              "label":"Continue button label",
-              "default":"Continue"
+              "label":"Jatka",
+              "default":"Jatka"
             },
             {
-              "label":"Next button label",
-              "default":"Next"
+              "label":"Seuraava",
+              "default":"Seuraava"
             },
             {
-              "label":"Submit button label",
-              "default":"Submit"
+              "label":"Lähetä",
+              "default":"Lähetä"
             }
           ]
         },
         {
-          "label":"Accessibility",
+          "label":"Esteettömyys",
           "fields":[
             {
-              "label":"Required message exit button label",
-              "default":"Close error message"
+              "label":"Poistuminen virheilmoituksesta",
+              "default":"Sulje virheilmoitus"
             },
             {
-              "label":"Progress bar text",
-              "default":"Question %current of %max",
-              "description":"Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
+              "label":"Edistymistä kuvaava teksti",
+              "default":"Kysymys %current\/%max",
+              "description":"Käytetään esteettömyysteknologioissa ilmaisemaan kuluva kysymys. Muuttujat: [ %current, %max ]"
             }
           ]
         },
         {
-          "label":"Required message",
-          "default":"This question requires an answer",
-          "description":"Will display if this field is unanswered and required by a wrapper content type"
+          "label":"Pakollinen kysymys",
+          "default":"Tähän kysymykseen on pakko vastata",
+          "description":"Näytetään jos on jätety vastaamatta ja kysymykseen on pakko vastata kysymystyypin mukaan"
         },
         {
-          "label":"Required symbol text",
-          "default":"required",
-          "description":"Text that will accompany an asterisk to signal that a question is required"
+          "label":"Teksti pakollisuutta ilmaisevaan symboliin",
+          "default":"vaaditaan",
+          "description":"Teksti joka näytetään *-merkin yhteydessä, kun kysymykseen on pakko vastata"
         },
         {
-          "label":"Title for the submit screen",
-          "default":"You successfully answered all of the questions"
+          "label":"Kyselyn lähetyssivun otsikko",
+          "default":"Olet onnistuneesti vastannut kaikkiin kysymyksiin"
         },
         {
-          "label":"Subtitle for the submit screen",
-          "default":"Click below to submit your answers"
+          "label":"Kyselyn lähetyssivun alaotsikko",
+          "default":"Klikkaa lähettääksesi vastauksesi"
         }
       ]
     }

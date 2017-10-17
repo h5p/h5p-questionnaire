@@ -188,7 +188,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
        * success screen page.
        */
       this.successScreen.on('imageLoaded', () => {
-        this.trigger('resize')
+        this.trigger('resize');
       });
 
       return this.successScreen;
@@ -238,7 +238,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
       }
 
       this.state.finished = true;
-    }
+    };
 
     /**
      * Create a Footer instance
@@ -389,7 +389,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         progress: this.state.currentIndex,
         finished: this.state.finished,
         version: 1
-      }
+      };
     };
 
     /**
@@ -423,7 +423,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
           questionnaireElements[idx].library.userDatas || {};
 
         questionnaireElements[idx].library.userDatas.state = question;
-      })
+      });
     };
 
     this.setPreviousState();

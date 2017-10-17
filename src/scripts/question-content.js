@@ -86,7 +86,7 @@ export default class QuestionContent extends H5P.EventDispatcher {
 
     this.answered = !!results.length;
     this.trigger('handledInteraction');
-  };
+  }
 
   /**
    * Check if question needs to e.g. display something before next question may

@@ -151,7 +151,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         submitLabel: uiElements.buttonLabels.submitLabel
       });
 
-      this.submitScreen.on('submit', this.showSuccessScreen.bind(this));
+      this.submitScreen.on('submit', this.handleSubmit.bind(this));
 
       this.submitScreen.on('previous', () => {
         this.submitScreen.hide();
@@ -188,7 +188,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
        * success screen page.
        */
       this.successScreen.on('imageLoaded', () => {
-        this.trigger('resize')
+        this.trigger('resize');
       });
 
       return this.successScreen;
@@ -219,9 +219,12 @@ export default class Questionnaire extends H5P.EventDispatcher {
     };
 
     /**
-     * Show the success screen
+     * Handle submitting of questionnaire
+     *
+     * Either show succcess screen or notify container
+     * that there is no success screen
      */
-    this.showSuccessScreen = function () {
+    this.handleSubmit = function () {
       this.triggerXAPI('completed');
 
       if (successScreenOptions.enableSuccessScreen) {
@@ -229,8 +232,12 @@ export default class Questionnaire extends H5P.EventDispatcher {
         this.submitScreen.hide();
         this.successScreen.show();
         this.trigger('resize');
-        this.state.finished = true;
       }
+      else {
+        this.trigger('noSuccessScreen');
+      }
+
+      this.state.finished = true;
     };
 
     /**
@@ -382,7 +389,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         progress: this.state.currentIndex,
         finished: this.state.finished,
         version: 1
-      }
+      };
     };
 
     /**
@@ -416,7 +423,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
           questionnaireElements[idx].library.userDatas || {};
 
         questionnaireElements[idx].library.userDatas.state = question;
-      })
+      });
     };
 
     this.setPreviousState();

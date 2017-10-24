@@ -151,7 +151,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         submitLabel: uiElements.buttonLabels.submitLabel
       });
 
-      this.submitScreen.on('submit', this.showSuccessScreen.bind(this));
+      this.submitScreen.on('submit', this.handleSubmit.bind(this));
 
       this.submitScreen.on('previous', () => {
         this.submitScreen.hide();
@@ -219,19 +219,26 @@ export default class Questionnaire extends H5P.EventDispatcher {
     };
 
     /**
+     * Show the succcess screen
+     */
+    this.showSuccessScreen = function () {
+      this.hideQuestion(true);
+      this.submitScreen.hide();
+      this.successScreen.show();
+      this.trigger('resize');
+    }
+
+    /**
      * Handle submitting of questionnaire
      *
      * Either show succcess screen or notify container
      * that there is no success screen
      */
-    this.showSuccessScreen = function () {
+    this.handleSubmit = function () {
       this.triggerXAPI('completed');
 
       if (successScreenOptions.enableSuccessScreen) {
-        this.hideQuestion(true);
-        this.submitScreen.hide();
-        this.successScreen.show();
-        this.trigger('resize');
+        this.showSuccessScreen();
       }
       else {
         this.trigger('noSuccessScreen');

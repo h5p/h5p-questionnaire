@@ -128,7 +128,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
 
       if (this.state.finished) {
         // Resume functionality
-        this.showSuccessScreen();
+        successScreenOptions.enableSuccessScreen ? this.showSuccessScreen() : this.showSubmitScreen();
       }
       else {
         // If currentIndex > 0, it means we are resuming
@@ -151,7 +151,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         submitLabel: uiElements.buttonLabels.submitLabel
       });
 
-      this.submitScreen.on('submit', this.handleSubmit.bind(this));
+      this.submitScreen.on('submit', this.showSuccessScreen.bind(this));
 
       this.submitScreen.on('previous', () => {
         this.submitScreen.hide();
@@ -224,7 +224,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
      * Either show succcess screen or notify container
      * that there is no success screen
      */
-    this.handleSubmit = function () {
+    this.showSuccessScreen = function () {
       this.triggerXAPI('completed');
 
       if (successScreenOptions.enableSuccessScreen) {

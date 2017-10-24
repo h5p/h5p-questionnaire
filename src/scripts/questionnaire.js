@@ -226,7 +226,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
       this.submitScreen.hide();
       this.successScreen.show();
       this.trigger('resize');
-    }
+    };
 
     /**
      * Handle submitting of questionnaire
@@ -235,8 +235,6 @@ export default class Questionnaire extends H5P.EventDispatcher {
      * that there is no success screen
      */
     this.handleSubmit = function () {
-      this.triggerXAPI('completed');
-
       if (successScreenOptions.enableSuccessScreen) {
         this.showSuccessScreen();
       }
@@ -245,6 +243,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
       }
 
       this.state.finished = true;
+      this.triggerXAPI('completed');
     };
 
     /**

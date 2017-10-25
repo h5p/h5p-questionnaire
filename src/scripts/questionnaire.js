@@ -29,7 +29,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
       currentIndex: 0
     };
 
-    uiElements = Object.assign({}, {
+    uiElements = H5P.jQuery.extend(true, {
       buttonLabels: {
         prevLabel: 'Back',
         nextLabel: 'Next',

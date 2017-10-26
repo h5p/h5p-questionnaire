@@ -29,7 +29,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
       currentIndex: 0
     };
 
-    uiElements = Object.assign({}, {
+    uiElements = H5P.jQuery.extend(true, {
       buttonLabels: {
         prevLabel: 'Back',
         nextLabel: 'Next',
@@ -128,7 +128,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
 
       if (this.state.finished) {
         // Resume functionality
-        this.showSuccessScreen();
+        successScreenOptions.enableSuccessScreen ? this.showSuccessScreen() : this.showSubmitScreen();
       }
       else {
         // If currentIndex > 0, it means we are resuming
@@ -151,7 +151,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         submitLabel: uiElements.buttonLabels.submitLabel
       });
 
-      this.submitScreen.on('submit', this.showSuccessScreen.bind(this));
+      this.submitScreen.on('submit', this.handleSubmit.bind(this));
 
       this.submitScreen.on('previous', () => {
         this.submitScreen.hide();
@@ -188,7 +188,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
        * success screen page.
        */
       this.successScreen.on('imageLoaded', () => {
-        this.trigger('resize')
+        this.trigger('resize');
       });
 
       return this.successScreen;
@@ -219,18 +219,31 @@ export default class Questionnaire extends H5P.EventDispatcher {
     };
 
     /**
-     * Show the success screen
+     * Show the succcess screen
      */
     this.showSuccessScreen = function () {
-      this.triggerXAPI('completed');
+      this.hideQuestion(true);
+      this.submitScreen.hide();
+      this.successScreen.show();
+      this.trigger('resize');
+    };
 
+    /**
+     * Handle submitting of questionnaire
+     *
+     * Either show succcess screen or notify container
+     * that there is no success screen
+     */
+    this.handleSubmit = function () {
       if (successScreenOptions.enableSuccessScreen) {
-        this.hideQuestion(true);
-        this.submitScreen.hide();
-        this.successScreen.show();
-        this.trigger('resize');
-        this.state.finished = true;
+        this.showSuccessScreen();
       }
+      else {
+        this.trigger('noSuccessScreen');
+      }
+
+      this.state.finished = true;
+      this.triggerXAPI('completed');
     };
 
     /**
@@ -382,7 +395,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         progress: this.state.currentIndex,
         finished: this.state.finished,
         version: 1
-      }
+      };
     };
 
     /**
@@ -416,7 +429,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
           questionnaireElements[idx].library.userDatas || {};
 
         questionnaireElements[idx].library.userDatas.state = question;
-      })
+      });
     };
 
     this.setPreviousState();

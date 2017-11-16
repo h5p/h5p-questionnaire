@@ -78,6 +78,8 @@ export default class Questionnaire extends H5P.EventDispatcher {
      * @return {QuestionContent}
      */
     this.createQuestionContent = function (requiredField, library, index) {
+      var that = this;
+
       const questionContent = new QuestionContent({
         progressBar: this.progressBar,
         params: library,
@@ -88,8 +90,12 @@ export default class Questionnaire extends H5P.EventDispatcher {
       });
       questionContent.on('handledInteraction', () => {
         this.trigger('resize');
-        this.requiredMessage.trigger('hideMessage');
       });
+
+      H5P.jQuery(questionContent.questionnaireElement).on('keydown', function() {
+        that.requiredMessage.trigger('hideMessage');
+      });
+
       questionContent.on('allow-finish-changed', () => {
         this.setForwardNavigationButton(this.state.currentIndex);
       });

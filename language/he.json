@@ -1,101 +1,101 @@
 {
-  "semantics":[
+  "semantics": [
     {
-      "label":"Questionnaire elements",
-      "widgets":[
+      "label": "רכיבי שאלון",
+      "widgets": [
         {
-          "label":"Default"
+          "label": "ברירת מחדל"
         }
       ],
-      "entity":"element",
-      "field":{
-        "label":"Choose library",
-        "fields":[
+      "entity": "רכיב",
+      "field": {
+        "label": "יש לבחור ספריה",
+        "fields": [
           {
-            "label":"Library",
-            "description":"Choose a library"
+            "label": "ספרייה",
+            "description": "יש לבחור ספרייה"
           },
           {
-            "label":"Required field"
+            "label": "שדה נדרש"
           }
         ]
       }
     },
     {
-      "label":"Success screen options",
-      "fields":[
+      "label": "אפשרויות מסך הצלחה",
+      "fields": [
         {
-          "label":"Enable success screen"
+          "label": "הפעילו מסך הצלחה"
         },
         {
-          "label":"Add success screen image",
-          "fields":[
+          "label": "יש להוסיף תמונת מסך הצלחה",
+          "fields": [
             {
-              "label":"Replace success icon with image"
+              "label": "החלפת סמל הצלחה בתמונה "
             }
           ]
         },
         {
-          "label":"Text to display on submit",
-          "default":"You have completed the questionnaire."
+          "label": "התוכן שיש להציג בעת שליחה",
+          "default": "סיימתם את השאלון."
         }
       ]
     },
     {
-      "label":"UI Elements",
-      "fields":[
+      "label": "רכיבי ממשק",
+      "fields": [
         {
-          "label":"Button labels",
-          "fields":[
+          "label": "כפתור תוויות",
+          "fields": [
             {
-              "label":"Previous button label",
-              "default":"Back"
+              "label": "תווית כפתור קודמת",
+              "default": "חזרה"
             },
             {
-              "label":"Continue button label",
-              "default":"Continue"
+              "label": "תווית כפתור המשך",
+              "default": "המשך"
             },
             {
-              "label":"Next button label",
-              "default":"Next"
+              "label": "תווית כפתור הבא",
+              "default": "הבא"
             },
             {
-              "label":"Submit button label",
-              "default":"Submit"
+              "label": "תווית כפתור שליחה",
+              "default": "שליחה"
             }
           ]
         },
         {
-          "label":"Accessibility",
-          "fields":[
+          "label": "נגישות",
+          "fields": [
             {
-              "label":"Required message exit button label",
-              "default":"Close error message"
+              "label": "תווית הכרחית לכפתור הודעת יציאה",
+              "default": "סיגרו את הודעת השגיאה"
             },
             {
-              "label":"Progress bar text",
-              "default":"Question %current of %max",
-              "description":"Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
+              "label": "תיאור סרגל התקדמות",
+              "default": "שאלה %current מתוך %max",
+              "description": "  משמש עבור תמיכה טכנולוגית :להבין את השאלה [ %current, %max ]"
             }
           ]
         },
         {
-          "label":"Required message",
-          "default":"This question requires an answer",
-          "description":"Will display if this field is unanswered and required by a wrapper content type"
+          "label": "הודעה הכרחית",
+          "default": "השאלה מחייבת תשובה",
+          "description": "יוצג אם שדה זה לא נענה ונדרש על ידי סוג של תוכן על המשלב רכיב זה בתוכו"
         },
         {
-          "label":"Required symbol text",
-          "default":"required",
-          "description":"Text that will accompany an asterisk to signal that a question is required"
+          "label": "סמל תוכן הכרחי",
+          "default": "הכרחי",
+          "description": "תוכן יסומן בכוכבית לציין שהשאלה נדרשת"
         },
         {
-          "label":"Title for the submit screen",
-          "default":"You successfully answered all of the questions"
+          "label": "כותרת עבור מסך שליחה",
+          "default": "עניתם על כל השאלות בהצלחה"
         },
         {
-          "label":"Subtitle for the submit screen",
-          "default":"Click below to submit your answers"
+          "label": "כותרת משנה למסך השליחה",
+          "default": "יש להקיש על הכפתור למטה לשליחת התשובה"
         }
       ]
     }

@@ -88,6 +88,8 @@ export default class Questionnaire extends H5P.EventDispatcher {
       });
       questionContent.on('handledInteraction', () => {
         this.trigger('resize');
+        this.requiredMessage.trigger('hideMessage');
+        this.triggerXAPI('interacted');
       });
 
       questionContent.on('allow-finish-changed', () => {

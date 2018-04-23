@@ -44,6 +44,7 @@ export default class QuestionContent extends H5P.EventDispatcher {
 
     this.instance.on('xAPI', this.handleInteraction.bind(this));
     this.instance.on('allow-finish-changed', this.trigger.bind(this));
+    this.instance.on('changed', this.trigger.bind(this));
   }
 
   /**

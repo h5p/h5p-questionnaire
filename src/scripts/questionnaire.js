@@ -89,11 +89,16 @@ export default class Questionnaire extends H5P.EventDispatcher {
       questionContent.on('handledInteraction', () => {
         this.trigger('resize');
         this.requiredMessage.trigger('hideMessage');
+        this.triggerXAPI('interacted');
       });
+
       questionContent.on('allow-finish-changed', () => {
         this.setForwardNavigationButton(this.state.currentIndex);
       });
 
+      questionContent.on('changed', () => {
+        this.requiredMessage.trigger('hideMessage');
+      });
       return questionContent;
     };
 

@@ -1,86 +1,86 @@
 {
   "semantics":[
     {
-      "label":"Questionnaire elements",
+      "label":"عناصر الاستبيان",
       "widgets":[
         {
-          "label":"Default"
+          "label":"افتراضي"
         }
       ],
       "entity":"element",
       "field":{
-        "label":"Choose library",
+        "label":"اختر المكتبة",
         "fields":[
           {
-            "label":"Library",
-            "description":"Choose a library"
+            "label":"مكتبة",
+            "description":"اختر مكتبة"
           },
           {
-            "label":"Required field"
+            "label":"حقل مطلوب"
           }
         ]
       }
     },
     {
-      "label":"Success screen options",
+      "label":"خيارات شاشة النجاح",
       "fields":[
         {
-          "label":"Enable success screen"
+          "label":"تمكين شاشة النجاح"
         },
         {
-          "label":"Add success screen image",
+          "label":"أضف صورة شاشة النجاح",
           "fields":[
             {
-              "label":"Replace success icon with image"
+              "label":"استبدال ايقونة النجاح مع الصوورة"
             }
           ]
         },
         {
-          "label":"Text to display on submit",
+          "label":"النص الذي سيتم عرضه عند الإرسال",
           "default":"You have completed the questionnaire."
         }
       ]
     },
     {
-      "label":"UI Elements",
+      "label":"UI عناصر",
       "fields":[
         {
           "label":"Button labels",
           "fields":[
             {
-              "label":"Previous button label",
+              "label":"تسمية الزر السابق",
               "default":"Back"
             },
             {
-              "label":"Continue button label",
+              "label":"تسمية زر المتابعة",
               "default":"Continue"
             },
             {
-              "label":"Next button label",
+              "label":"تسمية الزر التالي",
               "default":"Next"
             },
             {
-              "label":"Submit button label",
+              "label":"تسمية زر الارسال",
               "default":"Submit"
             }
           ]
         },
         {
-          "label":"Accessibility",
+          "label":"إمكانية الوصول",
           "fields":[
             {
-              "label":"Required message exit button label",
+              "label":"الرسالة المطلوبة لتسمية زر الخروج",
               "default":"Close error message"
             },
             {
-              "label":"Progress bar text",
+              "label":"نص شريط الانجاز",
               "default":"Question %current of %max",
               "description":"Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
             }
           ]
         },
         {
-          "label":"Required message",
+          "label":"الرسالة المطلوبة",
           "default":"This question requires an answer",
           "description":"Will display if this field is unanswered and required by a wrapper content type"
         },

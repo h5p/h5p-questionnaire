@@ -82,19 +82,19 @@
         {
           "label":"الرسالة المطلوبة",
           "default":"This question requires an answer",
-          "description":"Will display if this field is unanswered and required by a wrapper content type"
+          "description":"سيظهر إذا كان هذا الحقل بدون إجابة ويتطلبه نوع محتوى المجمع"
         },
         {
-          "label":"Required symbol text",
+          "label":"نص رمز مطلوب",
           "default":"required",
-          "description":"Text that will accompany an asterisk to signal that a question is required"
+          "description":"النص الذي سيصاحب علامة النجمة للإشارة إلى أن السؤال مطلوب"
         },
         {
-          "label":"Title for the submit screen",
+          "label":"عنوان شاشة التقديم",
           "default":"You successfully answered all of the questions"
         },
         {
-          "label":"Subtitle for the submit screen",
+          "label":"العنوان الفرعي لشاشة التقديم",
           "default":"Click below to submit your answers"
         }
       ]

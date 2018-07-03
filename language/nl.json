@@ -1,101 +1,101 @@
 {
   "semantics": [
     {
-      "label": "Questionnaire elements",
+      "label": "Enquête onderdelen",
       "widgets": [
         {
-          "label": "Default"
+          "label": "Standaard"
         }
       ],
-      "entity": "element",
+      "entity": "Onderdeel",
       "field": {
-        "label": "Choose library",
+        "label": "Kies een bibliotheek",
         "fields": [
           {
-            "label": "Library",
-            "description": "Choose a library"
+            "label": "Bibliotheek",
+            "description": "Kies een bibliotheek"
           },
           {
-            "label": "Required field"
+            "label": "Verplicht veld"
           }
         ]
       }
     },
     {
-      "label": "Success screen options",
+      "label": "Opties succes-scherm",
       "fields": [
         {
-          "label": "Enable success screen"
+          "label": "Activeer succes-scherm"
         },
         {
-          "label": "Add success screen image",
+          "label": "Voeg succes-schermafbeelding toe",
           "fields": [
             {
-              "label": "Replace success icon with image"
+              "label": "Vervang succes-pictogram door een afbeelding"
             }
           ]
         },
         {
-          "label": "Text to display on submit",
-          "default": "You have completed the questionnaire."
+          "label": "Te tonen tekst voor verzenden",
+          "default": "Je hebt de enquête voltooid."
         }
       ]
     },
     {
-      "label": "UI Elements",
+      "label": "Gebruikersinterface-elementen",
       "fields": [
         {
-          "label": "Button labels",
+          "label": "Labels van de knoppen",
           "fields": [
             {
-              "label": "Previous button label",
-              "default": "Back"
+              "label": "Label vorige-knop",
+              "default": "Vorige"
             },
             {
-              "label": "Continue button label",
-              "default": "Continue"
+              "label": "Label verder-knop",
+              "default": "Verder"
             },
             {
-              "label": "Next button label",
-              "default": "Next"
+              "label": "Label volgende-knop",
+              "default": "Volgende"
             },
             {
-              "label": "Submit button label",
-              "default": "Submit"
+              "label": "Label verzend-knop",
+              "default": "Verzend"
             }
           ]
         },
         {
-          "label": "Accessibility",
+          "label": "Toegankelijkheid",
           "fields": [
             {
-              "label": "Required message exit button label",
-              "default": "Close error message"
+              "label": "Label vereist bericht afsluiten-knop",
+              "default": "Foutmelding sluiten"
             },
             {
-              "label": "Progress bar text",
-              "default": "Question %current of %max",
-              "description": "Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
+              "label": "Tekst voortgangsbalk",
+              "default": "Vraag %current van %max",
+              "description": "Dit wordt gebruikt om ondersteunende technologieën te vertellen welke vraag het is. Variabelen: [ %current, %max ]"
             }
           ]
         },
         {
-          "label": "Required message",
-          "default": "This question requires an answer",
-          "description": "Will display if this field is unanswered and required by a wrapper content type"
+          "label": "Verplicht bericht",
+          "default": "Op deze vraag moet een antwoord worden gegeven",
+          "description": "Dit wordt opengeklapt weergegeven als een vraag onbeantwoord is, maar deze wel verplicht is op basis van het inhoudstype"
         },
         {
-          "label": "Required symbol text",
-          "default": "required",
-          "description": "Text that will accompany an asterisk to signal that a question is required"
+          "label": "Verplicht symbooltekst",
+          "default": "verplicht",
+          "description": "De tekst die bij een asterisk hoort om aan te geven dat een vraag nodig is"
         },
         {
-          "label": "Title for the submit screen",
-          "default": "You successfully answered all of the questions"
+          "label": "Titel voor een verzendscherm",
+          "default": "Je hebt alle vragen succesvol beantwoord"
         },
         {
-          "label": "Subtitle for the submit screen",
-          "default": "Click below to submit your answers"
+          "label": "Ondertitel voor het verzendscherm",
+          "default": "Klik hieronder om je antwoorden te verzenden"
         }
       ]
     }

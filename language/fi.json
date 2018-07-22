@@ -1,101 +1,101 @@
 {
-  "semantics":[
+  "semantics": [
     {
-      "label":"Kyselyn osat",
-      "widgets":[
+      "label": "Kyselyn osat",
+      "widgets": [
         {
-          "label":"Oletus"
+          "label": "Oletus"
         }
       ],
-      "entity":"osa",
-      "field":{
-        "label":"Valitse tyyppi",
-        "fields":[
+      "entity": "osa",
+      "field": {
+        "label": "Valitse tyyppi",
+        "fields": [
           {
-            "label":"Tyyppi",
-            "description":"Valitse kyselyn tyyppi"
+            "label": "Tyyppi",
+            "description": "Valitse kyselyn tyyppi"
           },
           {
-            "label":"Vaadittu kenttä"
+            "label": "Vaadittu kenttä"
           }
         ]
       }
     },
     {
-      "label":"Päätösnäkymän valinnat",
-      "fields":[
+      "label": "Päätösnäkymän valinnat",
+      "fields": [
         {
-          "label":"Salli päätösnäkymä"
+          "label": "Salli päätösnäkymä"
         },
         {
-          "label":"Päätösnäkymän kuva",
-          "fields":[
+          "label": "Päätösnäkymän kuva",
+          "fields": [
             {
-              "label":"Vaihda ikonin tilalle kuva"
+              "label": "Vaihda ikonin tilalle kuva"
             }
           ]
         },
         {
-          "label":"Teksti kyselyn lähdettyä eteenpäin",
-          "default":"Vastaukset lähetetty."
+          "label": "Teksti kyselyn lähdettyä eteenpäin",
+          "default": "Vastaukset lähetetty."
         }
       ]
     },
     {
-      "label":"Käyttöliittymä",
-      "fields":[
+      "label": "Käyttöliittymä",
+      "fields": [
         {
-          "label":"Painikkeiden tekstit",
-          "fields":[
+          "label": "Painikkeiden tekstit",
+          "fields": [
             {
-              "label":"Palaa",
-              "default":"Palaa"
+              "label": "Palaa",
+              "default": "Palaa"
             },
             {
-              "label":"Jatka",
-              "default":"Jatka"
+              "label": "Jatka",
+              "default": "Jatka"
             },
             {
-              "label":"Seuraava",
-              "default":"Seuraava"
+              "label": "Seuraava",
+              "default": "Seuraava"
             },
             {
-              "label":"Lähetä",
-              "default":"Lähetä"
+              "label": "Lähetä",
+              "default": "Lähetä"
             }
           ]
         },
         {
-          "label":"Esteettömyys",
-          "fields":[
+          "label": "Esteettömyys",
+          "fields": [
             {
-              "label":"Poistuminen virheilmoituksesta",
-              "default":"Sulje virheilmoitus"
+              "label": "Poistuminen virheilmoituksesta",
+              "default": "Sulje virheilmoitus"
             },
             {
-              "label":"Edistymistä kuvaava teksti",
-              "default":"Kysymys %current\/%max",
-              "description":"Käytetään esteettömyysteknologioissa ilmaisemaan kuluva kysymys. Muuttujat: [ %current, %max ]"
+              "label": "Edistymistä kuvaava teksti",
+              "default": "Kysymys %current/%max",
+              "description": "Käytetään esteettömyysteknologioissa ilmaisemaan kuluva kysymys. Muuttujat: [ %current, %max ]"
             }
           ]
         },
         {
-          "label":"Pakollinen kysymys",
-          "default":"Tähän kysymykseen on pakko vastata",
-          "description":"Näytetään jos on jätety vastaamatta ja kysymykseen on pakko vastata kysymystyypin mukaan"
+          "label": "Pakollinen kysymys",
+          "default": "Tähän kysymykseen on pakko vastata",
+          "description": "Näytetään jos on jätety vastaamatta ja kysymykseen on pakko vastata kysymystyypin mukaan"
         },
         {
-          "label":"Teksti pakollisuutta ilmaisevaan symboliin",
-          "default":"vaaditaan",
-          "description":"Teksti joka näytetään *-merkin yhteydessä, kun kysymykseen on pakko vastata"
+          "label": "Teksti pakollisuutta ilmaisevaan symboliin",
+          "default": "vaaditaan",
+          "description": "Teksti joka näytetään *-merkin yhteydessä, kun kysymykseen on pakko vastata"
         },
         {
-          "label":"Kyselyn lähetyssivun otsikko",
-          "default":"Olet onnistuneesti vastannut kaikkiin kysymyksiin"
+          "label": "Kyselyn lähetyssivun otsikko",
+          "default": "Olet onnistuneesti vastannut kaikkiin kysymyksiin"
         },
         {
-          "label":"Kyselyn lähetyssivun alaotsikko",
-          "default":"Klikkaa lähettääksesi vastauksesi"
+          "label": "Kyselyn lähetyssivun alaotsikko",
+          "default": "Klikkaa lähettääksesi vastauksesi"
         }
       ]
     }

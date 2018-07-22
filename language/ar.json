@@ -1,5 +1,5 @@
 {
-  "semantics":[
+  "semantics": [
     {
       "label":"عناصر الاستبيان",
       "widgets":[
@@ -45,8 +45,8 @@
       "label":"UI عناصر",
       "fields":[
         {
-          "label":"Button labels",
-          "fields":[
+          "label": "Button labels",
+          "fields": [
             {
               "label":"تسمية الزر السابق",
               "default":"Back"

@@ -2,8 +2,8 @@
   "title": "Questionnaire",
   "description": "Create a questionnaire",
   "majorVersion": 1,
-  "minorVersion": 2,
-  "patchVersion": 6,
+  "minorVersion": 3,
+  "patchVersion": 0,
   "runnable": 1,
   "author": "Joubel",
   "license": "MIT",
@@ -25,12 +25,12 @@
     {
       "machineName": "H5P.OpenEndedQuestion",
       "majorVersion": 1,
-      "minorVersion": 0
+      "minorVersion": 1
     },
     {
       "machineName": "H5P.SimpleMultiChoice",
       "majorVersion": 1,
-      "minorVersion": 1
+      "minorVersion": 2
     },
     {
       "machineName": "FontAwesome",

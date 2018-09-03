@@ -1,101 +1,101 @@
 {
   "semantics": [
     {
-      "label": "Questionnaire elements",
-      "widgets": [
+      "label":"عناصر الاستبيان",
+      "widgets":[
         {
-          "label": "Default"
+          "label":"افتراضي"
         }
       ],
-      "entity": "element",
-      "field": {
-        "label": "Choose library",
-        "fields": [
+      "entity":"element",
+      "field":{
+        "label":"اختر المكتبة",
+        "fields":[
           {
-            "label": "Library",
-            "description": "Choose a library"
+            "label":"مكتبة",
+            "description":"اختر مكتبة"
           },
           {
-            "label": "Required field"
+            "label":"حقل مطلوب"
           }
         ]
       }
     },
     {
-      "label": "Success screen options",
-      "fields": [
+      "label":"خيارات شاشة النجاح",
+      "fields":[
         {
-          "label": "Enable success screen"
+          "label":"تمكين شاشة النجاح"
         },
         {
-          "label": "Add success screen image",
-          "fields": [
+          "label":"أضف صورة شاشة النجاح",
+          "fields":[
             {
-              "label": "Replace success icon with image"
+              "label":"استبدال ايقونة النجاح مع الصوورة"
             }
           ]
         },
         {
-          "label": "Text to display on submit",
-          "default": "You have completed the questionnaire."
+          "label":"النص الذي سيتم عرضه عند الإرسال",
+          "default":"You have completed the questionnaire."
         }
       ]
     },
     {
-      "label": "UI Elements",
-      "fields": [
+      "label":"UI عناصر",
+      "fields":[
         {
           "label": "Button labels",
           "fields": [
             {
-              "label": "Previous button label",
-              "default": "Back"
+              "label":"تسمية الزر السابق",
+              "default":"Back"
             },
             {
-              "label": "Continue button label",
-              "default": "Continue"
+              "label":"تسمية زر المتابعة",
+              "default":"Continue"
             },
             {
-              "label": "Next button label",
-              "default": "Next"
+              "label":"تسمية الزر التالي",
+              "default":"Next"
             },
             {
-              "label": "Submit button label",
-              "default": "Submit"
+              "label":"تسمية زر الارسال",
+              "default":"Submit"
             }
           ]
         },
         {
-          "label": "Accessibility",
-          "fields": [
+          "label":"إمكانية الوصول",
+          "fields":[
             {
-              "label": "Required message exit button label",
-              "default": "Close error message"
+              "label":"الرسالة المطلوبة لتسمية زر الخروج",
+              "default":"Close error message"
             },
             {
-              "label": "Progress bar text",
-              "default": "Question %current of %max",
-              "description": "Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
+              "label":"نص شريط الانجاز",
+              "default":"Question %current of %max",
+              "description":"Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
             }
           ]
         },
         {
-          "label": "Required message",
-          "default": "This question requires an answer",
-          "description": "Will display if this field is unanswered and required by a wrapper content type"
+          "label":"الرسالة المطلوبة",
+          "default":"This question requires an answer",
+          "description":"سيظهر إذا كان هذا الحقل بدون إجابة ويتطلبه نوع محتوى المجمع"
         },
         {
-          "label": "Required symbol text",
-          "default": "required",
-          "description": "Text that will accompany an asterisk to signal that a question is required"
+          "label":"نص رمز مطلوب",
+          "default":"required",
+          "description":"النص الذي سيصاحب علامة النجمة للإشارة إلى أن السؤال مطلوب"
         },
         {
-          "label": "Title for the submit screen",
-          "default": "You successfully answered all of the questions"
+          "label":"عنوان شاشة التقديم",
+          "default":"You successfully answered all of the questions"
         },
         {
-          "label": "Subtitle for the submit screen",
-          "default": "Click below to submit your answers"
+          "label":"العنوان الفرعي لشاشة التقديم",
+          "default":"Click below to submit your answers"
         }
       ]
     }

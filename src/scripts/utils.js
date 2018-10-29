@@ -52,7 +52,7 @@ export default class Utils {
    *
    * @return {HTMLElement}
    */
-  static createDiv (attributes) {
+  static createDiv(attributes) {
     return Utils.createElement('div', attributes);
   }
 }

@@ -105,7 +105,7 @@ export default class QuestionContent extends H5P.EventDispatcher {
    *                   Otherwise, we are ready to skip to next question.
    */
   finish() {
-    if(this.instance.finish) {
+    if (this.instance.finish) {
       return this.instance.finish();
     }
   }

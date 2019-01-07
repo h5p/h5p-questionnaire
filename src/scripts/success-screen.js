@@ -26,8 +26,8 @@ export default class SuccessScreen extends H5P.EventDispatcher {
         { parent: parent }
       );
       image.on('loaded', () => {
-        this.trigger('imageLoaded')
-      })
+        this.trigger('imageLoaded');
+      });
     }
     else {
       successIcon.classList.add('standard-icon');
@@ -47,7 +47,7 @@ export default class SuccessScreen extends H5P.EventDispatcher {
     this.show = function () {
       this.wrapper.classList.remove('hide');
       this.wrapper.focus();
-    }
+    };
   }
 
   /**

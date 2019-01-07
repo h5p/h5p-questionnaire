@@ -172,7 +172,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
      *
      * @param {boolean} hide Will hide if true, otherwise it will show
      */
-    this.hideQuestion = function(hide) {
+    this.hideQuestion = function (hide) {
       this.state.questionnaireElements[this.state.questionnaireElements.length - 1].hide(hide);
       this.progressBar.hide(hide);
       this.footer.hide(hide);
@@ -258,7 +258,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
     this.createFooter = function () {
       const footer = new Footer(uiElements.buttonLabels);
       footer.on('next', () => {
-        if(this.move(this.state.currentIndex + 1)) {
+        if (this.move(this.state.currentIndex + 1)) {
           this.showSubmitScreen();
         }
       });

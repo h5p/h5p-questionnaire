@@ -1,101 +1,101 @@
 {
   "semantics": [
     {
-      "label": "Questionnaire elements",
+      "label": "Küsitluse elemendid",
       "widgets": [
         {
-          "label": "Default"
+          "label": "Vaikimisi"
         }
       ],
       "entity": "element",
       "field": {
-        "label": "Choose library",
+        "label": "Vali teek",
         "fields": [
           {
-            "label": "Library",
-            "description": "Choose a library"
+            "label": "Teek",
+            "description": "Vali teek"
           },
           {
-            "label": "Required field"
+            "label": "Nõutud väli"
           }
         ]
       }
     },
     {
-      "label": "Success screen options",
+      "label": "Edukuva valikud",
       "fields": [
         {
-          "label": "Enable success screen"
+          "label": "Luba edukuva"
         },
         {
-          "label": "Add success screen image",
+          "label": "Lisa edukuva pilt",
           "fields": [
             {
-              "label": "Replace success icon with image"
+              "label": "Asenda eduikoon pildiga"
             }
           ]
         },
         {
-          "label": "Text to display on submit",
-          "default": "You have completed the questionnaire."
+          "label": "Tekst, mida näidata esitamisel",
+          "default": "Oled küsitluse täitnud."
         }
       ]
     },
     {
-      "label": "UI Elements",
+      "label": "Kasutajaliidese elemendid",
       "fields": [
         {
-          "label": "Button labels",
+          "label": "Nuppude sildid",
           "fields": [
             {
-              "label": "Previous button label",
-              "default": "Back"
+              "label": "Eelmine nupu silt",
+              "default": "Tagasi"
             },
             {
-              "label": "Continue button label",
-              "default": "Continue"
+              "label": "Jätka nupu silt",
+              "default": "Jätka"
             },
             {
-              "label": "Next button label",
-              "default": "Next"
+              "label": "Järgmine nupu silt",
+              "default": "Järgmine"
             },
             {
-              "label": "Submit button label",
-              "default": "Submit"
+              "label": "Esita nupu silt",
+              "default": "Esita"
             }
           ]
         },
         {
-          "label": "Accessibility",
+          "label": "Puudega kasutaja",
           "fields": [
             {
-              "label": "Required message exit button label",
-              "default": "Close error message"
+              "label": "Nõutud teade, välju nupu silt",
+              "default": "Sulge veateade"
             },
             {
-              "label": "Progress bar text",
-              "default": "Question %current of %max",
-              "description": "Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
+              "label": "Edenemisriba tekst",
+              "default": "Küsimus %current kokku %max küsimusest",
+              "description": "Kasutatakse assisteeriva tehnoloogiaga, et öelda, mis küsimusega on tegu. Muutujad: [ %current, %max ]"
             }
           ]
         },
         {
-          "label": "Required message",
-          "default": "This question requires an answer",
-          "description": "Will display if this field is unanswered and required by a wrapper content type"
+          "label": "Nõutud teade",
+          "default": "See küsimus vajab vastust",
+          "description": "Näidatakse, kui väli on täitmata, kuigi täitmine on nõutud ümbrise sisutüübi poolt"
         },
         {
-          "label": "Required symbol text",
-          "default": "required",
-          "description": "Text that will accompany an asterisk to signal that a question is required"
+          "label": "Nõutud sümboli tekst",
+          "default": "nõutud",
+          "description": "Tekst, mis saadab tärni, osutamaks, et küsimus on nõutud"
         },
         {
-          "label": "Title for the submit screen",
-          "default": "You successfully answered all of the questions"
+          "label": "Esita kuva pealkiri",
+          "default": "Oled edukalt vastanud kõigile küsimustele"
         },
         {
-          "label": "Subtitle for the submit screen",
-          "default": "Click below to submit your answers"
+          "label": "Esita kuva subtiiter",
+          "default": "Oma vastuste esitamiseks kliki allpool"
         }
       ]
     }

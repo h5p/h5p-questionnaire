@@ -1,101 +1,101 @@
 {
   "semantics": [
     {
-      "label": "Questionnaire elements",
+      "label": "Spørreskjema",
       "widgets": [
         {
-          "label": "Default"
+          "label": "Normal verdi"
         }
       ],
-      "entity": "element",
+      "entity": "Element",
       "field": {
-        "label": "Choose library",
+        "label": "Vel innhaldstype",
         "fields": [
           {
-            "label": "Library",
-            "description": "Choose a library"
+            "label": "Innhaldstype",
+            "description": "Vel innhaldstype"
           },
           {
-            "label": "Required field"
+            "label": "Nødvendig felt"
           }
         ]
       }
     },
     {
-      "label": "Success screen options",
+      "label": "Suksess-skjerm alternativ",
       "fields": [
         {
-          "label": "Enable success screen"
+          "label": "Slå på suksess-skjerm"
         },
         {
-          "label": "Add success screen image",
+          "label": "Legg til bilete for suksess-skjerm",
           "fields": [
             {
-              "label": "Replace success icon with image"
+              "label": "Bytt ut suksess-skjerm ikon med bilete"
             }
           ]
         },
         {
-          "label": "Text to display on submit",
-          "default": "You have completed the questionnaire."
+          "label": "Tekst ved ferdig innsending",
+          "default": "Du er nå ferdig med spørreskjemaet."
         }
       ]
     },
     {
-      "label": "UI Elements",
+      "label": "Oversettelser av grensesnitt",
       "fields": [
         {
-          "label": "Button labels",
+          "label": "Knappe-etiketter",
           "fields": [
             {
-              "label": "Previous button label",
-              "default": "Back"
+              "label": "Forrige knapp etikett",
+              "default": "Førre"
             },
             {
-              "label": "Continue button label",
-              "default": "Continue"
+              "label": "Fortsett knapp etikett",
+              "default": "Fortsett"
             },
             {
-              "label": "Next button label",
-              "default": "Next"
+              "label": "Neste knapp etikett",
+              "default": "Neste"
             },
             {
-              "label": "Submit button label",
-              "default": "Submit"
+              "label": "Send inn etikett",
+              "default": "Send inn"
             }
           ]
         },
         {
-          "label": "Accessibility",
+          "label": "Oversettelser for hjelpemiddelteknologi",
           "fields": [
             {
-              "label": "Required message exit button label",
-              "default": "Close error message"
+              "label": "Lukk \"nødvendig felt tekst\" knappetikett",
+              "default": "Lukk feilmelding"
             },
             {
-              "label": "Progress bar text",
-              "default": "Question %current of %max",
-              "description": "Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
+              "label": "Framgang tekst",
+              "default": "Spørsmål %current av %max",
+              "description": "Brukes for å fortelle hjelpemiddelteknologier hvilket spørsmål vi er på. Variabler: [ %current, %max ]"
             }
           ]
         },
         {
-          "label": "Required message",
-          "default": "This question requires an answer",
-          "description": "Will display if this field is unanswered and required by a wrapper content type"
+          "label": "Nødvendig spørsmål tekst",
+          "default": "Dette spørsmålet krever et svar",
+          "description": "Vises dersom dette feltet er krevet, men ikke besvart."
         },
         {
-          "label": "Required symbol text",
-          "default": "required",
-          "description": "Text that will accompany an asterisk to signal that a question is required"
+          "label": "Nødvendig spørsmål symbol tekst",
+          "default": "påkravd",
+          "description": "Tekst som vil vises ved siden av asterisk for å vise at spørsmålet er påkrevd."
         },
         {
-          "label": "Title for the submit screen",
-          "default": "You successfully answered all of the questions"
+          "label": "Tittel på innsendingsskjermen",
+          "default": "Du er nå ferdig med å svare på spørsmåla."
         },
         {
-          "label": "Subtitle for the submit screen",
-          "default": "Click below to submit your answers"
+          "label": "Hjelpetekst for innsendingsskjermen",
+          "default": "Trykk under for å sende inn svara dine"
         }
       ]
     }

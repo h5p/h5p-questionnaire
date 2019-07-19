@@ -6,6 +6,7 @@ import RequiredMessage from './required-message';
 import Footer from './footer';
 import ProgressBar from './progress-bar/progress-bar';
 import QuestionContent from './question-content';
+import Utils from './utils';
 
 export default class Questionnaire extends H5P.EventDispatcher {
 
@@ -45,6 +46,8 @@ export default class Questionnaire extends H5P.EventDispatcher {
       submitScreenTitle: 'You successfully answered all of the questions',
       submitScreenSubtitle: 'Click below to submit your answers'
     }, uiElements);
+
+    Utils.htmlDecodeProperties(uiElements);
 
     /**
      * Instantiate all questions

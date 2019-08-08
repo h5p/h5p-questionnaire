@@ -5,17 +5,17 @@ export default class Utils {
   /**
    * Creates a button
    *
-   * @param {string} text Button label
+   * @param {string} label Button label in HTML
    * @param {string} type name used as className and eventName
    * @param {H5P.EventDispatcher} dispatcher
    *
    * @return {HTMLElement}
    */
-  static createButton(text, type, dispatcher) {
+  static createButton(label, type, dispatcher) {
     const button = Utils.createElement('button', {
       className: 'h5p-questionnaire-button ' + type,
       type: 'button',
-      textContent: text
+      innerHTML: label
     });
 
     if (dispatcher) {

@@ -9,7 +9,7 @@ export default class RequiredMessage extends H5P.EventDispatcher {
     this.requiredElement.classList.add('hide');
 
     this.requiredMessage = document.createElement('div');
-    this.requiredMessage.textContent = uiElements.requiredMessage;
+    this.requiredMessage.innerHTML = uiElements.requiredMessage;
     this.requiredMessage.className = 'h5p-questionnaire-choice-required-message';
     this.requiredMessage.setAttribute('role', 'alert');
 

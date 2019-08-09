@@ -60,7 +60,7 @@ export default class QuestionContent extends H5P.EventDispatcher {
     const subContentQuestion = this.questionnaireElement.querySelector('.h5p-subcontent-question');
     this.questionnaireElement.classList.add('h5p-questionnaire-required');
     const requiredSymbol = document.createElement('div');
-    requiredSymbol.textContent = '* ' + uiElements.requiredText;
+    requiredSymbol.innerHTML = '* ' + uiElements.requiredText;
     requiredSymbol.className = 'h5p-questionnaire-required-symbol';
     if (subContentQuestion) {
       subContentQuestion.insertBefore(requiredSymbol, subContentQuestion.firstChild);

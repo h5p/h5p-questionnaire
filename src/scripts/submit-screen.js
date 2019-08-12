@@ -14,13 +14,13 @@ export default class SubmitScreen extends H5P.EventDispatcher {
     // Create title
     this.wrapper.appendChild(Utils.createDiv({
       className: 'h5p-questionnaire-submit-screen-title',
-      textContent: title
+      innerHTML: title
     }));
 
     // Create subtitle
     this.wrapper.appendChild(Utils.createDiv({
       className: 'h5p-questionnaire-submit-screen-subtitle',
-      textContent: subtitle
+      innerHTML: subtitle
     }));
 
     // Add buttons

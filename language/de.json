@@ -1,19 +1,19 @@
 {
   "semantics": [
     {
-      "label": "Elemente des Fragebogens",
+      "label": "Fragen",
       "widgets": [
         {
-          "label": "Vorgaben"
+          "label": "Eingabemaske"
         }
       ],
-      "entity": "element",
+      "entity": "Frage",
       "field": {
-        "label": "Wähle Bibliothek",
+        "label": "Wähle einen Fragetyp",
         "fields": [
           {
-            "label": "Bibliothek",
-            "description": "Wähle eine Bibliothek"
+            "label": "Fragetyp",
+            "description": "Wähle einen Fragetyp"
           },
           {
             "label": "Erforderliches Feld"
@@ -36,66 +36,66 @@
           ]
         },
         {
-          "label": "Text der nach dem Absenden angezeigt wird",
+          "label": "Text, der nach dem Absenden angezeigt wird",
           "default": "Du hast alle Fragen erfolgreich beantwortet."
         }
       ]
     },
     {
-      "label": "Elemente der Nutzerschnittstelle",
+      "label": "Elemente der Benutzeroberfläche",
       "fields": [
         {
           "label": "Button-Beschriftungen",
           "fields": [
             {
-              "label": "Beschriftung für den \"Zurück\"-Button",
+              "label": "Beschriftung des \"Zurück\"-Buttons",
               "default": "Zurück"
             },
             {
-              "label": "Continue button label",
-              "default": "Continue"
-            },
-            {
-              "label": "Beschriftung für den \"Weiter\"-Button",
+              "label": "Beschriftung des \"Weiter\"-Buttons",
               "default": "Weiter"
             },
             {
-              "label": "Beschriftung für den \"Absenden\"-Button",
+              "label": "Beschriftung des \"Weiter\"-Buttons",
+              "default": "Weiter"
+            },
+            {
+              "label": "Beschriftung des \"Absenden\"-Buttons",
               "default": "Absenden"
             }
           ]
         },
         {
-          "label": "Zugänglichkeit",
+          "label": "Barrierefreiheit",
           "fields": [
             {
-              "label": "Beschriftung für den \"Schließe Fehlermeldung\"-Button",
+              "label": "Beschriftung des \"Schließe Fehlermeldung\"-Buttons",
               "default": "Schließe Fehlermeldung"
             },
             {
-              "label": "Text für den Fortschrittsbalken",
+              "label": "Text der Fortschrittsanzeige",
               "default": "Frage %current von %max",
-              "description": "Sagt unterstützenden Technologien, welche Frage aktuell ist. Variablen: [ %current, %max ]"
+              "description": "Text für Vorlesewerkzeuge, der mitteilt, um welche Frage es sich handelt. Mögliche Platzhalter sind %current und %max."
             }
           ]
         },
         {
-          "label": "Hinweis auf Erforderlichkeit",
+          "label": "Hinweis, dass eine Antwort erforderlich ist",
           "default": "Diese Frage muss beantwortet werden.",
-          "description": "Wird angezeigt, wenn dieses Feld nicht beantwortet wurde, aber benötigt wird."
+          "description": "Wird angezeigt, wenn diese Frage nicht beantwortet wurde, aber benötigt wird."
         },
         {
-          "label": "Text für die Beschriftung bei Erforderlichkeit",
+          "label": "Beschriftung bei Erforderlichkeit",
           "default": "erforderlich",
           "description": "Text, der zusätzlich zum Sternchen darauf hinweist, dass eine Antwort erforderlich ist."
         },
         {
-          "label": "Title for the submit screen",
-          "default": "You successfully answered all of the questions"
+          "label": "Überschrift des Einsendebildschirms",
+          "default": "Du hast alle Fragen beantwortet!"
         },
         {
-          "label": "Subtitle for the submit screen",
-          "default": "Click below to submit your answers"
+          "label": "Weiterer Texte auf dem Einsendebildschirm",
+          "default": "Klicke unten auf den Button, um deine Antworten einzusenden!"
         }
       ]
     }

@@ -4,7 +4,7 @@
       "label": "Elementos do questionário",
       "widgets": [
         {
-          "label": "Padrão"
+          "label": "Predefinição"
         }
       ],
       "entity": "element",
@@ -22,22 +22,22 @@
       }
     },
     {
-      "label": "Opções da tela de sucesso",
+      "label": "Opções do ecrã de sucesso",
       "fields": [
         {
-          "label": "Habilitar tela de sucesso"
+          "label": "Ativar ecrã de sucesso"
         },
         {
-          "label": "Adicionar imagem da tela de sucesso",
+          "label": "Adicionar imagem do ecrã de sucesso",
           "fields": [
             {
-              "label": "Substituir ícone de sucesso com uma imagem"
+              "label": "Substituir ícone de sucesso por uma imagem"
             }
           ]
         },
         {
           "label": "Texto a ser exibido na submissão",
-          "default": "Você completou o questionário."
+          "default": "Completou o questionário."
         }
       ]
     },
@@ -45,22 +45,21 @@
       "label": "Elementos de interface",
       "fields": [
         {
-          "label": "Rótulos de botões",
+          "label": "Etiquetas dos botões",
           "fields": [
             {
-              "label": "Rótulo de botão Anterior",
+              "label": "Etiqueta do botão Anterior",
               "default": "Voltar"
             },
             {
-              "label": "Rótulo de botão Continuar",
+              "label": "Etiqueta do botão Continuar",
               "default": "Continuar"
             },
             {
-              "label": "Rótulo do botão Próximo",
-              "default": "Próximo"
-            },
+              "label": "Etiqueta do botão Seguinte",
+              "default": "Seguinte"
             {
-              "label": "Rótulo do botão de submissão",
+              "label": "Etiqueta do botão de submissão",
               "default": "Submeter"
             }
           ]
@@ -69,33 +68,33 @@
           "label": "Acessibilidade",
           "fields": [
             {
-              "label": "Rótulo do botão de saída de mensagem obrigatória",
-              "default": "Mensagem de erro de saída"
+              "label": "Etiqueta do botão de saída da mensagem obrigatória",
+              "default": "Fechar mensagem de erro"
             },
             {
               "label": "Texto da barra de progresso",
-              "default": "Questão %current de %max",
-              "description": "Usada para informar a tecnologias assistivas em qual questão se encontra. Variáveis: [ %current, %max ]"
+              "default": "Pergunta %current de %max",
+              "description": "Usada para informar as tecnologias de apoio em que pergunta se encontra. Variáveis: [ %current, %max ]"
             }
           ]
         },
         {
           "label": "Mensagem obrigatória",
-          "default": "Esta questão requer uma resposta",
+          "default": "É obrigatório responder a esta pergunta",
           "description": "Será exibida se o campo de uma pergunta obrigatória não for preenchido"
         },
         {
-          "label": "Texto de símbolo de obrigatório",
+          "label": "Texto do símbolo de obrigatório",
           "default": "obrigatório",
-          "description": "Texto que acompanhará o asterisco ao informar que a questão é obrigatória"
+          "description": "Texto que acompanhará o asterisco para informar que a pergunta é obrigatória"
         },
         {
-          "label": "Título para a tela de submissão",
-          "default": "Você respondeu todas as questões com sucesso"
+          "label": "Título para o ecrã de submissão",
+          "default": "Respondeu as todas as perguntas com sucesso"
         },
         {
-          "label": "Legenda para a tela de submissão",
-          "default": "Clique abaixo para submeter suas respostas"
+          "label": "Sub-título para o ecrã de submissão",
+          "default": "Clique abaixo para submeter as suas respostas"
         }
       ]
     }

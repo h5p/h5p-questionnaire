@@ -58,6 +58,7 @@
             {
               "label": "Etiqueta do botão Seguinte",
               "default": "Seguinte"
+            },
             {
               "label": "Etiqueta do botão de submissão",
               "default": "Submeter"

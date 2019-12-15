@@ -1,101 +1,101 @@
 {
   "semantics": [
     {
-      "label": "Questionnaire elements",
+      "label": "Elementi del questionario",
       "widgets": [
         {
-          "label": "Default"
+          "label": "Predefinito"
         }
       ],
-      "entity": "element",
+      "entity": "elemento",
       "field": {
-        "label": "Choose library",
+        "label": "Scegli libreria",
         "fields": [
           {
-            "label": "Library",
-            "description": "Choose a library"
+            "label": "Libreria",
+            "description": "Scegli una libreria"
           },
           {
-            "label": "Required field"
+            "label": "Campo obbligatorio"
           }
         ]
       }
     },
     {
-      "label": "Success screen options",
+      "label": "Opzioni della schermata di successo",
       "fields": [
         {
-          "label": "Enable success screen"
+          "label": "Abilita schermata di successo"
         },
         {
-          "label": "Add success screen image",
+          "label": "Aggiungi immagine alla schermata di successo",
           "fields": [
             {
-              "label": "Replace success icon with image"
+              "label": "Sostituisci l'icona di successo con un'immagine"
             }
           ]
         },
         {
-          "label": "Text to display on submit",
-          "default": "You have completed the questionnaire."
+          "label": "Testo da mostrare su invio",
+          "default": "Hai completato il questionario"
         }
       ]
     },
     {
-      "label": "UI Elements",
+      "label": "Elementi di UI",
       "fields": [
         {
-          "label": "Button labels",
+          "label": "Etichette dei pulsanti",
           "fields": [
             {
-              "label": "Previous button label",
-              "default": "Back"
+              "label": "Etichetta del pulsante Precedente",
+              "default": "Precedente"
             },
             {
-              "label": "Continue button label",
-              "default": "Continue"
+              "label": "Etichetta per pulsante Continua",
+              "default": "Continua"
             },
             {
-              "label": "Next button label",
-              "default": "Next"
+              "label": "Etichetta del pulsante Prossimo",
+              "default": "Prossimo"
             },
             {
-              "label": "Submit button label",
-              "default": "Submit"
+              "label": "Etichetta del pulsante Invio",
+              "default": "Invio"
             }
           ]
         },
         {
-          "label": "Accessibility",
+          "label": "Accessibilità",
           "fields": [
             {
-              "label": "Required message exit button label",
-              "default": "Close error message"
+              "label": "Etichetta del messaggio obbligatorio per pulsante di uscita",
+              "default": "Messaggio di errore di chiusura"
             },
             {
-              "label": "Progress bar text",
-              "default": "Question %current of %max",
-              "description": "Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
+              "label": "Testo della barra di avanzamento",
+              "default": "Domanda %current di %max",
+              "description": "Usato per comunicare alle tecnologie assistive quale domanda è. Variabili: [ %current, %max ]"
             }
           ]
         },
         {
-          "label": "Required message",
-          "default": "This question requires an answer",
-          "description": "Will display if this field is unanswered and required by a wrapper content type"
+          "label": "Messaggio obbligatorio",
+          "default": "Questa domanda richiede una risposta",
+          "description": "Sarà mostrato se questo campo non contiene risposta ma è richiesto da un tipo di contenuto inglobato"
         },
         {
-          "label": "Required symbol text",
-          "default": "required",
-          "description": "Text that will accompany an asterisk to signal that a question is required"
+          "label": "Richiede testo in formato di simbolo",
+          "default": "obbligatorio",
+          "description": "Testo che accompagnerà un asterisco per indicare che una domanda è necessaria"
         },
         {
-          "label": "Title for the submit screen",
-          "default": "You successfully answered all of the questions"
+          "label": "Titolo per la schermata di invio",
+          "default": "Hai risposto positivamente a tutte le domande"
         },
         {
-          "label": "Subtitle for the submit screen",
-          "default": "Click below to submit your answers"
+          "label": "Sottotitolo per la schermata di invio",
+          "default": "Clicca qui sotto per inviare le tue risposte"
         }
       ]
     }

@@ -42,13 +42,13 @@
       ]
     },
     {
-      "label": "rlrmrnto de Interfase del Usuario ",
+      "label": "Elemento de Interfase del Usuario ",
       "fields": [
         {
           "label": "Etiquetas botón",
           "fields": [
             {
-              "label": "etiqueta botón Anterior",
+              "label": "Etiqueta botón Anterior",
               "default": "Regresar"
             },
             {

@@ -48,8 +48,8 @@
           "label": "Popisky tlačítka",
           "fields": [
             {
-              "label": "Previous button label",
-              "default": "Back"
+              "label": "Popisek tlačítka Zpět",
+              "default": "Zpět"
             },
             {
               "label": "Popisek tlačítka Pokračovat",

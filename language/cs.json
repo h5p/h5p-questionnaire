@@ -1,101 +1,101 @@
 {
   "semantics": [
     {
-      "label": "Questionnaire elements",
+      "label": "Prvky dotazníku",
       "widgets": [
         {
-          "label": "Default"
+          "label": "Výchozí"
         }
       ],
       "entity": "element",
       "field": {
-        "label": "Choose library",
+        "label": "Vybrat knihovnu",
         "fields": [
           {
-            "label": "Library",
-            "description": "Choose a library"
+            "label": "Knihovna",
+            "description": "Vyberte knihovnu"
           },
           {
-            "label": "Required field"
+            "label": "Povinné pole"
           }
         ]
       }
     },
     {
-      "label": "Success screen options",
+      "label": "Možnosti obrazovky úspěchu",
       "fields": [
         {
-          "label": "Enable success screen"
+          "label": "Povolit obrazovku úspěchu"
         },
         {
-          "label": "Add success screen image",
+          "label": "Přidat obrázek obrazovky úspěchu",
           "fields": [
             {
-              "label": "Replace success icon with image"
+              "label": "Nahradit ikonu úspěchu obrázkem"
             }
           ]
         },
         {
-          "label": "Text to display on submit",
-          "default": "You have completed the questionnaire."
+          "label": "Text, který se má zobrazit při odeslání",
+          "default": "Vyplnili jste dotazník."
         }
       ]
     },
     {
-      "label": "UI Elements",
+      "label": "Prvky uživatelského rozhraní",
       "fields": [
         {
-          "label": "Button labels",
+          "label": "Popisky tlačítka",
           "fields": [
             {
-              "label": "Previous button label",
-              "default": "Back"
+              "label": "Popisek tlačítka Zpět",
+              "default": "Zpět"
             },
             {
-              "label": "Continue button label",
-              "default": "Continue"
+              "label": "Popisek tlačítka Pokračovat",
+              "default": "Pokračovat"
             },
             {
-              "label": "Next button label",
-              "default": "Next"
+              "label": "Popisek tlačítka Další",
+              "default": "Další"
             },
             {
-              "label": "Submit button label",
-              "default": "Submit"
+              "label": "Popisek tlačítka Odeslat",
+              "default": "Odeslat"
             }
           ]
         },
         {
-          "label": "Accessibility",
+          "label": "Přístupnost",
           "fields": [
             {
-              "label": "Required message exit button label",
-              "default": "Close error message"
+              "label": "Popisek tlačítka zprávy požadované ukončení",
+              "default": "Zavřít chybové hlášení"
             },
             {
-              "label": "Progress bar text",
-              "default": "Question %current of %max",
-              "description": "Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
+              "label": "Text ukazatele průběhu",
+              "default": "Otázka %current z %max",
+              "description": "Používá se k tomu, aby řekl asistenčním technologiím, o jakou otázku jde. Proměnné: [ %current, %max ]"
             }
           ]
         },
         {
-          "label": "Required message",
-          "default": "This question requires an answer",
-          "description": "Will display if this field is unanswered and required by a wrapper content type"
+          "label": "Povinná odpověď",
+          "default": "Tato otázka vyžaduje odpověď",
+          "description": "Zobrazí se, pokud je toto pole nezodpovězeno a jde o povinný typ obsahu "
         },
         {
-          "label": "Required symbol text",
-          "default": "required",
-          "description": "Text that will accompany an asterisk to signal that a question is required"
+          "label": "Symbol požadovaného textu",
+          "default": "povinné",
+          "description": "Text, který bude doprovázet hvězdičku, aby signalizoval, že je vyžadována otázka"
         },
         {
-          "label": "Title for the submit screen",
-          "default": "You successfully answered all of the questions"
+          "label": "Název obrazovky pro odeslání",
+          "default": "Úspěšně jste odpověděli na všechny otázky"
         },
         {
-          "label": "Subtitle for the submit screen",
-          "default": "Click below to submit your answers"
+          "label": "Popis pro obrazovku odeslání",
+          "default": "Kliknutím níže odešlete své odpovědi"
         }
       ]
     }

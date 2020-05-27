@@ -67,7 +67,7 @@
             "type": "library",
             "optional": true,
             "options": [
-              "H5P.Image 1.0"
+              "H5P.Image 1.1"
             ]
           }
         ]

@@ -37,7 +37,7 @@
         },
         {
           "label": "Tekst ved ferdig innsending",
-          "default": "Du er nå ferdig med spørreskjemaet."
+          "default": "Du er no ferdig med spørreskjemaet."
         }
       ]
     },
@@ -53,7 +53,7 @@
             },
             {
               "label": "Fortsett knapp etikett",
-              "default": "Fortsett"
+              "default": "Hald fram"
             },
             {
               "label": "Neste knapp etikett",
@@ -81,7 +81,7 @@
         },
         {
           "label": "Nødvendig spørsmål tekst",
-          "default": "Dette spørsmålet krever et svar",
+          "default": "Dette spørsmålet krev eit svar",
           "description": "Vises dersom dette feltet er krevet, men ikke besvart."
         },
         {
@@ -91,7 +91,7 @@
         },
         {
           "label": "Tittel på innsendingsskjermen",
-          "default": "Du er nå ferdig med å svare på spørsmåla."
+          "default": "Du er no ferdig med å svare på spørsmåla."
         },
         {
           "label": "Hjelpetekst for innsendingsskjermen",

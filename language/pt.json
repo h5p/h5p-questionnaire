@@ -7,7 +7,7 @@
           "label": "Predefinição"
         }
       ],
-      "entity": "element",
+      "entity": "elemento",
       "field": {
         "label": "Escolher biblioteca",
         "fields": [

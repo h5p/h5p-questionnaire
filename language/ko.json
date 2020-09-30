@@ -1,101 +1,101 @@
 {
   "semantics": [
     {
-      "label": "Questionnaire elements",
+      "label": "설문 요소",
       "widgets": [
         {
-          "label": "Default"
+          "label": "기본 설정"
         }
       ],
-      "entity": "element",
+      "entity": "요소",
       "field": {
-        "label": "Choose library",
+        "label": "라이브러리 선택",
         "fields": [
           {
-            "label": "Library",
-            "description": "Choose a library"
+            "label": "라이브러리",
+            "description": "라이브러리 선택"
           },
           {
-            "label": "Required field"
+            "label": "필수 영역"
           }
         ]
       }
     },
     {
-      "label": "Success screen options",
+      "label": "성공 화면 옵션",
       "fields": [
         {
-          "label": "Enable success screen"
+          "label": "성공화면 활성화"
         },
         {
-          "label": "Add success screen image",
+          "label": "성공 화면 이미지 추가",
           "fields": [
             {
-              "label": "Replace success icon with image"
+              "label": "성공 아이콘을 이미지로 바꾸기"
             }
           ]
         },
         {
-          "label": "Text to display on submit",
-          "default": "You have completed the questionnaire."
+          "label": "제출시 표시할 텍스트",
+          "default": "설문지를 완료하셨습니다."
         }
       ]
     },
     {
-      "label": "UI Elements",
+      "label": "UI 요소",
       "fields": [
         {
-          "label": "Button labels",
+          "label": "버튼 레이블",
           "fields": [
             {
-              "label": "Previous button label",
-              "default": "Back"
+              "label": "돌아가기 버튼 레이블",
+              "default": "돌아가기"
             },
             {
-              "label": "Continue button label",
-              "default": "Continue"
+              "label": "계속 버튼 레이블",
+              "default": "계속"
             },
             {
-              "label": "Next button label",
-              "default": "Next"
+              "label": "다음 버튼 레이블",
+              "default": "다음"
             },
             {
-              "label": "Submit button label",
-              "default": "Submit"
+              "label": "제출 버튼 레이블",
+              "default": "제출하기"
             }
           ]
         },
         {
-          "label": "Accessibility",
+          "label": "접근성",
           "fields": [
             {
-              "label": "Required message exit button label",
-              "default": "Close error message"
+              "label": "필수 메시지 종료 버튼 레이블",
+              "default": "에러 메시지 닫기"
             },
             {
-              "label": "Progress bar text",
-              "default": "Question %current of %max",
-              "description": "Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
+              "label": "진행률 표시줄 텍스트",
+              "default": "총 %max의 현재 %current 질문",
+              "description": "보조 기술에게 그것이 어떤 질문인지 알려주는 데 사용. 변수: [ %current, %max ]"
             }
           ]
         },
         {
-          "label": "Required message",
-          "default": "This question requires an answer",
-          "description": "Will display if this field is unanswered and required by a wrapper content type"
+          "label": "필수 메시지",
+          "default": "이 설문 응답이 필수임",
+          "description": "이 영역이 응답되지 않고 래퍼 내용 유형에 필요한 경우 표시됨"
         },
         {
-          "label": "Required symbol text",
-          "default": "required",
-          "description": "Text that will accompany an asterisk to signal that a question is required"
+          "label": "필수 심벌 텍스트",
+          "default": "필수",
+          "description": "질문이 필요함을 알리는 별표와 함께 제공되는 텍스트"
         },
         {
-          "label": "Title for the submit screen",
-          "default": "You successfully answered all of the questions"
+          "label": "제출 화면 제목",
+          "default": "모든 질문에 성공적으로 답변하셨습니다."
         },
         {
-          "label": "Subtitle for the submit screen",
-          "default": "Click below to submit your answers"
+          "label": "제출 화면의 부제목",
+          "default": "답변을 제출하려면 아래를 클릭하십시오."
         }
       ]
     }

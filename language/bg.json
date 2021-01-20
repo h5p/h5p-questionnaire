@@ -22,13 +22,13 @@
       }
     },
     {
-      "label": "Настройки за success screen",
+      "label": "Настройки за екран за успех",
       "fields": [
         {
-          "label": "Разреши success screen"
+          "label": "Разреши екран за успех"
         },
         {
-          "label": "Добави изображение за success screen",
+          "label": "Добави изображение за екран за успех",
           "fields": [
             {
               "label": "Замени иконата с изображение"
@@ -69,13 +69,13 @@
           "label": "Достъпност",
           "fields": [
             {
-              "label": "Required message exit button label",
+              "label": "Съобщение при натискане на бутон за изход",
               "default": "Съобщение за грешка"
             },
             {
               "label": "Текст за лентата с напредък",
               "default": "Въпрос %current от %max",
-              "description": "Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
+              "description": "Използва се, за да обясни на помощните технологии какъв въпрос е. Променливи: [ %current, %max ]"
             }
           ]
         },

@@ -1,101 +1,101 @@
 {
   "semantics": [
     {
-      "label": "Questionnaire elements",
+      "label": "Elements del qüestionari",
       "widgets": [
         {
-          "label": "Default"
+          "label": "Opció predeterminada"
         }
       ],
       "entity": "element",
       "field": {
-        "label": "Choose library",
+        "label": "Tria la biblioteca",
         "fields": [
           {
-            "label": "Library",
-            "description": "Choose a library"
+            "label": "Biblioteca",
+            "description": "Trieu una biblioteca"
           },
           {
-            "label": "Required field"
+            "label": "Camp obligatori"
           }
         ]
       }
     },
     {
-      "label": "Success screen options",
+      "label": "Opcions de la pantalla de compleció satisfactòria",
       "fields": [
         {
-          "label": "Enable success screen"
+          "label": "Activa la pantalla de compleció satisfactòria"
         },
         {
-          "label": "Add success screen image",
+          "label": "Afegeix la imatge de la pantalla de compleció satisfactòria",
           "fields": [
             {
-              "label": "Replace success icon with image"
+              "label": "Substitueix la icona de resposta correcta per una imatge"
             }
           ]
         },
         {
-          "label": "Text to display on submit",
-          "default": "You have completed the questionnaire."
+          "label": "Text per mostrar després de l’enviament",
+          "default": "Heu completat el qüestionari."
         }
       ]
     },
     {
-      "label": "UI Elements",
+      "label": "Elements de la Interfície d'usuari",
       "fields": [
         {
-          "label": "Button labels",
+          "label": "Etiquetes de botons",
           "fields": [
             {
-              "label": "Previous button label",
-              "default": "Back"
+              "label": "Etiqueta del botó Anterior",
+              "default": "Enrere"
             },
             {
-              "label": "Continue button label",
-              "default": "Continue"
+              "label": "Etiqueta del botó “Continua”",
+              "default": "Continua"
             },
             {
-              "label": "Next button label",
-              "default": "Next"
+              "label": "Etiqueta del botó Següent",
+              "default": "Següent"
             },
             {
-              "label": "Submit button label",
-              "default": "Submit"
+              "label": "Etiqueta del botó Envia",
+              "default": "Envia"
             }
           ]
         },
         {
-          "label": "Accessibility",
+          "label": "Accessibilitat",
           "fields": [
             {
-              "label": "Required message exit button label",
-              "default": "Close error message"
+              "label": "Etiqueta del botó per sortir del missatge obligatori",
+              "default": "Tanca el missatge d’error"
             },
             {
-              "label": "Progress bar text",
-              "default": "Question %current of %max",
-              "description": "Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
+              "label": "Text de la barra de progrés",
+              "default": "Pregunta %current de %max",
+              "description": "S’utilitza per indicar a les tecnologies d’assistència quina pregunta és. Variables: [%current, %max]."
             }
           ]
         },
         {
-          "label": "Required message",
-          "default": "This question requires an answer",
-          "description": "Will display if this field is unanswered and required by a wrapper content type"
+          "label": "Missatge obligatori",
+          "default": "Aquesta pregunta requereix una resposta",
+          "description": "Es mostrarà si aquest camp no es respon i si ho requereix un tipus de contingut determinat."
         },
         {
-          "label": "Required symbol text",
-          "default": "required",
-          "description": "Text that will accompany an asterisk to signal that a question is required"
+          "label": "Text del símbol Obligatori",
+          "default": "obligatori",
+          "description": "Text situat al costat d’un asterisc per indicar que una pregunta és obligatòria"
         },
         {
-          "label": "Title for the submit screen",
-          "default": "You successfully answered all of the questions"
+          "label": "Subtítol per a la pantalla d’enviament",
+          "default": "Heu respost totes les preguntes correctament"
         },
         {
-          "label": "Subtitle for the submit screen",
-          "default": "Click below to submit your answers"
+          "label": "Subtítol per a la pantalla d’enviament",
+          "default": "Feu clic més avall per enviar les respostes"
         }
       ]
     }

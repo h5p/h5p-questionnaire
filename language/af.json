@@ -1,101 +1,101 @@
 {
   "semantics": [
     {
-      "label": "Questionnaire elements",
+      "label": "Vraelys elemente",
       "widgets": [
         {
-          "label": "Default"
+          "label": "Verstek"
         }
       ],
       "entity": "element",
       "field": {
-        "label": "Choose library",
+        "label": "Kies biblioteek",
         "fields": [
           {
-            "label": "Library",
-            "description": "Choose a library"
+            "label": "Biblioteek",
+            "description": "Kies 'n biblioteek"
           },
           {
-            "label": "Required field"
+            "label": "Vereisde veld"
           }
         ]
       }
     },
     {
-      "label": "Success screen options",
+      "label": "Sukses skermopsies",
       "fields": [
         {
-          "label": "Enable success screen"
+          "label": "Aktiveer suksesskerm"
         },
         {
-          "label": "Add success screen image",
+          "label": "Voeg suksesskermprent",
           "fields": [
             {
-              "label": "Replace success icon with image"
+              "label": "Vervang suksesikoon met prent"
             }
           ]
         },
         {
-          "label": "Text to display on submit",
-          "default": "You have completed the questionnaire."
+          "label": "Teks om te vertoon by indiening",
+          "default": "Jy het die vraeslys voltooi."
         }
       ]
     },
     {
-      "label": "UI Elements",
+      "label": "UI Elemente",
       "fields": [
         {
-          "label": "Button labels",
+          "label": "Knoppie-etikette",
           "fields": [
             {
-              "label": "Previous button label",
-              "default": "Back"
+              "label": "Vorige knoppie etiket",
+              "default": "Terug"
             },
             {
-              "label": "Continue button label",
-              "default": "Continue"
+              "label": "Gaan voort knoppie-etiket",
+              "default": "Gaan voort"
             },
             {
-              "label": "Next button label",
-              "default": "Next"
+              "label": "Volgende knoppie etiket",
+              "default": "Volgende"
             },
             {
-              "label": "Submit button label",
-              "default": "Submit"
+              "label": "Beginknoppie etiket",
+              "default": "Handig in"
             }
           ]
         },
         {
-          "label": "Accessibility",
+          "label": "Toeganklikheid",
           "fields": [
             {
-              "label": "Required message exit button label",
-              "default": "Close error message"
+              "label": "Vereisde boodskap verlaat knoppie-etiket",
+              "default": "Geslote foutboodskap"
             },
             {
-              "label": "Progress bar text",
-              "default": "Question %current of %max",
-              "description": "Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
+              "label": "Vordering balkteks",
+              "default": "Vraag %current of %max",
+              "description": "Gebruik om vir hulptegnologieë te vertel watter vraag dit is. Veranderlikes: [ %current, %max ]"
             }
           ]
         },
         {
-          "label": "Required message",
-          "default": "This question requires an answer",
-          "description": "Will display if this field is unanswered and required by a wrapper content type"
+          "label": "Vereisde boodskap",
+          "default": "Hierdie vraag vereis 'n antwoord",
+          "description": "Word vertoon as hierdie veld onbeantwoord is en vereis word deur 'n tipe omslaginhoud"
         },
         {
-          "label": "Required symbol text",
-          "default": "required",
-          "description": "Text that will accompany an asterisk to signal that a question is required"
+          "label": "Vereisde symboolteks",
+          "default": "vereis",
+          "description": "Teks wat 'n sterretjie sal vergesel om aan te dui dat 'n vraag nodig is"
         },
         {
-          "label": "Title for the submit screen",
-          "default": "You successfully answered all of the questions"
+          "label": "Titel vir indienskerm",
+          "default": "Jy het al die vrae suksesvol beantwoord"
         },
         {
-          "label": "Subtitle for the submit screen",
-          "default": "Click below to submit your answers"
+          "label": "Onderskrif vir indienskerm",
+          "default": "Klik hieronder om jou antwoorde in te dien"
         }
       ]
     }

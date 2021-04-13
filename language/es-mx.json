@@ -42,7 +42,7 @@
       ]
     },
     {
-      "label": "Elemento de Interfase del Usuario ",
+      "label": "Elementos de Interfaz del Usuario",
       "fields": [
         {
           "label": "Etiquetas botón",
@@ -69,7 +69,7 @@
           "label": "Accesibilidad",
           "fields": [
             {
-              "label": "Etiqueta salir botón mensaje obligatorio",
+              "label": "Etiqueta botón mensaje salida obligatoria",
               "default": "Mensaje cerrar error"
             },
             {
@@ -82,7 +82,7 @@
         {
           "label": "Mensaje Obligatorio",
           "default": "Esta pregunta requiere una respuesta",
-          "description": "Se mostrará si este campo no es contestado y es requerido por un tipo de contenido envoltorio (wrapper)"
+          "description": "Se mostrará si este campo no es contestado y es requerido por un tipo de contenido envoltorio"
         },
         {
           "label": "Texto de símbolo Obligatorio",

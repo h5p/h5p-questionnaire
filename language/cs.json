@@ -7,7 +7,7 @@
           "label": "Výchozí"
         }
       ],
-      "entity": "element",
+      "entity": "prvek",
       "field": {
         "label": "Vybrat knihovnu",
         "fields": [
@@ -82,7 +82,7 @@
         {
           "label": "Povinná odpověď",
           "default": "Tato otázka vyžaduje odpověď",
-          "description": "Zobrazí se, pokud je toto pole nezodpovězeno a jde o povinný typ obsahu "
+          "description": "Zobrazí se, pokud je toto pole nezodpovězeno a jde o povinný typ obsahu"
         },
         {
           "label": "Symbol požadovaného textu",

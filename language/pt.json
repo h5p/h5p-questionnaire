@@ -4,7 +4,7 @@
       "label": "Elementos do questionário",
       "widgets": [
         {
-          "label": "Predefinição"
+          "label": "Padrão"
         }
       ],
       "entity": "elemento",
@@ -37,7 +37,7 @@
         },
         {
           "label": "Texto a ser exibido na submissão",
-          "default": "Completou o questionário."
+          "default": "Concluiu o questionário."
         }
       ]
     },

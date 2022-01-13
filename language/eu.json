@@ -82,12 +82,12 @@
         {
           "label": "Beharrezko mezua",
           "default": "Galdera hau erantzun behar da",
-          "description": "Erakutsik du eremu honek ez daukal erantzunik eta edukiaren paketerentza ezinbestekoa dela"
+          "description": "Erakutsik du eremu honek ez dauka erantzunik eta eduki motaren paketerentzat ezinbestekoa dela"
         },
         {
           "label": "Beharrezko ikurra testua",
           "default": "beharrezkoa",
-          "description": "Galdera batek erantzuna eskatzen duela adierazten duen asterikoari laguntzen dion testua"
+          "description": "Galdera batek erantzuna eskatzen duela adierazten duen izartxoari laguntzen dion testua"
         },
         {
           "label": "Bidalketa pantailaren izenburua",

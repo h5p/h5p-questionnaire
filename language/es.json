@@ -9,11 +9,11 @@
       ],
       "entity": "elemento",
       "field": {
-        "label": "Elegir librería",
+        "label": "Elegir biblioteca",
         "fields": [
           {
-            "label": "Librería",
-            "description": "Elegir una librería"
+            "label": "Biblioteca",
+            "description": "Elegir una biblioteca"
           },
           {
             "label": "Campo obligatorio"

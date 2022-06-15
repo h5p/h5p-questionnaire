@@ -1,10 +1,10 @@
 {
   "semantics": [
     {
-      "label": "Elementos del Questionnaire",
+      "label": "Elementos del cuestionario",
       "widgets": [
         {
-          "label": "Predeterminado"
+          "label": "Por defecto"
         }
       ],
       "entity": "elemento",
@@ -22,34 +22,34 @@
       }
     },
     {
-      "label": "Opciones pantalla éxito",
+      "label": "Opciones de la pantalla de éxito",
       "fields": [
         {
-          "label": "Habilitar pantalla éxito"
+          "label": "Habilitar pantalla de éxito"
         },
         {
-          "label": "Añadir imagen pantalla éxito",
+          "label": "Añadir imagen a la pantalla de éxito",
           "fields": [
             {
-              "label": "Remplazar ícono de éxito con imagen"
+              "label": "Remplazar icono de éxito con imagen"
             }
           ]
         },
         {
           "label": "Texto a mostrar al enviar",
-          "default": "Usted ha completado el questionnaire."
+          "default": "Has completado el cuestionario."
         }
       ]
     },
     {
-      "label": "Elementos de Interfaz del Usuario",
+      "label": "Elementos de la interfaz de usuario",
       "fields": [
         {
-          "label": "Etiquetas botón",
+          "label": "Etiquetas de botón",
           "fields": [
             {
               "label": "Etiqueta botón Anterior",
-              "default": "Regresar"
+              "default": "Atrás"
             },
             {
               "label": "Etiqueta botón Continuar",
@@ -69,33 +69,33 @@
           "label": "Accesibilidad",
           "fields": [
             {
-              "label": "Etiqueta botón mensaje salida obligatoria",
-              "default": "Mensaje cerrar error"
+              "label": "Etiqueta del botón de salida del mensaje obligatorio",
+              "default": "Mensaje de error al cerrar"
             },
             {
               "label": "Texto de Barra del Progreso",
               "default": "Pregunta %current de %max",
-              "description": "Usado para decirle a tecnologías asistivas cual pregunta es. Variables: [ %current, %max ]"
+              "description": "Usado para decirle a tecnologías de asistencia qué pregunta es. Variables: [ %current, %max ]"
             }
           ]
         },
         {
           "label": "Mensaje Obligatorio",
           "default": "Esta pregunta requiere una respuesta",
-          "description": "Se mostrará si este campo no es contestado y es requerido por un tipo de contenido envoltorio"
+          "description": "Se mostrará si este campo no ha sido contestado y es requerido por un tipo de contenido wrapper"
         },
         {
           "label": "Texto de símbolo Obligatorio",
           "default": "obligatorio",
-          "description": "Texto que acompañará un asterisco para señalar que una pregunta es obligatoria"
+          "description": "Texto que acompañará a un asterisco para señalar que una pregunta es obligatoria"
         },
         {
           "label": "Título para la pantalla para enviar",
-          "default": "Usted contestó exitosamente todas las preguntas"
+          "default": "Has conseguido contestar todas las preguntas"
         },
         {
           "label": "Subtítulo para la pantalla para envío",
-          "default": "Hacer clic debajo para enviar sus respuestas"
+          "default": "Hacer clic en la parte inferior para enviar tus respuestas"
         }
       ]
     }

@@ -1,15 +1,17 @@
-var autoprefixer = require('autoprefixer');
-var webpack = require('webpack');
 var path = require('path');
+var autoprefixer = require('autoprefixer');
+const nodeEnv = process.env.NODE_ENV || 'development';
 
 module.exports = {
-  entry: "./src/entries/dev.js",
+  mode: nodeEnv,
+  context: path.resolve(__dirname, 'src'),
+  entry: "./entries/dev.js",
   output: {
     path: path.join(__dirname, '/build'),
     filename: "dev.js"
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         include: [
@@ -17,7 +19,7 @@ module.exports = {
           path.resolve(__dirname, "src/scripts"),
           path.resolve(__dirname, "src/entries")
         ],
-        loader: 'babel'
+        use: 'babel-loader'
       },
       {
         test: /\.css$/,
@@ -25,12 +27,19 @@ module.exports = {
           path.resolve(__dirname, "src/content"),
           path.resolve(__dirname, "src/scripts")
         ],
-        loader: "style!css!postcss"
-      },
-      {
-        test: /\.json$/,
-        include: path.resolve(__dirname, "src/content"),
-        loader: 'json'
+        use: [
+          'css-loader',
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  autoprefixer
+                ],
+              },
+            },
+          },
+        ]
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -38,16 +47,15 @@ module.exports = {
       },
       {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "file"
+        use: "file-loader"
       },
       {
         test: /\.png$/,
-        loader: "file?name=[name].[ext]"
+        use: [
+          { name: '[name].[ext]' }
+        ]
       }
     ]
-  },
-  postcss: function () {
-    return [autoprefixer];
   },
   devtool: 'inline-source-map',
   devServer: {

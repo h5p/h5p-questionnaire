@@ -55,6 +55,10 @@ export default class Questionnaire extends H5P.EventDispatcher {
       content.className = 'h5p-questionnaire-content';
 
       questionnaireElements.forEach(({requiredField, library}, index) => {
+        if (typeof library !== 'object' || !library.library) {
+          return; // No library selected
+        }
+
         const questionContent = this.createQuestionContent(requiredField, library, index);
         content.appendChild(questionContent.getElement());
         this.state.questionnaireElements.push(questionContent);

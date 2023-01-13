@@ -1,101 +1,101 @@
 {
   "semantics": [
     {
-      "label": "Questionnaire elements",
+      "label": "Elementy kwestionariusza",
       "widgets": [
         {
-          "label": "Default"
+          "label": "Domyślny"
         }
       ],
       "entity": "element",
       "field": {
-        "label": "Choose library",
+        "label": "Wybierz bibliotekę",
         "fields": [
           {
-            "label": "Library",
-            "description": "Choose a library"
+            "label": "Biblioteka",
+            "description": "Wybierz bibliotekę"
           },
           {
-            "label": "Required field"
+            "label": "Pole wymagane"
           }
         ]
       }
     },
     {
-      "label": "Success screen options",
+      "label": "Opcje ekranu sukcesu",
       "fields": [
         {
-          "label": "Enable success screen"
+          "label": "Włącz ekran sukcesu"
         },
         {
-          "label": "Add success screen image",
+          "label": "Dodaj obraz ekranu sukcesu",
           "fields": [
             {
-              "label": "Replace success icon with image"
+              "label": "Zastąp ikonę sukcesu obrazem"
             }
           ]
         },
         {
-          "label": "Text to display on submit",
-          "default": "You have completed the questionnaire."
+          "label": "Tekst do wyświetlenia przy przesłaniu",
+          "default": "Wypełniłeś/aś kwestionariusz."
         }
       ]
     },
     {
-      "label": "UI Elements",
+      "label": "Elementy UI",
       "fields": [
         {
-          "label": "Button labels",
+          "label": "Etykiety przycisków",
           "fields": [
             {
-              "label": "Previous button label",
-              "default": "Back"
+              "label": "Poprzednia etykieta przycisku",
+              "default": "Wróć"
             },
             {
-              "label": "Continue button label",
-              "default": "Continue"
+              "label": "Etykieta przycisku Kontynuuj",
+              "default": "Kontynuuj"
             },
             {
-              "label": "Next button label",
-              "default": "Next"
+              "label": "Etykieta przycisku Następny",
+              "default": "Następny"
             },
             {
-              "label": "Submit button label",
-              "default": "Submit"
+              "label": "Etykieta przycisku Prześlij",
+              "default": "Prześlij"
             }
           ]
         },
         {
-          "label": "Accessibility",
+          "label": "Dostępność",
           "fields": [
             {
-              "label": "Required message exit button label",
-              "default": "Close error message"
+              "label": "Wymagana etykieta przycisku wyjścia z wiadomości",
+              "default": "Zamknij komunikat o błędzie"
             },
             {
-              "label": "Progress bar text",
-              "default": "Question %current of %max",
-              "description": "Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
+              "label": "Tekst paska postępu",
+              "default": "Pytanie %current z %max",
+              "description": "Służy do informowania technologii wspomagających, jakie to pytanie. Zmienne: [ %current, %max ]"
             }
           ]
         },
         {
-          "label": "Required message",
-          "default": "This question requires an answer",
-          "description": "Will display if this field is unanswered and required by a wrapper content type"
+          "label": "Wymagana wiadomość",
+          "default": "To pytanie wymaga odpowiedzi",
+          "description": "Wyświetli się, jeśli to pole zostanie puste, a jest wymagane przez typ zawartości wrappera"
         },
         {
-          "label": "Required symbol text",
-          "default": "required",
-          "description": "Text that will accompany an asterisk to signal that a question is required"
+          "label": "Tekst wymaganego symbolu",
+          "default": "wymagany",
+          "description": "Tekst, który będzie oznaczony gwiazdką, aby zasygnalizować, że pytanie jest wymagane"
         },
         {
-          "label": "Title for the submit screen",
-          "default": "You successfully answered all of the questions"
+          "label": "Tytuł ekranu przesyłania",
+          "default": "Udało Ci się odpowiedzieć na wszystkie pytania"
         },
         {
-          "label": "Subtitle for the submit screen",
-          "default": "Click below to submit your answers"
+          "label": "Podtytuł ekranu przesyłania",
+          "default": "Kliknij poniżej, aby przesłać swoje odpowiedzi"
         }
       ]
     }

@@ -25,13 +25,13 @@
       "label": "Sėkmės ekrano parinktys",
       "fields": [
         {
-          "label": "Enable success screen"
+          "label": "Įgalinti sėkmės ekraną"
         },
         {
-          "label": "Add success screen image",
+          "label": "Pridėkite sėkmės ekrano vaizdą",
           "fields": [
             {
-              "label": "Replace success icon with image"
+              "label": "Pakeisti sėkmės piktogramą vaizdu"
             }
           ]
         },
@@ -70,7 +70,7 @@
           "fields": [
             {
               "label": "Required message exit button label",
-              "default": "Close error message"
+              "default": "Uždaryti klaidos pranešimą"
             },
             {
               "label": "Pažangos juostos tekstas",
@@ -80,13 +80,13 @@
           ]
         },
         {
-          "label": "Required message",
-          "default": "This question requires an answer",
+          "label": "Reikalingas pranešimas",
+          "default": "Šis klausimas reikalauja atsakymo",
           "description": "Will display if this field is unanswered and required by a wrapper content type"
         },
         {
           "label": "Required symbol text",
-          "default": "required",
+          "default": "reikalaujama",
           "description": "Text that will accompany an asterisk to signal that a question is required"
         },
         {

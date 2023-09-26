@@ -110,6 +110,12 @@ export default class QuestionContent extends H5P.EventDispatcher {
     }
   }
 
+  resetTask() {
+    if (typeof this.instance.resetTask === 'function') {
+      this.instance.resetTask();
+    }
+  }
+
   /**
    * Get current state
    * @return {*}

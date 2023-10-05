@@ -422,7 +422,10 @@ export default class Questionnaire extends H5P.EventDispatcher {
         }
       });
 
-      this.move(0, true);
+      if (this instanceof H5P.Questionnaire) {
+        this.move(0, true);
+      }
+
       this.finished = false;
     };
 

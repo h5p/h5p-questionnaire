@@ -422,7 +422,7 @@ export default class Questionnaire extends H5P.EventDispatcher {
         }
       });
 
-      if (this.isRoot()) {
+      if (H5P.instances[0].libraryInfo.machineName === "H5P.Questionnaire") {
         this.move(0, true);
       }
 

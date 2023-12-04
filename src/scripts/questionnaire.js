@@ -395,6 +395,12 @@ export default class Questionnaire extends H5P.EventDispatcher {
         return question.getCurrentState();
       });
 
+      if (!this.state.currentIndex && !this.state.finished) {
+        if (typeof H5P.isEmpty === 'function' && H5P.isEmpty(questions)) {
+          return {}; // No state to preserve
+        }
+      }
+
       // Content state was changed in version 1. Before that there was no version property.
       // In version 1, currentIndex's max value is (numQuestions - 1). Before that,
       // currentIndex could be numQuestions to indicate success screen was shown. finished
@@ -405,6 +411,22 @@ export default class Questionnaire extends H5P.EventDispatcher {
         finished: this.state.finished,
         version: 1
       };
+    };
+
+    this.resetTask = function () {
+      delete contentData.previousState;
+
+      this.state.questionnaireElements.forEach(q => {
+        if (typeof q.resetTask === 'function') {
+          q.resetTask();
+        }
+      });
+
+      if (this.isRoot()) {
+        this.move(0, true);
+      }
+
+      this.finished = false;
     };
 
     /**

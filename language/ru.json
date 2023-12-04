@@ -1,101 +1,101 @@
 {
   "semantics": [
     {
-      "label": "Questionnaire elements",
+      "label": "Элементы анкеты",
       "widgets": [
         {
-          "label": "Default"
+          "label": "По умолчанию"
         }
       ],
-      "entity": "element",
+      "entity": "элемент",
       "field": {
-        "label": "Choose library",
+        "label": "Выбрать библиотеку",
         "fields": [
           {
-            "label": "Library",
-            "description": "Choose a library"
+            "label": "Библиотека",
+            "description": "Выбрать библиотеку"
           },
           {
-            "label": "Required field"
+            "label": "Обязательное поле"
           }
         ]
       }
     },
     {
-      "label": "Success screen options",
+      "label": "Параметры экрана успеха",
       "fields": [
         {
-          "label": "Enable success screen"
+          "label": "Включить экран успеха"
         },
         {
-          "label": "Add success screen image",
+          "label": "Добавить изображение экрана успеха",
           "fields": [
             {
-              "label": "Replace success icon with image"
+              "label": "Заменить значок успеха на картинке"
             }
           ]
         },
         {
-          "label": "Text to display on submit",
-          "default": "You have completed the questionnaire."
+          "label": "Текст для отображения при отправке",
+          "default": "Вы заполнили анкету."
         }
       ]
     },
     {
-      "label": "UI Elements",
+      "label": "Элементы пользовательского интерфейса",
       "fields": [
         {
-          "label": "Button labels",
+          "label": "Метки кнопок",
           "fields": [
             {
-              "label": "Previous button label",
-              "default": "Back"
+              "label": "Метка кнопки предыдущего шага",
+              "default": "Назад"
             },
             {
-              "label": "Continue button label",
-              "default": "Continue"
+              "label": "Метка кнопки продолжения",
+              "default": "Продолжить"
             },
             {
-              "label": "Next button label",
-              "default": "Next"
+              "label": "Метка кнопки следующего шага",
+              "default": "Дальше"
             },
             {
-              "label": "Submit button label",
-              "default": "Submit"
+              "label": "Метка кнопки отправки",
+              "default": "Отправить"
             }
           ]
         },
         {
-          "label": "Accessibility",
+          "label": "Доступность",
           "fields": [
             {
-              "label": "Required message exit button label",
-              "default": "Close error message"
+              "label": "Обязательно сообщение кнопки выхода",
+              "default": "Закройте сообщение об ошибке"
             },
             {
-              "label": "Progress bar text",
-              "default": "Question %current of %max",
-              "description": "Used to tell assistive technologies what question it is. Variables: [ %current, %max ]"
+              "label": "Текст индикатора прогресса",
+              "default": "Вопрос %current из %max",
+              "description": "Используется, чтобы сообщить вспомогательным технологиям, какой это вопрос. Переменные: [%current, %max]"
             }
           ]
         },
         {
-          "label": "Required message",
-          "default": "This question requires an answer",
-          "description": "Will display if this field is unanswered and required by a wrapper content type"
+          "label": "Обязательное сообщение",
+          "default": "Этот вопрос требует ответа",
+          "description": "Отображается, если это поле не имеет ответа и требуется тип содержимого оболочки"
         },
         {
-          "label": "Required symbol text",
-          "default": "required",
-          "description": "Text that will accompany an asterisk to signal that a question is required"
+          "label": "Текст символа \"Обязательно\"",
+          "default": "Обязательно",
+          "description": "Текст, сопровождающий звездочку, указывающую на необходимость вопроса"
         },
         {
-          "label": "Title for the submit screen",
-          "default": "You successfully answered all of the questions"
+          "label": "Заголовок экрана отправки",
+          "default": "Вы успешно ответили на все вопросы"
         },
         {
-          "label": "Subtitle for the submit screen",
-          "default": "Click below to submit your answers"
+          "label": "Подзаголовок для экрана отправки",
+          "default": "Нажмите ниже, чтобы отправить свои ответы"
         }
       ]
     }

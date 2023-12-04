@@ -75,7 +75,7 @@
             {
               "label": "Text ukazatele průběhu",
               "default": "Otázka %current z %max",
-              "description": "Používá se k tomu, aby řekl asistenčním technologiím, o jakou otázku jde. Proměnné: [ %current, %max ]"
+              "description": "Používá se k tomu, aby řekl podpůrným technologiím, o jakou otázku jde. Proměnné: [ %current, %max ]"
             }
           ]
         },

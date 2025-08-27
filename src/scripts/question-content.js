@@ -2,7 +2,7 @@ export default class QuestionContent extends H5P.EventDispatcher {
 
   /**
    * Enum for continue/next logic. For now this is used for being able to
-   * display the feedback for simple multiple choice. I.e: can't skip to next
+   * display the feedback for simple multiple choice. i.e: can't skip to next
    * question until this is displayed (if anything needs to be displayed)
    *
    * @readonly
